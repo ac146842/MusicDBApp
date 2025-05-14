@@ -17,5 +17,5 @@ namespace MusicDBApp.DBfile.Model
             Genre_Name = inGenre;
             Genre_ID = inGenre_ID;
         }
-    }
+    } //genre class
 }
