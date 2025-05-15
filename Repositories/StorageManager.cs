@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MusicDBApp.Model;
 using Microsoft.Data.SqlClient;
+using MusicDBApp.DBfile.Model;
 
-namespace MusicDBApp.Repositories
+
+namespace MusicDBApp
 {
     public class StorageManager
     {
@@ -30,6 +33,16 @@ namespace MusicDBApp.Repositories
             {
                 Console.WriteLine("An error occoured \n");
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        public List<Genres> GetAllGenres()
+        {
+            List<Genres> genres = new List<Genres>();
+            string sqlString = "SELECT * FROM Genres";
+            using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+            {
+
             }
         }
     }
