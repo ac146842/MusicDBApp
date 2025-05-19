@@ -1,0 +1,4 @@
+SELECT Short_Review, Review_Date, Review_ID ,ReviewComment_ID
+FROM tblReviewComments
+WHERE LENGTH(Short_Review) <= 30
+ORDER BY Short_Review;

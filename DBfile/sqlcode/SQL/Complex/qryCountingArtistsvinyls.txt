@@ -1,0 +1,5 @@
+SELECT a.Artist_Name, COUNT(v.Vinyl_ID) AS VinylCount
+FROM tblArtist a, tblVinyl v
+WHERE a.Artist_ID = v.Artist_ID
+GROUP BY a.Artist_Name 
+ORDER BY VinylCount DESC;

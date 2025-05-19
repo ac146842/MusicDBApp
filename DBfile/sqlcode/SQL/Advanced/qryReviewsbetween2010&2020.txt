@@ -1,0 +1,4 @@
+SELECT Review_Date, Short_Review, Review_ID, ReviewComment_ID
+FROM TblReviewComments
+WHERE Review_Date BETWEEN '2010-12-31' AND '2020-12-31'
+ORDER BY Review_Date;

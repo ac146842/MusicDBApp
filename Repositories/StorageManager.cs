@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MusicDBApp.Model;
 using Microsoft.Data.SqlClient;
 using MusicDBApp.DBfile.Model;
+using Microsoft.Identity.Client;
 
 
 namespace MusicDBApp
@@ -42,8 +43,17 @@ namespace MusicDBApp
             string sqlString = "SELECT * FROM Genres";
             using (SqlCommand cmd = new SqlCommand(sqlString, conn))
             {
-
+                using (SqlDataReader reader = cmd.ExecuteReader()) 
+                {
+                    while (reader.Read())
+                    {
+                        int genreID = Convert.ToInt32(reader["Genre_ID"]);
+                        string GenreName = reader["Genre_Name"].ToString();
+                        genres.Add(new Genres(GenreID, GenreName));
+                    }
+                }
             }
+            return genres;
         }
     }
 }

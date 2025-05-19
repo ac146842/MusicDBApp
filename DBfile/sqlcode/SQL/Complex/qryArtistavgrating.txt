@@ -1,0 +1,5 @@
+SELECT a.Artist_Name, AVG(r.Out_Of_5) AS AvgRating, a.RecordLabel_ID
+FROM TblArtist a, TblVinyl v, TblReviews r
+WHERE a.Artist_ID = v.Artist_ID  
+AND v.Vinyl_ID = r.Vinyl_ID  
+GROUP BY a.Artist_Name
