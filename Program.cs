@@ -13,16 +13,15 @@ namespace MusicDBApp
             string connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=MusicDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             storageManager = new StorageManager(connectionString);
-            consoleView view = new ConsoleView();
-            View.DisplayMenu();
-            string choice = 
+            ConsoleView view = new ConsoleView();            
+            string choice = view.DisplayMenu();
 
             storageManager = new StorageManager(connectionString);
             //get list from storage manager
             List<Genres> genres = storageManager.GetAllGenres();
             foreach (Genres genre in genres)
             {
-                Console.WriteLine($"{genres.GenreName}, {genres.GenreID}");
+                Console.WriteLine($"{genre.Genre_Name}, {genre.Genre_ID}");
             }
         }
     }

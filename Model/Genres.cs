@@ -9,8 +9,8 @@ namespace MusicDBApp.Model
 
     public class Genres
     {
-        private string Genre_Name { get; set; }
-        private int Genre_ID { get; set; }
+        public string Genre_Name { get; set; }
+        public int Genre_ID { get; set; }
 
         public Genres(string inGenre, int inGenre_ID)
         {

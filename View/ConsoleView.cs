@@ -9,25 +9,21 @@ namespace MusicDBApp.View
 {
     public class ConsoleView
     {
-        public void DisplayMenu()
+        public string DisplayMenu()
         {
             Console.WriteLine("Welcome to MusicDB ");
             Console.WriteLine("Menu: ");
             Console.WriteLine("1. View all Records in Genres");
+
+            return Console.ReadLine();
         }
 
         public void DisplayGenres(List<Genres> genres)
         {
-            List<Genres> genres = storageManager.GetAllGenres();
             foreach (Genres genre in genres)
             {
-                Console.WriteLine($"{genres.GenreName}, {genres.GenreID}");
+                Console.WriteLine($"{genre.Genre_ID}, {genre.Genre_ID}");
             }
-        }
-
-        public string GetInput()
-        {
-            return Console.ReadLine();
         }
     }
 }
