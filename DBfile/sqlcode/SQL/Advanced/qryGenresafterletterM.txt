@@ -1,4 +1,0 @@
-SELECT Genre_Name, Description, Genre_ID  
-FROM tblGenre  
-WHERE Genre_Name > 'M'  
-ORDER BY Genre_Name;  

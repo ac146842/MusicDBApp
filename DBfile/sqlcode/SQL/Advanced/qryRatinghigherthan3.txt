@@ -1,4 +1,0 @@
-SELECT Reviewer_Name, Out_Of_5, Vinyl_ID, Review_ID
-FROM TblReviews
-WHERE Out_Of_5 > 3
-ORDER BY Out_Of_5;
