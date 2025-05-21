@@ -40,7 +40,7 @@ namespace MusicDBApp.View
            return Console.ReadLine();
         }
 
-        public int GetIntInpupt()
+        public int GetIntInput()
         {
             return int.Parse(Console.ReadLine());
         }
