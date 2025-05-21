@@ -7,14 +7,15 @@ namespace MusicDBApp
 {
     public class Program
     {
-        private static StorageManager storageManager;       
+        private static StorageManager storageManager;
+        private static ConsoleView view;
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
             string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MusicApp;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             storageManager = new StorageManager(connectionString);
-            ConsoleView view = new ConsoleView();            
+            view = new ConsoleView();            
             string choice = view.DisplayMenu();
 
 
@@ -32,11 +33,11 @@ namespace MusicDBApp
                     break;
 
                 case "3":
-                    InsertNewGenres();
+                    //InsertNewGenres();
                     break;
 
                 case "4":
-                    DeleteGenresByName();
+                    //DeleteGenresByName();
                     break;               
 
                 default:
@@ -53,7 +54,6 @@ namespace MusicDBApp
             string genreName = view.GetInput();
             int rowsAffected = storageManager.UpdateGenresName(genreID, genreName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
-
         }
     }
 }
