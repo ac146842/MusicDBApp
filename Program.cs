@@ -1,5 +1,6 @@
 ﻿using MusicDBApp;
 using MusicDBApp.Model;
+using MusicDBApp.Repos;
 using MusicDBApp.View;
 
 namespace MusicDBApp
@@ -10,18 +11,24 @@ namespace MusicDBApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            string connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=MusicDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MusicApp;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             storageManager = new StorageManager(connectionString);
             ConsoleView view = new ConsoleView();            
             string choice = view.DisplayMenu();
 
-            storageManager = new StorageManager(connectionString);
-            //get list from storage manager
-            List<Genres> genres = storageManager.GetAllGenres();
-            foreach (Genres genre in genres)
+
+            switch (choice)
             {
-                Console.WriteLine($"{genre.Genre_Name}, {genre.Genre_ID}");
+                case "1":
+                    {
+                        List<Genres> genres = storageManager.GetAllGenres();
+                        view.DisplayGenres(genres);
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Invalid option. Please try again.");
+                    break;
             }
         }
     }

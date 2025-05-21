@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
+using MusicDBApp.Model;
 
-
-namespace MusicDBApp.Model;
+namespace MusicDBApp.Repos;
 
 public class StorageManager
 {
@@ -38,7 +38,7 @@ public class StorageManager
     public List<Genres> GetAllGenres()
     {
         List<Genres> genres = new List<Genres>();
-        string sqlString = "SELECT * FROM Genres";
+        string sqlString = "SELECT * FROM tblGenre";
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
             using (SqlDataReader reader = cmd.ExecuteReader()) 

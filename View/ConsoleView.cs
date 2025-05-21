@@ -22,7 +22,7 @@ namespace MusicDBApp.View
         {
             foreach (Genres genre in genres)
             {
-                Console.WriteLine($"{genre.Genre_ID}, {genre.Genre_ID}");
+                Console.WriteLine($"{genre.Genre_ID}, {genre.Genre_Name}");
             }
         }
     }
