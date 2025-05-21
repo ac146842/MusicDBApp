@@ -13,7 +13,11 @@ namespace MusicDBApp.View
         {
             Console.WriteLine("Welcome to MusicDB ");
             Console.WriteLine("Menu: ");
+            Console.WriteLine("Choose an option from 1-4");
             Console.WriteLine("1. View all Records in Genres");
+            Console.WriteLine("2. Update a Genres name by Genre_ID");
+            Console.WriteLine("3. Insert a new Genre");
+            Console.WriteLine("4. Delete a Genre by Gemre_Name");
 
             return Console.ReadLine();
         }
