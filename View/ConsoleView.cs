@@ -29,5 +29,20 @@ namespace MusicDBApp.View
                 Console.WriteLine($"{genre.Genre_ID}, {genre.Genre_Name}");
             }
         }
+
+        public void DisplayMessage(string message)
+        {
+            Console.WriteLine(message);
+        }
+
+        public string GetInput()
+        {
+            return Console.ReadLine();
+        }
+
+        public int GetIntInpupt()
+        {
+            return int.Parse(Console.ReadLine());
+        }
     }
 }

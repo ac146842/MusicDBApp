@@ -44,5 +44,16 @@ namespace MusicDBApp
                     break;
             }
         }
+
+        private static void UpdateGenresName()
+        {
+            view.DisplayMessage("Enter the Genre_ID to update: ");
+            int genreID = view.GetIntInput();
+            view.DisplayMessage("Enter the new Genre name: ");
+            string genreName = view.GetInput();
+            int rowsAffected = storageManager.UpdateGenresName(genreID, genreName);
+            view.DisplayMessage($"Rows affected {rowsAffected}");
+
+        }
     }
 }

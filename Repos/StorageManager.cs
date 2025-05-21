@@ -54,4 +54,14 @@ public class StorageManager
         }
         return genres;
     }
+
+    public int UpdateGenresName(int genreID, string genreName)
+    {
+        using (SqlCommand cmd = new SqlCommand($"UPDATE Genres SET Genre_Name = @Genre_Name WHERE Genre_ID = @Genre_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@Genre_Name", genreName);
+            cmd.Parameters.AddWithValue("@Genre_ID", genreID);
+            return cmd.ExecuteNonQuery();
+        }
+    }
 }
