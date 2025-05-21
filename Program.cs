@@ -26,6 +26,19 @@ namespace MusicDBApp
                         view.DisplayGenres(genres);
                     }
                     break;
+
+                case "2":
+                    UpdateGenresName();
+                    break;
+
+                case "3":
+                    InsertNewGenres();
+                    break;
+
+                case "4":
+                    DeleteGenresByName();
+                    break;               
+
                 default:
                     Console.WriteLine("Invalid option. Please try again.");
                     break;

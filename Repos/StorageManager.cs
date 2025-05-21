@@ -9,7 +9,8 @@ using MusicDBApp.Model;
 
 namespace MusicDBApp.Repos;
 
-public class StorageManager
+// .mdf file stored in Onedrive>12TPI>DBfile
+public class StorageManager 
 {
     private SqlConnection conn;
 
