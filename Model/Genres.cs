@@ -12,7 +12,7 @@ namespace MusicDBApp.Model
         public string Genre_Name { get; set; }
         public int Genre_ID { get; set; }
 
-        //add description var
+        
         public Genres(string inGenre, int inGenre_ID)
         {
             Genre_Name = inGenre;
