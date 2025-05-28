@@ -33,11 +33,11 @@ namespace MusicDBApp
                     break;
 
                 case "3":
-                    //InsertNewGenres();
+                    InsertNewGenres();
                     break;
 
                 case "4":
-                    //DeleteGenresByName();
+                    DeleteGenresByName();
                     break;               
 
                 default:
