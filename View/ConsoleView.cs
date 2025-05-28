@@ -34,6 +34,36 @@ namespace MusicDBApp.View
         }
 
 
+        public void tblRecordLabel()
+        {
+
+        }
+
+        public void tblArtist()
+        {
+
+        }
+
+        public void tblVinyl()
+        {
+
+        }
+
+        public void tblGenre()
+        {
+
+        }
+
+        public void tblReviews()
+        {
+
+        }
+
+        public void tblReviewComments()
+        {
+
+        }
+
 
         public void DisplayGenres(List<Genres> genres)
         {
