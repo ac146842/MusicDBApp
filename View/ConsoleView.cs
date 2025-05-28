@@ -46,27 +46,52 @@ namespace MusicDBApp.View
 
         public void tblArtist()
         {
-
+            Console.Clear();
+            Console.WriteLine("Welcome to tblArtist");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblArtist");
+            Console.WriteLine("2: Update an Artists details by Artist_ID");
         }
 
         public void tblVinyl()
         {
-
+            Console.Clear();
+            Console.WriteLine("Welcome to tblVinyl");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblVinyl");
+            Console.WriteLine("2: Update an Vinyls details by Vinyl_ID");
         }
 
         public void tblGenre()
         {
-
+            Console.Clear();
+            Console.WriteLine("Welcome to tblGenre");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblGenre");
+            Console.WriteLine("2: Update an Genre's details by Genre_ID");
         }
 
         public void tblReviews()
         {
-
+            Console.Clear();
+            Console.WriteLine("Welcome to tblReviews");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblReviews");
+            Console.WriteLine("2: Update an Reviews details by Review_ID");
         }
 
         public void tblReviewComments()
         {
-
+            Console.Clear();
+            Console.WriteLine("Welcome to tblReviewComments");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblReviewComments");
+            Console.WriteLine("2: Update an Employee's details by ReviewComment_ID");
         }
 
 
