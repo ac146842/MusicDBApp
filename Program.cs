@@ -22,8 +22,13 @@ namespace MusicDBApp
             bool Notvalid = true;
             string tblchoice;
             string choice;
+        }
 
 
+
+
+
+            /*
             switch (choice)
             {
                 case "1":
@@ -50,7 +55,7 @@ namespace MusicDBApp
                     break;
             }
         }
-
+        */
 
         private static void UpdateGenresName()
         {
