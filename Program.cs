@@ -55,5 +55,15 @@ namespace MusicDBApp
             int rowsAffected = storageManager.UpdateGenresName(genreID, genreName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
+
+        private static void InsertNewGenres()
+        {
+
+        }
+
+        private static void DeleteGenresByName()
+        {
+
+        }
     }
 }
