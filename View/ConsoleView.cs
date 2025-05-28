@@ -36,7 +36,12 @@ namespace MusicDBApp.View
 
         public void tblRecordLabel()
         {
-
+            Console.Clear();
+            Console.WriteLine("Welcome to tblRecordlabel");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblRecordLabel");
+            Console.WriteLine("2: Update a Record Labels info by RecordLabel_ID");
         }
 
         public void tblArtist()
