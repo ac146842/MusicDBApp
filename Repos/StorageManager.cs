@@ -72,4 +72,13 @@ public class StorageManager
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }
+
+    public int DeleteLocationByName(string genreName)
+    {
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE Genre_Name = @GenreName", conn))
+        {
+            cmd.Parameters.AddWithValue($"@Genre_Name", genreName);
+            return cmd.ExecuteNonQuery();
+        }
+    }
 }
