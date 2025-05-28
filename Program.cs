@@ -58,7 +58,12 @@ namespace MusicDBApp
 
         private static void InsertNewGenres()
         {
-        
+            view.DisplayMessage("Enter the new Genre name: ");
+            string genreName = view.GetInput();
+            int genreID = 0;
+            Genres genre = new Genres(genreName, genreID);
+            int generateID = storageManager.InsertLocation(genre);
+            view.DisplayMessage($"new Genre inserted with ID {generateID}");
         }
 
         private static void DeleteGenresByName()
