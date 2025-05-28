@@ -15,8 +15,13 @@ namespace MusicDBApp
             string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MusicApp;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             storageManager = new StorageManager(connectionString);
-            view = new ConsoleView();            
-            string choice = view.DisplayMenu();
+            view = new ConsoleView();
+
+            // string tblchoice = view.TblDisplayMenu();
+            // string choice = view.DisplayMenu();
+            bool Notvalid = true;
+            string tblchoice;
+            string choice;
 
 
             switch (choice)
@@ -45,6 +50,7 @@ namespace MusicDBApp
                     break;
             }
         }
+
 
         private static void UpdateGenresName()
         {
