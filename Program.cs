@@ -68,7 +68,10 @@ namespace MusicDBApp
 
         private static void DeleteGenresByName()
         {
-
+            view.DisplayMessage("Enter the Genre Name to delete");
+            string genreName = view.GetInput();
+            int rowsaffected = storageManager.DeleteLocationByName(genreName);
+            view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
     }
 }
