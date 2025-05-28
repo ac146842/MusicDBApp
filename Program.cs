@@ -58,7 +58,7 @@ namespace MusicDBApp
 
         private static void InsertNewGenres()
         {
-
+        
         }
 
         private static void DeleteGenresByName()

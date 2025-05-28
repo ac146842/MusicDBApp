@@ -64,4 +64,12 @@ public class StorageManager
             return cmd.ExecuteNonQuery();
         }
     }
+    public int InsertLocation(Genres genre)
+    {
+        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre GenreName VALUES @GenreName; SELECT SCOPE_IDENTITY(); ", conn))
+        {
+            cmd.Parameters.AddWithValue("@Genre_Name", genre.Genre_Name);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+    }
 }
