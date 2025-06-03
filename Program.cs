@@ -19,9 +19,8 @@ namespace MusicDBApp
 
             // string tblchoice = view.TblDisplayMenu();
             // string choice = view.DisplayMenu();
-            bool Notvalid = true;
-            string tblchoice;
-            string choice;
+            //string tblchoice;
+            //string choice;
         }
 
 
