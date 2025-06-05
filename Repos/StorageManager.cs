@@ -55,6 +55,7 @@ public class StorageManager
         }
         return genres;
     }
+    .
 
     public int UpdateGenresName(int genreID, string genreName)
     {
