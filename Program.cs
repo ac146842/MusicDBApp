@@ -43,6 +43,39 @@ namespace MusicDBApp
                     case "3":
                         view.tblVinyl();
                         Notvalid = false;
+
+                        do
+                        {
+                            choice = Console.ReadLine();
+                            switch (choice)
+                            {
+                                case "1":
+                                    {
+                                        List<Vinyl> vinyl = storageManager.GetAllVinyl();
+                                        view.Display(vinyl);
+                                    }
+                                    break;
+                                /*
+                                case "2":
+                                    UpdateGenresName();
+                                    break;
+
+                                case "3":
+                                    InsertNewGenres();
+                                    break;
+
+                                case "4":
+                                    DeleteGenresByName();
+                                    break;
+                                */
+                                default:
+                                    Console.WriteLine("Invalid option. Please try again.");
+                                    break;
+                            }
+                        }
+                        while (Notvalid);
+                        break;
+
                         break;
 
                     case "4":
