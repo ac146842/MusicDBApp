@@ -88,7 +88,7 @@ namespace MusicDBApp.View
             Console.WriteLine("2: Update an Employee's details by ReviewComment_ID");
         }
 
-
+        /*
         public void DisplayVinyl(List<Vinyl> vinyl)
         {
             foreach (Vinyl vinyl in vinyl)
@@ -96,7 +96,7 @@ namespace MusicDBApp.View
                 Console.WriteLine($"{vinyl.Artist_ID}, {vinyl.VinylName1}, {vinyl.VinylName2}");
             }
         }
-
+        */
 
         public void DisplayGenres(List<Genres> genres)
         {

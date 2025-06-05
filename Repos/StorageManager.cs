@@ -37,6 +37,27 @@ public class StorageManager
         }
     }
 
+
+    public List<RecordLabel> GetAllRecordLabel()
+    {
+        List<RecordLabel> recordLabels = new List<RecordLabel>();
+        string sqlString = "SELECT * FROM tblRecordLabel";
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int RecordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
+                    string RecordLabelName = reader["RecordLabel_Name"].ToString();
+                    recordLabels.Add(new RecordLabel(RecordLabelName, RecordLabelID));
+                }
+            }
+        }
+        return recordLabels;
+    }
+
+
     public List<Vinyl> GetAllVinyl()
     {
         List<Vinyl> vinyls = new List<Vinyl>();

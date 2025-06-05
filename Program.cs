@@ -48,14 +48,14 @@ namespace MusicDBApp
                         {
                             choice = Console.ReadLine();
                             switch (choice)
-                            {
+                            { /*
                                 case "1":
                                     {
                                         List<Vinyl> vinyl = storageManager.GetAllVinyl();
                                         view.DisplayVinyl(vinyl);
                                     }
                                     break;
-                                /*
+                                
                                 case "2":
                                     UpdateGenresName();
                                     break;

@@ -11,7 +11,6 @@ namespace MusicDBApp.Model
         public string RecordLabel_Name { get; set; }
         public int RecordLabel_ID { get; set; }
 
-
         public RecordLabel(string inRecordLabel_Name, int inRecordLabel_ID)
         {
             RecordLabel_Name = inRecordLabel_Name;
