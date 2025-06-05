@@ -89,6 +89,15 @@ namespace MusicDBApp.View
         }
 
 
+        public void DisplayVinyl(List<Vinyl> vinyl)
+        {
+            foreach (Vinyl vinyl in vinyl)
+            {
+                Console.WriteLine($"{vinyl.Artist_ID}, {vinyl.VinylName1}, {vinyl.VinylName2}");
+            }
+        }
+
+
         public void DisplayGenres(List<Genres> genres)
         {
             foreach (Genres genre in genres)

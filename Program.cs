@@ -52,7 +52,7 @@ namespace MusicDBApp
                                 case "1":
                                     {
                                         List<Vinyl> vinyl = storageManager.GetAllVinyl();
-                                        view.Display(vinyl);
+                                        view.DisplayVinyl(vinyl);
                                     }
                                     break;
                                 /*

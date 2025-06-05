@@ -39,7 +39,7 @@ public class StorageManager
 
     public List<Vinyl> GetAllVinyl()
     {
-        List<Vinyl> vinyl = new List<Vinyl>();
+        List<Vinyl> vinyls = new List<Vinyl>();
         string sqlString = "SELECT * FROM tblVinyl";
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
@@ -51,11 +51,11 @@ public class StorageManager
                     int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
                     string VinylName = reader["Vinyl_Name"].ToString();
                     //date of release
-                    vinyl.Add(new Vinyl(VinylName, VinylID, VinylName));
+                    vinyls.Add(new Vinyl(VinylName, VinylID, VinylName));
                 }
             }
         }
-        return vinyl;
+        return vinyls;
     }
 
 
