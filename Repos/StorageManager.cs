@@ -99,6 +99,25 @@ public class StorageManager
         return genres;
     }
 
+    public List<Reviews> GetAllReviews()
+    {
+        List<Reviews> reviews = new List<Reviews>();
+        string sqlString = "SELECT * FROM tblReviews";
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int ReviewID = Convert.ToInt32(reader["Genre_ID"]);
+                    string VinylName = reader["Genre_Name"].ToString();
+                    genres.Add(new Genres(GenreName, GenreID));
+                }
+            }
+        }
+        return genres;
+    }
+
     public int UpdateGenresName(int genreID, string genreName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE Genres SET Genre_Name = @Genre_Name WHERE Genre_ID = @Genre_ID", conn))
