@@ -12,7 +12,7 @@ namespace MusicDBApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Mihee\\Downloads\\MusicDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\sqlcode\\MusicDB.mdf\";Integrated Security=True;Connect Timeout=30;Encrypt=True";
 
             storageManager = new StorageManager(connectionString);
             view = new ConsoleView();
@@ -33,6 +33,39 @@ namespace MusicDBApp
                     case "1":
                         view.tblRecordLabel();
                         Notvalid = false;
+
+                        do
+                        {
+                            choice = Console.ReadLine();
+                            switch (choice)
+                            {
+                                case "1":
+                                    {
+                                        List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
+                                        view.DisplayRecordLabels(recordLabels);
+                                    }
+                                    break;
+                                /*
+                                case "2":
+                                    UpdateGenresName();
+                                    break;
+
+                                case "3":
+                                    InsertNewGenres();
+                                    break;
+
+                                case "4":
+                                    DeleteGenresByName();
+                                    break;
+                                */
+                                default:
+                                    Console.WriteLine("Invalid option. Please try again.");
+                                    break;
+                            }
+                        }
+                        while (Notvalid);
+                        break;
+
                         break;
 
                     case "2":
