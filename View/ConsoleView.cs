@@ -98,6 +98,15 @@ namespace MusicDBApp.View
         }
         */
 
+        public void DisplayRecordLabels(List<RecordLabel> recordLabels)
+        {
+            foreach (RecordLabel recordLabel in recordLabels)
+            {
+                Console.WriteLine($"{recordLabel.RecordLabel_ID}, {recordLabel.RecordLabel_Name}");
+            }
+        }
+
+
         public void DisplayGenres(List<Genres> genres)
         {
             foreach (Genres genre in genres)
