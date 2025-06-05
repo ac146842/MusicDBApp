@@ -37,6 +37,28 @@ public class StorageManager
         }
     }
 
+    public List<Vinyl> GetAllVinyl()
+    {
+        List<Vinyl> vinyl = new List<Vinyl>();
+        string sqlString = "SELECT * FROM tblVinyl";
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
+                    int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
+                    string VinylName = reader["Vinyl_Name"].ToString();
+                    //date of release
+                    vinyl.Add(new Vinyl(VinylName, VinylID, VinylName));
+                }
+            }
+        }
+        return vinyl;
+    }
+
+
     public List<Genres> GetAllGenres()
     {
         List<Genres> genres = new List<Genres>();
@@ -55,7 +77,6 @@ public class StorageManager
         }
         return genres;
     }
-    .
 
     public int UpdateGenresName(int genreID, string genreName)
     {
