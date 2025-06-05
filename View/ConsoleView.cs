@@ -36,7 +36,6 @@ namespace MusicDBApp.View
 
         public void tblRecordLabel()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblRecordlabel");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -46,7 +45,6 @@ namespace MusicDBApp.View
 
         public void tblArtist()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblArtist");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -56,7 +54,6 @@ namespace MusicDBApp.View
 
         public void tblVinyl()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblVinyl");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -66,7 +63,6 @@ namespace MusicDBApp.View
 
         public void tblGenre()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblGenre");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -76,7 +72,6 @@ namespace MusicDBApp.View
 
         public void tblReviews()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblReviews");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -86,7 +81,6 @@ namespace MusicDBApp.View
 
         public void tblReviewComments()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblReviewComments");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");

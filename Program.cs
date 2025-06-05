@@ -12,7 +12,7 @@ namespace MusicDBApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\New Database.mdf\";Integrated Security=True;Connect Timeout=30";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Mihee\\Downloads\\MusicDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True";
 
             storageManager = new StorageManager(connectionString);
             view = new ConsoleView();
@@ -26,6 +26,7 @@ namespace MusicDBApp
             do
             {                
                 tblchoice = view.DisplayMenu();
+                Console.Clear();
 
                 switch (tblchoice)
                 {
