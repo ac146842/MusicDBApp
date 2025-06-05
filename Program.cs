@@ -12,7 +12,7 @@ namespace MusicDBApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MusicApp;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\New Database.mdf\";Integrated Security=True;Connect Timeout=30";
 
             storageManager = new StorageManager(connectionString);
             view = new ConsoleView();
@@ -22,6 +22,81 @@ namespace MusicDBApp
             bool Notvalid = true;
             string tblchoice;
             string choice;
+
+            do
+            {                
+                tblchoice = view.DisplayMenu();
+
+                switch (tblchoice)
+                {
+                    case "1":
+                        view.tblRecordLabel();
+                        Notvalid = false;
+                        break;
+
+                    case "2":
+                        view.tblArtist();
+                        Notvalid = false;
+                        break;
+
+                    case "3":
+                        view.tblVinyl();
+                        Notvalid = false;
+                        break;
+
+                    case "4":
+                        view.tblGenre();
+                        Notvalid = false;
+
+                        do
+                        {
+                            choice = Console.ReadLine();
+                            switch (choice)
+                            {
+                                case "1":
+                                    {
+                                        List<Genres> genres = storageManager.GetAllGenres();
+                                        view.DisplayGenres(genres);
+                                    }
+                                    break;
+
+                                case "2":
+                                    UpdateGenresName();
+                                    break;
+
+                                case "3":
+                                    InsertNewGenres();
+                                    break;
+
+                                case "4":
+                                    DeleteGenresByName();
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Invalid option. Please try again.");
+                                    break;
+                            }
+                        }
+                        while (Notvalid);
+                        break;
+
+                    case "5":
+                        view.tblReviews();
+                        Notvalid = false;
+                        break;
+
+                    case "6":
+                        view.tblReviewComments();
+                        Notvalid = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option please try again.");
+                        Notvalid = false;
+                        break;
+                }
+            }
+            while (true);
         }
 
 

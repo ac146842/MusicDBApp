@@ -87,7 +87,7 @@ public class StorageManager
         if (conn != null && conn.State == ConnectionState.Open)
         {
             conn.Close();
-            Console.WriteLine("connection closed");
+            Console.WriteLine("connection closed.");
         }
     }
 }
