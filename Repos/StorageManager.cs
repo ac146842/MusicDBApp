@@ -98,8 +98,6 @@ public class StorageManager
         return vinyls;
     }
 
-
-
     public List<Genres> GetAllGenres()
     {
         List<Genres> genres = new List<Genres>();
