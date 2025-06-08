@@ -109,13 +109,15 @@ public class StorageManager
             {
                 while (reader.Read())
                 {
-                    int ReviewID = Convert.ToInt32(reader["Genre_ID"]);
-                    string VinylName = reader["Genre_Name"].ToString();
-                    genres.Add(new Genres(GenreName, GenreID));
+                    int ReviewID = Convert.ToInt32(reader["Review_ID"]);
+                    string ReviewerName = reader["Reviewer_Name"].ToString();
+                    int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
+                    decimal OutOf5 = Convert.ToDecimal(reader["Out_Of_5"]);
+                    reviews.Add(new Genres(GenreName, GenreID));
                 }
             }
         }
-        return genres;
+        return reviews;
     }
 
     public int UpdateGenresName(int genreID, string genreName)
