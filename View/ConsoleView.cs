@@ -122,6 +122,14 @@ namespace MusicDBApp.View
             }
         }
 
+        public void DisplayReviews(List<Reviews> reviews)
+        {
+            foreach (Reviews review in reviews)
+            {
+                Console.WriteLine($"{review.Review_ID}, {review.Reviewer_Name}, {review.Vinyl_ID}, {review.Out_Of_5}");
+            }
+        }
+
         public void DisplayMessage(string message)
         {
             Console.WriteLine(message);

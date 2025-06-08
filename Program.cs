@@ -150,6 +150,37 @@ namespace MusicDBApp
                     case "5":
                         view.tblReviews();
                         Notvalid = false;
+
+                        do
+                        {
+                            choice = Console.ReadLine();
+                            switch (choice)
+                            {
+                                case "1":
+                                    {
+                                        List<Reviews> reviews = storageManager.GetAllReviews();
+                                        view.DisplayReviews(reviews);
+                                    }
+                                    break;
+
+                                case "2":
+                                    UpdateGenresName();
+                                    break;
+
+                                case "3":
+                                    InsertNewGenres();
+                                    break;
+
+                                case "4":
+                                    DeleteGenresByName();
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Invalid option. Please try again.");
+                                    break;
+                            }
+                        }
+                        while (Notvalid);
                         break;
 
                     case "6":
