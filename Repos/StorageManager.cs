@@ -135,7 +135,8 @@ public class StorageManager
                     int ReviewID = Convert.ToInt32(reader["Review_ID"]);
                     int ReviewCommentID = Convert.ToInt32(reader["ReviewComment_ID"]);
                     DateTime ReviewDate = Convert.ToDateTime(reader["Review_Date"]);
-                    reviewComments.Add(new Reviews(ShortReview, ReviewID, ReviewCommentID, ReviewDate));
+                    reviewComments.Add(new ReviewComments(ShortReview, ReviewID, ReviewCommentID, ReviewDate));
+
                 }
             }
         }
