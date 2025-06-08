@@ -57,6 +57,25 @@ public class StorageManager
         return recordLabels;
     }
 
+    public List<Artist> GetAllArtist()
+    {
+        List<Artist> artist = new List<Artist>();
+        string sqlString = "SELECT * FROM tblArtist";
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string ArtistName = reader["RecordLabel_Name"].ToString();
+                    int ArtistID = Convert.ToInt32(reader["RecordLabel_ID"]);
+                    int RecordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);                   
+                    artist.Add(new Artist(ArtistName, ArtistID, RecordLabelID));
+                }
+            }
+        }
+        return artist;
+    }
 
     public List<Vinyl> GetAllVinyl()
     {
