@@ -106,6 +106,14 @@ namespace MusicDBApp.View
             }
         }
 
+        public void DisplayArtists(List<Artist> artists)
+        {
+            foreach (Artist artist in artists)
+            {
+                Console.WriteLine($"{artist.Artist_Name}, {artist.Artist_ID}, {artist.RecordLabel_ID}");
+            }
+        }
+
         public void DisplayVinyls(List<Vinyl> vinyls)
         {
             foreach (Vinyl vinyl in vinyls)
