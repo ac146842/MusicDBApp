@@ -131,15 +131,15 @@ public class StorageManager
             {
                 while (reader.Read())
                 {
+                    string ShortReview = (reader["Short_Review"]).ToString();
                     int ReviewID = Convert.ToInt32(reader["Review_ID"]);
-                    string ReviewerName = reader["Reviewer_Name"].ToString();
-                    int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
-                    decimal OutOf5 = Convert.ToDecimal(reader["Out_Of_5"]);
-                    reviews.Add(new Reviews(ReviewerName, ReviewID, VinylID, OutOf5));
+                    int ReviewCommentID = Convert.ToInt32(reader["ReviewComment_ID"]);
+                    DateTime ReviewDate = Convert.ToDateTime(reader["Review_Date"]);
+                    reviewComments.Add(new Reviews(ShortReview, ReviewID, ReviewCommentID, ReviewDate));
                 }
             }
         }
-        return reviews;
+        return reviewComments;
     }
 
     /*
