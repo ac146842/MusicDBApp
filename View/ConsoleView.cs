@@ -134,7 +134,7 @@ namespace MusicDBApp.View
         {
             foreach (ReviewComments reviewComment in reviewComments)
             {
-                Console.WriteLine($"{reviewComment.Short_Review}, {reviewComment.Review_ID}, {reviewComment.ReviewComment_ID}, {reviewComment.Review_Date}");
+                Console.WriteLine($"{reviewComment.Short_Review}, {reviewComment.Review_ID}, {reviewComment.ReviewComment_ID}, {reviewComment.Review_Date:yyyy-MM-dd}");
             }
         }
 
