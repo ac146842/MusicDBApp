@@ -37,6 +37,49 @@ public class StorageManager
         }
     }
 
+
+    public List<RecordLabel> GetAllRecordLabel()
+    {
+        List<RecordLabel> recordLabels = new List<RecordLabel>();
+        string sqlString = "SELECT * FROM tblRecordLabel";
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int RecordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
+                    string RecordLabelName = reader["RecordLabel_Name"].ToString();
+                    recordLabels.Add(new RecordLabel(RecordLabelName, RecordLabelID));
+                }
+            }
+        }
+        return recordLabels;
+    }
+
+
+    public List<Vinyl> GetAllVinyl()
+    {
+        List<Vinyl> vinyls = new List<Vinyl>();
+        string sqlString = "SELECT * FROM tblVinyl";
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
+                    int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
+                    string VinylName = reader["Vinyl_Name"].ToString();
+                    //date of release
+                    vinyls.Add(new Vinyl(VinylName, VinylID, VinylName));
+                }
+            }
+        }
+        return vinyls;
+    }
+
+
     public List<Genres> GetAllGenres()
     {
         List<Genres> genres = new List<Genres>();
@@ -49,6 +92,25 @@ public class StorageManager
                 {
                     int GenreID = Convert.ToInt32(reader["Genre_ID"]);
                     string GenreName = reader["Genre_Name"].ToString();
+                    genres.Add(new Genres(GenreName, GenreID));
+                }
+            }
+        }
+        return genres;
+    }
+
+    public List<Reviews> GetAllReviews()
+    {
+        List<Reviews> reviews = new List<Reviews>();
+        string sqlString = "SELECT * FROM tblReviews";
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int ReviewID = Convert.ToInt32(reader["Genre_ID"]);
+                    string VinylName = reader["Genre_Name"].ToString();
                     genres.Add(new Genres(GenreName, GenreID));
                 }
             }
@@ -87,7 +149,7 @@ public class StorageManager
         if (conn != null && conn.State == ConnectionState.Open)
         {
             conn.Close();
-            Console.WriteLine("connection closed");
+            Console.WriteLine("connection closed.");
         }
     }
 }

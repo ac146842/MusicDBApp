@@ -36,7 +36,6 @@ namespace MusicDBApp.View
 
         public void tblRecordLabel()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblRecordlabel");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -46,7 +45,6 @@ namespace MusicDBApp.View
 
         public void tblArtist()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblArtist");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -56,7 +54,6 @@ namespace MusicDBApp.View
 
         public void tblVinyl()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblVinyl");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -66,7 +63,6 @@ namespace MusicDBApp.View
 
         public void tblGenre()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblGenre");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -76,7 +72,6 @@ namespace MusicDBApp.View
 
         public void tblReviews()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblReviews");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -86,12 +81,29 @@ namespace MusicDBApp.View
 
         public void tblReviewComments()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblReviewComments");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblReviewComments");
             Console.WriteLine("2: Update an Employee's details by ReviewComment_ID");
+        }
+
+        /*
+        public void DisplayVinyl(List<Vinyl> vinyl)
+        {
+            foreach (Vinyl vinyl in vinyl)
+            {
+                Console.WriteLine($"{vinyl.Artist_ID}, {vinyl.VinylName1}, {vinyl.VinylName2}");
+            }
+        }
+        */
+
+        public void DisplayRecordLabels(List<RecordLabel> recordLabels)
+        {
+            foreach (RecordLabel recordLabel in recordLabels)
+            {
+                Console.WriteLine($"{recordLabel.RecordLabel_ID}, {recordLabel.RecordLabel_Name}");
+            }
         }
 
 

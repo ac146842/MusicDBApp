@@ -12,6 +12,9 @@ namespace MusicDBApp.Model
         public int Vinyl_ID { get; set; }
         public int Artist_ID { get; set; }
         public DateTime Date_Of_Release { get; set; }
+        public string? VinylName1 { get; }
+        public int VinylID { get; }
+        public string? VinylName2 { get; }
 
         public Vinyl(string inVinyl_Name, int inVinyl_ID, int inArtist_ID, DateTime inDate_Of_Release)
         {
@@ -19,6 +22,13 @@ namespace MusicDBApp.Model
             Vinyl_ID = inVinyl_ID;
             Artist_ID = inArtist_ID;
             Date_Of_Release = inDate_Of_Release;
-        }        
+        }
+
+        public Vinyl(string? vinylName1, int vinylID, string? vinylName2)
+        {
+            VinylName1 = vinylName1;
+            VinylID = vinylID;
+            VinylName2 = vinylName2;
+        }
     }
 }
