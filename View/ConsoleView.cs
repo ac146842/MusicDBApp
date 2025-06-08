@@ -130,6 +130,14 @@ namespace MusicDBApp.View
             }
         }
 
+        public void DisplayReviewComments(List<ReviewComments> reviewComments)
+        {
+            foreach (ReviewComments reviewComment in reviewComments)
+            {
+                Console.WriteLine($"{reviewComment.Short_Review}, {reviewComment.Review_ID}, {reviewComment.ReviewComment_ID}, {reviewComment.Review_Date}");
+            }
+        }
+
         public void DisplayMessage(string message)
         {
             Console.WriteLine(message);

@@ -186,6 +186,37 @@ namespace MusicDBApp
                     case "6":
                         view.tblReviewComments();
                         Notvalid = false;
+
+                        do
+                        {
+                            choice = Console.ReadLine();
+                            switch (choice)
+                            {
+                                case "1":
+                                    {
+                                        List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
+                                        view.DisplayReviewComments(reviewComments);
+                                    }
+                                    break;
+
+                                case "2":
+                                    UpdateGenresName();
+                                    break;
+
+                                case "3":
+                                    InsertNewGenres();
+                                    break;
+
+                                case "4":
+                                    DeleteGenresByName();
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Invalid option. Please try again.");
+                                    break;
+                            }
+                        }
+                        while (Notvalid);
                         break;
 
                     default:
