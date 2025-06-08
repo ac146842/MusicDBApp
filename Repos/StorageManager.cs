@@ -121,6 +121,39 @@ public class StorageManager
         return reviews;
     }
 
+    public List<ReviewComments> GetAllReviewComments()
+    {
+        List<ReviewComments> reviewComments = new List<ReviewComments>();
+        string sqlString = "SELECT * FROM tblReviewComments";
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int ReviewID = Convert.ToInt32(reader["Review_ID"]);
+                    string ReviewerName = reader["Reviewer_Name"].ToString();
+                    int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
+                    decimal OutOf5 = Convert.ToDecimal(reader["Out_Of_5"]);
+                    reviews.Add(new Reviews(ReviewerName, ReviewID, VinylID, OutOf5));
+                }
+            }
+        }
+        return reviews;
+    }
+
+    /*
+    public int UpdateRecordLabelName(int recordLabelID, string recordLabelName)
+    {
+        using (SqlCommand cmd = new SqlCommand($"UPDATE tblRecordLabel SET RecordLabel_Name = @RecordLabel_Name WHERE RecordLabel_ID = @RecordLabel_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@RecordLabel_Name", recordLabelName);
+            cmd.Parameters.AddWithValue("@RecordLabel_ID", recordLabelID);
+            return cmd.ExecuteNonQuery();
+        }
+    }   
+    */ 
+
     public int UpdateGenresName(int genreID, string genreName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE Genres SET Genre_Name = @Genre_Name WHERE Genre_ID = @Genre_ID", conn))
