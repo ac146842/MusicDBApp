@@ -113,7 +113,7 @@ public class StorageManager
                     string ReviewerName = reader["Reviewer_Name"].ToString();
                     int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
                     decimal OutOf5 = Convert.ToDecimal(reader["Out_Of_5"]);
-                    reviews.Add(new Genres(GenreName, GenreID));
+                    reviews.Add(new Reviews(ReviewerName, ReviewID, VinylID, OutOf5));
                 }
             }
         }
