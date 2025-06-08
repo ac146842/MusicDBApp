@@ -71,13 +71,14 @@ public class StorageManager
                     int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
                     int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
                     string VinylName = reader["Vinyl_Name"].ToString();
-                    //date of release
-                    vinyls.Add(new Vinyl(VinylName, VinylID, VinylName));
+                    DateTime DateOfRelease = Convert.ToDateTime(reader["Date_Of_Release"]);
+                    vinyls.Add(new Vinyl(VinylName, VinylID, ArtistID, DateOfRelease));
                 }
             }
         }
         return vinyls;
     }
+
 
 
     public List<Genres> GetAllGenres()

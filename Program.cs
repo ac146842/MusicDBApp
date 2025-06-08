@@ -12,7 +12,7 @@ namespace MusicDBApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\sqlcode\\MusicDB.mdf\";Integrated Security=True;Connect Timeout=30;Encrypt=True";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Mihee\\Downloads\\MusicDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True";
 
             storageManager = new StorageManager(connectionString);
             view = new ConsoleView();
@@ -81,11 +81,11 @@ namespace MusicDBApp
                         {
                             choice = Console.ReadLine();
                             switch (choice)
-                            { /*
+                            { 
                                 case "1":
                                     {
                                         List<Vinyl> vinyl = storageManager.GetAllVinyl();
-                                        view.DisplayVinyl(vinyl);
+                                        view.DisplayVinyls(vinyl);
                                     }
                                     break;
                                 
@@ -100,7 +100,7 @@ namespace MusicDBApp
                                 case "4":
                                     DeleteGenresByName();
                                     break;
-                                */
+                                
                                 default:
                                     Console.WriteLine("Invalid option. Please try again.");
                                     break;
