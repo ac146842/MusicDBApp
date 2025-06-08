@@ -110,7 +110,7 @@ namespace MusicDBApp.View
         {
             foreach (Vinyl vinyl in vinyls)
             {
-                Console.WriteLine($"{vinyl.Vinyl_ID}, {vinyl.Vinyl_Name}, {vinyl.Artist_ID}, {vinyl.Date_Of_Release}");
+                Console.WriteLine($"{vinyl.Vinyl_ID}, {vinyl.Vinyl_Name}, {vinyl.Artist_ID}, {vinyl.Date_Of_Release:yyyy-MM-dd}");
             }
         }
 
