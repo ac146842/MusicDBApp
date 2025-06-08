@@ -67,9 +67,9 @@ public class StorageManager
             {
                 while (reader.Read())
                 {
-                    string ArtistName = reader["RecordLabel_Name"].ToString();
-                    int ArtistID = Convert.ToInt32(reader["RecordLabel_ID"]);
-                    int RecordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);                   
+                    string ArtistName = reader["Artist_Name"].ToString();
+                    int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
+                    int RecordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
                     artist.Add(new Artist(ArtistName, ArtistID, RecordLabelID));
                 }
             }
