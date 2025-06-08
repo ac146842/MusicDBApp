@@ -71,6 +71,37 @@ namespace MusicDBApp
                     case "2":
                         view.tblArtist();
                         Notvalid = false;
+
+                        do
+                        {
+                            choice = Console.ReadLine();
+                            switch (choice)
+                            {
+                                case "1":
+                                    {
+                                        List<Artist> artists = storageManager.GetAllArtist();
+                                        view.DisplayArtists(artists);
+                                    }
+                                    break;
+
+                                case "2":
+                                    UpdateGenresName();
+                                    break;
+
+                                case "3":
+                                    InsertNewGenres();
+                                    break;
+
+                                case "4":
+                                    DeleteGenresByName();
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Invalid option. Please try again.");
+                                    break;
+                            }
+                        }
+                        while (Notvalid);
                         break;
 
                     case "3":
@@ -108,8 +139,7 @@ namespace MusicDBApp
                         }
                         while (Notvalid);
                         break;
-
-                        break;
+         
 
                     case "4":
                         view.tblGenre();
