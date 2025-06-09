@@ -197,7 +197,7 @@ public class StorageManager
 
     public int DeleteLocationByName(string genreName)
     {
-        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE Genre_Name = @GenreName", conn))
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE Genre_Name = @Genre_Name", conn))
         {
             cmd.Parameters.AddWithValue($"@Genre_Name", genreName);
             return cmd.ExecuteNonQuery();
