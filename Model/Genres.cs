@@ -11,13 +11,13 @@ namespace MusicDBApp.Model
     {
         public string Genre_Name { get; set; }
         public int Genre_ID { get; set; }
-        //public string Description { get; set; }    
+        public string Description { get; set; }
         
-        public Genres(string inGenre, int inGenre_ID/*, string inDescription*/)
+        public Genres(string inGenre, int inGenre_ID, string inDescription)
         {
             Genre_Name = inGenre;
             Genre_ID = inGenre_ID;
-            //Description = inDescription;
+            Description = inDescription;
         }
     } //genre class
 }

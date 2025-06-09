@@ -12,7 +12,7 @@ namespace MusicDBApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\sqlcode\\MusicDB.mdf\";Integrated Security=True;Connect Timeout=30";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Mihee\\Downloads\\MusicDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True";
 
             storageManager = new StorageManager(connectionString);
             view = new ConsoleView();
@@ -318,10 +318,12 @@ namespace MusicDBApp
         {
             view.DisplayMessage("Enter the new Genre name: ");
             string genreName = view.GetInput();
+            view.DisplayMessage("Enter a description for the Genre: ");
+            string Description = view.GetInput();
             int genreID = 0;
-            Genres genre = new Genres(genreName, genreID);
+            Genres genre = new Genres(genreName, genreID, Description);
             int generateID = storageManager.InsertLocation(genre);
-            view.DisplayMessage($"new Genre inserted with ID {generateID}");
+            view.DisplayMessage($"new Genre {genre.Genre_Name} with Description {genre.Description} inserted with ID {generateID}");
         }
 
         private static void DeleteGenresByName()

@@ -110,7 +110,8 @@ public class StorageManager
                 {
                     int GenreID = Convert.ToInt32(reader["Genre_ID"]);
                     string GenreName = reader["Genre_Name"].ToString();
-                    genres.Add(new Genres(GenreName, GenreID));
+                    string Description = reader["Description"].ToString();
+                    genres.Add(new Genres(GenreName, GenreID, Description));
                 }
             }
         }
@@ -185,9 +186,10 @@ public class StorageManager
     
     public int InsertLocation(Genres genre)
     {
-        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre (genre_Name) VALUES (@Genre_Name); SELECT SCOPE_IDENTITY(); ", conn))
+        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre (genre_Name, Description) VALUES (@Genre_Name, @Description); SELECT SCOPE_IDENTITY();", conn))
         {
             cmd.Parameters.AddWithValue("@Genre_Name", genre.Genre_Name);
+            cmd.Parameters.AddWithValue("@Description", genre.Description);
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }
