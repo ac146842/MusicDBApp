@@ -41,6 +41,8 @@ namespace MusicDBApp.View
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblRecordLabel");
             Console.WriteLine("2: Update a Record Labels info by RecordLabel_ID");
+            Console.WriteLine("3: Insert a new Record Label");
+            Console.WriteLine("4: Delete a Record Label by Name");
         }
 
         public void tblArtist()
@@ -50,6 +52,8 @@ namespace MusicDBApp.View
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblArtist");
             Console.WriteLine("2: Update an Artists details by Artist_ID");
+            Console.WriteLine("3: Insert a new Artist");
+            Console.WriteLine("4: Delete a Artist by Name");
         }
 
         public void tblVinyl()
@@ -59,6 +63,8 @@ namespace MusicDBApp.View
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblVinyl");
             Console.WriteLine("2: Update an Vinyls details by Vinyl_ID");
+            Console.WriteLine("3: Insert a new Vinyl");
+            Console.WriteLine("4: Delete a Vinyl by Name");
         }
 
         public void tblGenre()
@@ -68,6 +74,8 @@ namespace MusicDBApp.View
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblGenre");
             Console.WriteLine("2: Update an Genre's details by Genre_ID");
+            Console.WriteLine("3: Insert a new Genre");
+            Console.WriteLine("4: Delete a Genre by Name");
         }
 
         public void tblReviews()
@@ -77,6 +85,8 @@ namespace MusicDBApp.View
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblReviews");
             Console.WriteLine("2: Update an Reviews details by Review_ID");
+            Console.WriteLine("3: Insert a new Review");
+            Console.WriteLine("4: Delete a Review by Name");
         }
 
         public void tblReviewComments()
@@ -86,6 +96,8 @@ namespace MusicDBApp.View
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblReviewComments");
             Console.WriteLine("2: Update an Employee's details by ReviewComment_ID");
+            Console.WriteLine("3: Insert a new Review Comment");
+            Console.WriteLine("4: Delete a Review Comment by Name");
         }
 
         /*

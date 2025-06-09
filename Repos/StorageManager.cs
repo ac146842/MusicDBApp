@@ -11,7 +11,7 @@ using MusicDBApp.Model;
 namespace MusicDBApp.Repos;
 
 // .mdf file stored in Onedrive>12TPI>DBfile
-public class StorageManager 
+public class StorageManager
 {
     private SqlConnection conn;
 
@@ -104,7 +104,7 @@ public class StorageManager
         string sqlString = "SELECT * FROM tblGenre";
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            using (SqlDataReader reader = cmd.ExecuteReader()) 
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -170,7 +170,7 @@ public class StorageManager
             return cmd.ExecuteNonQuery();
         }
     }   
-    */ 
+    */
 
     public int UpdateGenresName(int genreID, string genreName)
     {
@@ -181,14 +181,17 @@ public class StorageManager
             return cmd.ExecuteNonQuery();
         }
     }
+    
+    
     public int InsertLocation(Genres genre)
     {
-        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre GenreName VALUES @GenreName; SELECT SCOPE_IDENTITY(); ", conn))
+        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre (genre_Name) VALUES (@Genre_Name); SELECT SCOPE_IDENTITY(); ", conn))
         {
             cmd.Parameters.AddWithValue("@Genre_Name", genre.Genre_Name);
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }
+    
 
     public int DeleteLocationByName(string genreName)
     {

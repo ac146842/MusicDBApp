@@ -12,7 +12,7 @@ namespace MusicDBApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Mihee\\Downloads\\MusicDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\sqlcode\\MusicDB.mdf\";Integrated Security=True;Connect Timeout=30";
 
             storageManager = new StorageManager(connectionString);
             view = new ConsoleView();
@@ -85,7 +85,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "2":
-                                    UpdateGenresName();
+                                    //UpdateGenresName();
                                     break;
 
                                 case "3":
@@ -157,7 +157,7 @@ namespace MusicDBApp
                                     }
                                     break;
 
-                                case "2":
+                                case "2":                                                                   
                                     UpdateGenresName();
                                     break;
 
@@ -194,7 +194,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "2":
-                                    UpdateGenresName();
+                                    //UpdateGenresName();
                                     break;
 
                                 case "3":
@@ -230,7 +230,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "2":
-                                    UpdateGenresName();
+                                    //UpdateGenresName();
                                     break;
 
                                 case "3":
@@ -262,32 +262,44 @@ namespace MusicDBApp
 
 
 
-            /*
-            switch (choice)
-            {
-                case "1":
-                    {
-                        List<Genres> genres = storageManager.GetAllGenres();
-                        view.DisplayGenres(genres);
-                    }
-                    break;
+        /*
+        switch (choice)
+        {
+            case "1":
+                {
+                    List<Genres> genres = storageManager.GetAllGenres();
+                    view.DisplayGenres(genres);
+                }
+                break;
 
-                case "2":
-                    UpdateGenresName();
-                    break;
+            case "2":
+                UpdateGenresName();
+                break;
 
-                case "3":
-                    InsertNewGenres();
-                    break;
+            case "3":
+                InsertNewGenres();
+                break;
 
-                case "4":
-                    DeleteGenresByName();
-                    break;               
+            case "4":
+                DeleteGenresByName();
+                break;               
 
-                default:
-                    Console.WriteLine("Invalid option. Please try again.");
-                    break;
-            }
+            default:
+                Console.WriteLine("Invalid option. Please try again.");
+                break;
+        }
+    }
+    */
+
+        /*
+        private static void UpdateRecordLabelName()
+        {
+            view.DisplayMessage("Enter the RecordLabel_ID to update: ");
+            int RecordLabelID = view.GetIntInput();
+            view.DisplayMessage("Enter the new RecordLabel name: ");
+            string RecordLabelName = view.GetInput();
+            int rowsAffected = storageManager.UpdateGenresName();
+            view.DisplayMessage($"Rows affected {rowsAffected}");
         }
         */
 
@@ -300,6 +312,7 @@ namespace MusicDBApp
             int rowsAffected = storageManager.UpdateGenresName(genreID, genreName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
+        
 
         private static void InsertNewGenres()
         {
