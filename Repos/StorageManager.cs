@@ -182,8 +182,8 @@ public class StorageManager
             return cmd.ExecuteNonQuery();
         }
     }
-    
-    
+
+
     public int InsertLocation(Genres genre)
     {
         using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre (genre_Name, Description) VALUES (@Genre_Name, @Description); SELECT SCOPE_IDENTITY();", conn))
@@ -193,7 +193,7 @@ public class StorageManager
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }
-    
+
 
     public int DeleteLocationByName(string genreName)
     {
