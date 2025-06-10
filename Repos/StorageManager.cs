@@ -174,7 +174,7 @@ public class StorageManager
 
     public int UpdateArtistsName(int ArtistID, string ArtistName) 
     {
-        using (SqlCommand cmd = new SqlCommand($"UPDATE tblArtist SET ArtistName = @Artist_Name WHERE ArtistID = @Artist_ID", conn))
+        using (SqlCommand cmd = new SqlCommand($"UPDATE tblArtist SET Artist_Name = @Artist_Name WHERE Artist_ID = @Artist_ID", conn))
         {
             cmd.Parameters.AddWithValue("@Artist_Name", ArtistName);
             cmd.Parameters.AddWithValue("@Artist_ID", ArtistID); 
