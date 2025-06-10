@@ -359,7 +359,7 @@ namespace MusicDBApp
         {
             view.DisplayMessage("Enter the Review_ID to update: ");
             int ReviewCommentID = view.GetIntInput();
-            view.DisplayMessage("Enter the new/same Reviewer Name : ");
+            view.DisplayMessage("Enter your new Review Comment : ");
             string ShortReview = view.GetInput();
             int rowsAffected = storageManager.UpdateReviewersName(ReviewCommentID, ShortReview);
             view.DisplayMessage($"Rows affected {rowsAffected}");
