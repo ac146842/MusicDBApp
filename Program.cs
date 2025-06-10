@@ -310,7 +310,7 @@ namespace MusicDBApp
             int RecordLabelID = view.GetIntInput();
             view.DisplayMessage("Enter the new Record Label name: ");
             string RecordLabelName = view.GetInput();
-            int rowsAffected = storageManager.UpdateGenresName(RecordLabelID, RecordLabelName);
+            int rowsAffected = storageManager.UpdateRecordLabelsName(RecordLabelID, RecordLabelName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
