@@ -161,8 +161,8 @@ public class StorageManager
         return reviewComments;
     }
 
-    /*
-    public int UpdateRecordLabelName(int recordLabelID, string recordLabelName)
+    
+    public int UpdateRecordLabelsName(int recordLabelID, string recordLabelName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblRecordLabel SET RecordLabel_Name = @RecordLabel_Name WHERE RecordLabel_ID = @RecordLabel_ID", conn))
         {
@@ -170,8 +170,7 @@ public class StorageManager
             cmd.Parameters.AddWithValue("@RecordLabel_ID", recordLabelID);
             return cmd.ExecuteNonQuery();
         }
-    }   
-    */
+    }      
 
     public int UpdateGenresName(int genreID, string genreName)
     {

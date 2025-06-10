@@ -12,7 +12,7 @@ namespace MusicDBApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Mihee\\Downloads\\MusicDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\sqlcode\\MusicDB.mdf\";Integrated Security=True;Connect Timeout=30;Encrypt=True";
 
             storageManager = new StorageManager(connectionString);
             view = new ConsoleView();
@@ -45,11 +45,11 @@ namespace MusicDBApp
                                         view.DisplayRecordLabels(recordLabels);
                                     }
                                     break;
-                                /*
+                                
                                 case "2":
-                                    UpdateGenresName();
+                                    UpdateRecordLabelsName();
                                     break;
-
+                                /*
                                 case "3":
                                     InsertNewGenres();
                                     break;
@@ -302,6 +302,18 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
         */
+
+
+        private static void UpdateRecordLabelsName()
+        {
+            view.DisplayMessage("Enter the RecordLabel_ID to update: ");
+            int RecordLabelID = view.GetIntInput();
+            view.DisplayMessage("Enter the new Record Label name: ");
+            string RecordLabelName = view.GetInput();
+            int rowsAffected = storageManager.UpdateGenresName(RecordLabelID, RecordLabelName);
+            view.DisplayMessage($"Rows affected {rowsAffected}");
+        }
+
 
         private static void UpdateGenresName()
         {
