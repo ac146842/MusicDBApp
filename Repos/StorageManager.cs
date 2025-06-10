@@ -214,12 +214,12 @@ public class StorageManager
         }
     }
 
-    public int UpdateReviewComments(int ReviewID, string ReviewerName)
+    public int UpdateReviewComments(int ReviewCommentID, string ShortReview)
     {
-        using (SqlCommand cmd = new SqlCommand($"UPDATE tblReviews SET Reviewer_Name = @Reviewer_Name WHERE Review_ID = @Review_ID", conn))
+        using (SqlCommand cmd = new SqlCommand($"UPDATE tblReviewComments SET ShortReview = @Short_Review WHERE ReviewCommentID = @ReviewCommentID", conn))
         {
-            cmd.Parameters.AddWithValue("@Reviewer_Name", ReviewerName);
-            cmd.Parameters.AddWithValue("@Review_ID", ReviewID);
+            cmd.Parameters.AddWithValue("@Short_Review", ShortReview);
+            cmd.Parameters.AddWithValue("@ReviewComment_ID", ReviewCommentID);
             return cmd.ExecuteNonQuery();
         }
     }

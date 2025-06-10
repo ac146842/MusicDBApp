@@ -230,7 +230,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "2":
-                                    //UpdateGenresName();
+                                    UpdateReviewComments();
                                     break;
 
                                 case "3":
@@ -352,6 +352,16 @@ namespace MusicDBApp
             view.DisplayMessage("Enter the new/same Reviewer Name : ");
             string ReviewerName = view.GetInput();
             int rowsAffected = storageManager.UpdateReviewersName(ReviewID, ReviewerName);
+            view.DisplayMessage($"Rows affected {rowsAffected}");
+        }
+
+        private static void UpdateReviewComments()
+        {
+            view.DisplayMessage("Enter the Review_ID to update: ");
+            int ReviewCommentID = view.GetIntInput();
+            view.DisplayMessage("Enter the new/same Reviewer Name : ");
+            string ShortReview = view.GetInput();
+            int rowsAffected = storageManager.UpdateReviewersName(ShortReview, ReviewCommentID);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
