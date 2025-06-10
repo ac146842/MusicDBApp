@@ -182,6 +182,16 @@ public class StorageManager
         }
     }
 
+    public int UpdateVinylsName(int VinylID, string VinylName)
+    {
+        using (SqlCommand cmd = new SqlCommand($"UPDATE tblVinyl SET Vinyl_Name = @Vinyl_Name WHERE Vinyl_ID = @Vinyl_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@Vinyl_Name", VinylName);
+            cmd.Parameters.AddWithValue("@Vinyl_ID", VinylID); 
+            return cmd.ExecuteNonQuery();
+        }
+    }
+
     public int UpdateGenresName(int genreID, string genreName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblGenre SET Genre_Name = @Genre_Name WHERE Genre_ID = @Genre_ID", conn))

@@ -121,7 +121,7 @@ namespace MusicDBApp
                                     break;
                                 
                                 case "2":
-                                    UpdateGenresName();
+                                    UpdateVinylsName();
                                     break;
 
                                 case "3":
@@ -321,6 +321,16 @@ namespace MusicDBApp
             view.DisplayMessage("Enter the new Artist name: ");
             string ArtistName = view.GetInput();
             int rowsAffected = storageManager.UpdateArtistsName(ArtistID, ArtistName);
+            view.DisplayMessage($"Rows affected {rowsAffected}");
+        }
+
+        private static void UpdateVinylsName()
+        {
+            view.DisplayMessage("Enter the Vinyl_ID to update: ");
+            int VinylID = view.GetIntInput();
+            view.DisplayMessage("Enter the new Vinyl name: ");
+            string VinylName = view.GetInput();
+            int rowsAffected = storageManager.UpdateVinylsName(VinylID, VinylName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
