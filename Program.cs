@@ -85,7 +85,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "2":
-                                    //UpdateGenresName();
+                                    UpdateArtistsName();
                                     break;
 
                                 case "3":
@@ -311,6 +311,16 @@ namespace MusicDBApp
             view.DisplayMessage("Enter the new Record Label name: ");
             string RecordLabelName = view.GetInput();
             int rowsAffected = storageManager.UpdateRecordLabelsName(RecordLabelID, RecordLabelName);
+            view.DisplayMessage($"Rows affected {rowsAffected}");
+        }
+
+        private static void UpdateArtistsName()
+        {
+            view.DisplayMessage("Enter the Artist_ID to update: ");
+            int ArtistID = view.GetIntInput();
+            view.DisplayMessage("Enter the new Artist name: ");
+            string ArtistName = view.GetInput();
+            int rowsAffected = storageManager.UpdateArtistsName(ArtistID, ArtistName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 

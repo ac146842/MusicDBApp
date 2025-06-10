@@ -170,7 +170,17 @@ public class StorageManager
             cmd.Parameters.AddWithValue("@RecordLabel_ID", recordLabelID);
             return cmd.ExecuteNonQuery();
         }
-    }      
+    }
+
+    public int UpdateArtistsName(int ArtistID, string ArtistName) 
+    {
+        using (SqlCommand cmd = new SqlCommand($"UPDATE tblArtist SET ArtistName = @Artist_Name WHERE ArtistID = @Artist_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@Artist_Name", ArtistName);
+            cmd.Parameters.AddWithValue("@Artist_ID", ArtistID); 
+            return cmd.ExecuteNonQuery();
+        }
+    }
 
     public int UpdateGenresName(int genreID, string genreName)
     {
