@@ -192,6 +192,8 @@ public class StorageManager
         }
     }
 
+
+
     public int UpdateGenresName(int genreID, string genreName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblGenre SET Genre_Name = @Genre_Name WHERE Genre_ID = @Genre_ID", conn))
@@ -202,6 +204,15 @@ public class StorageManager
         }
     }
 
+    public int UpdateReviewsName(int ReviewID, string ReviewerName)
+    {
+        using (SqlCommand cmd = new SqlCommand($"UPDATE tblReviews SET Reviewer_Name = @Reviewer_Name WHERE Review_ID = @Review_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@Reviewer_Name", ReviewerName);
+            cmd.Parameters.AddWithValue("@Review_ID", ReviewID); 
+            return cmd.ExecuteNonQuery();
+        }
+    }
 
     public int InsertLocation(Genres genre)
     {
