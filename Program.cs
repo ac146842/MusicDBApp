@@ -12,6 +12,7 @@ namespace MusicDBApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+            //school connection
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\sqlcode\\MusicDB.mdf\";Integrated Security=True;Connect Timeout=30;Encrypt=True";
 
             storageManager = new StorageManager(connectionString);
@@ -365,6 +366,16 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
+        private static void InsertNewRecordLabels()
+        {
+            view.DisplayMessage("Enter the new Record Label name: ");
+            string RecordLabelName = view.GetInput();
+            int RecordLabelID = 0;
+            Genres genre = new Genres(RecordLabelName, RecordLabelID);
+            int generateID = storageManager.InsertLocation(genre);
+            view.DisplayMessage($"new Genre {genre.Genre_Name} with Description {genre.Description} inserted with ID {generateID}");
+        }
+
         private static void InsertNewGenres()
         {
             view.DisplayMessage("Enter the new Genre name: ");
@@ -373,7 +384,7 @@ namespace MusicDBApp
             string Description = view.GetInput();
             int genreID = 0;
             Genres genre = new Genres(genreName, genreID, Description);
-            int generateID = storageManager.InsertLocation(genre);
+            int generateID = storageManager.InsertLocationGenres(genre);
             view.DisplayMessage($"new Genre {genre.Genre_Name} with Description {genre.Description} inserted with ID {generateID}");
         }
 

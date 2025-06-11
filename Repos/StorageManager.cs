@@ -224,7 +224,7 @@ public class StorageManager
         }
     }
 
-    public int InsertLocation(Genres genre)
+    public int InsertLocationGenres(Genres genre)
     {
         using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre (genre_Name, Description) VALUES (@Genre_Name, @Description); SELECT SCOPE_IDENTITY();", conn))
         {
