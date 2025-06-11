@@ -43,6 +43,7 @@ namespace MusicDBApp.View
             Console.WriteLine("2: Update a Record Labels info by RecordLabel_ID");
             Console.WriteLine("3: Insert a new Record Label");
             Console.WriteLine("4: Delete a Record Label by Name");
+            Console.WriteLine("5: Return to main menu");
         }
 
         public void tblArtist()
@@ -54,6 +55,7 @@ namespace MusicDBApp.View
             Console.WriteLine("2: Update an Artists details by Artist_ID");
             Console.WriteLine("3: Insert a new Artist");
             Console.WriteLine("4: Delete a Artist by Name");
+            Console.WriteLine("5: Return to main menu");
         }
 
         public void tblVinyl()
@@ -65,6 +67,7 @@ namespace MusicDBApp.View
             Console.WriteLine("2: Update an Vinyls details by Vinyl_ID");
             Console.WriteLine("3: Insert a new Vinyl");
             Console.WriteLine("4: Delete a Vinyl by Name");
+            Console.WriteLine("5: Return to main menu");
         }
 
         public void tblGenre()
@@ -76,6 +79,7 @@ namespace MusicDBApp.View
             Console.WriteLine("2: Update an Genre's details by Genre_ID");
             Console.WriteLine("3: Insert a new Genre");
             Console.WriteLine("4: Delete a Genre by Name");
+            Console.WriteLine("5: Return to main menu");
         }
 
         public void tblReviews()
@@ -87,6 +91,7 @@ namespace MusicDBApp.View
             Console.WriteLine("2: Update an Reviews details by Review_ID");
             Console.WriteLine("3: Insert a new Review");
             Console.WriteLine("4: Delete a Review by Name");
+            Console.WriteLine("5: Return to main menu");
         }
 
         public void tblReviewComments()
@@ -98,6 +103,7 @@ namespace MusicDBApp.View
             Console.WriteLine("2: Update an Employee's details by ReviewComment_ID");
             Console.WriteLine("3: Insert a new Review Comment");
             Console.WriteLine("4: Delete a Review Comment by Name");
+            Console.WriteLine("5: Return to main menu");
         }
 
         /*
