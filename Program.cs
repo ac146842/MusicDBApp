@@ -361,7 +361,7 @@ namespace MusicDBApp
             int ReviewCommentID = view.GetIntInput();
             view.DisplayMessage("Enter your new Review Comment : ");
             string ShortReview = view.GetInput();
-            int rowsAffected = storageManager.UpdateReviewersName(ReviewCommentID, ShortReview);
+            int rowsAffected = storageManager.UpdateReviewComments(ReviewCommentID, ShortReview);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
