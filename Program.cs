@@ -90,7 +90,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "3":
-                                    InsertNewGenres();
+                                    InsertNewArtists();
                                     break;
 
                                 case "4":
@@ -376,7 +376,18 @@ namespace MusicDBApp
             int generateID = storageManager.InsertLocationRecordLabels(recordLabel);
             view.DisplayMessage($"new Record Label {recordLabel.RecordLabel_Name} inserted with ID {generateID}");
         }
-        
+
+        private static void InsertNewArtists()
+        {
+            view.DisplayMessage("Enter the new Artist name: ");
+            string ArtistName = view.GetInput();
+            int ArtistID = 0;
+            int RecordLabelID = 0;
+            Artist artist = new Artist(ArtistName, ArtistID, RecordLabelID);
+            int generateID = storageManager.InsertLocationArtists(artist);
+            view.DisplayMessage($"new Artist {artist.Artist_Name} inserted with ID {generateID}");
+        }
+
         private static void InsertNewGenres()
         {
             view.DisplayMessage("Enter the new Genre name: ");

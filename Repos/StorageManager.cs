@@ -233,6 +233,15 @@ public class StorageManager
         }
     }
 
+    public int InsertLocationArtists(Artist artist)
+    {
+        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblArtist (Artist_Name) VALUES (@Artist_Name); SELECT SCOPE_IDENTITY();", conn))
+        {
+            cmd.Parameters.AddWithValue("@Artist_Name", artist.Artist_Name);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+    }
+
     public int InsertLocationGenres(Genres genre)
     {
         using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre (genre_Name, Description) VALUES (@Genre_Name, @Description); SELECT SCOPE_IDENTITY();", conn))
