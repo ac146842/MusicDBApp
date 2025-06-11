@@ -50,11 +50,11 @@ namespace MusicDBApp
                                 case "2":
                                     UpdateRecordLabelsName();
                                     break;
-                                /*
+                                
                                 case "3":
-                                    InsertNewGenres();
+                                    InsertNewRecordLabels();
                                     break;
-
+                                 /*
                                 case "4":
                                     DeleteGenresByName();
                                     break;
@@ -365,17 +365,18 @@ namespace MusicDBApp
             int rowsAffected = storageManager.UpdateReviewComments(ReviewCommentID, ShortReview);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
+        
 
         private static void InsertNewRecordLabels()
         {
             view.DisplayMessage("Enter the new Record Label name: ");
             string RecordLabelName = view.GetInput();
             int RecordLabelID = 0;
-            Genres genre = new Genres(RecordLabelName, RecordLabelID);
-            int generateID = storageManager.InsertLocation(genre);
-            view.DisplayMessage($"new Genre {genre.Genre_Name} with Description {genre.Description} inserted with ID {generateID}");
+            RecordLabel recordLabel = new RecordLabel(RecordLabelName, RecordLabelID);
+            int generateID = storageManager.InsertLocationRecordLabels(recordLabel);
+            view.DisplayMessage($"new Record Label {recordLabel.RecordLabel_Name} inserted with ID {generateID}");
         }
-
+        
         private static void InsertNewGenres()
         {
             view.DisplayMessage("Enter the new Genre name: ");

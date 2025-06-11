@@ -224,6 +224,15 @@ public class StorageManager
         }
     }
 
+    public int InsertLocationRecordLabels(RecordLabel recordLabel)
+    {
+        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblRecordLabel (RecordLabel_Name) VALUES (@RecordLabel_Name); SELECT SCOPE_IDENTITY();", conn))
+        {
+            cmd.Parameters.AddWithValue("@RecordLabel_Name", recordLabel.RecordLabel_Name);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+    }
+
     public int InsertLocationGenres(Genres genre)
     {
         using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre (genre_Name, Description) VALUES (@Genre_Name, @Description); SELECT SCOPE_IDENTITY();", conn))
