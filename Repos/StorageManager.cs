@@ -235,9 +235,10 @@ public class StorageManager
 
     public int InsertLocationArtists(Artist artist)
     {
-        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblArtist (Artist_Name) VALUES (@Artist_Name); SELECT SCOPE_IDENTITY();", conn))
+        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblArtist (Artist_Name, RecordLabel_ID) VALUES (@Artist_Name, @RecordLabel_ID); SELECT SCOPE_IDENTITY();", conn))
         {
             cmd.Parameters.AddWithValue("@Artist_Name", artist.Artist_Name);
+            cmd.Parameters.AddWithValue("@RecordLabel_ID", artist.RecordLabel_ID);
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }
