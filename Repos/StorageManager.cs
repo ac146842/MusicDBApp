@@ -256,12 +256,22 @@ public class StorageManager
 
     public int DeleteLocationByName(string genreName)
     {
-        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE Genre_Name = @Genre_Name", conn))
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE Genre_Name = @genreName", conn))
         {
-            cmd.Parameters.AddWithValue($"@Genre_Name", genreName);
+            cmd.Parameters.AddWithValue($"@genreName", genreName);
             return cmd.ExecuteNonQuery();
         }
     }
+
+    public int DeleteRecordLabelByName(string recordLabelName)
+    {
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblRecordLabel WHERE RecordLabel_Name = @recordLabelName", conn))
+        {
+            cmd.Parameters.AddWithValue($"@recordLabelName", recordLabelName);
+            return cmd.ExecuteNonQuery();
+        }
+    }
+
     public void CloseConnection()
     {
         if (conn != null && conn.State == ConnectionState.Open)

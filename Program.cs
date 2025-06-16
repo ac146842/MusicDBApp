@@ -54,11 +54,11 @@ namespace MusicDBApp
                                 case "3":
                                     InsertNewRecordLabels();
                                     break;
-                                 /*
+                                 
                                 case "4":
                                     DeleteGenresByName();
                                     break;
-                                */
+                                
                                 default:
                                     Console.WriteLine("Invalid option. Please try again.");
                                     break;
@@ -404,7 +404,7 @@ namespace MusicDBApp
         {
             view.DisplayMessage("Enter the Genre Name to delete");
             string genreName = view.GetInput();
-            int rowsaffected = storageManager.DeleteLocationByName(genreName);
+            int rowsaffected = storageManager.DeleteRecordLabelByName(genreName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
     }
