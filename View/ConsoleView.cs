@@ -11,6 +11,7 @@ namespace MusicDBApp.View
     public class ConsoleView
     {
         private static StorageManager storageManager;
+
         public void WelcomeMenu()
         {
             Console.WriteLine("Welcome to MusicDB ");
@@ -18,6 +19,7 @@ namespace MusicDBApp.View
             Console.WriteLine("1. Login ");
             Console.WriteLine("2. Register ");
         }
+
 
         public string DisplayMenu()
         {
