@@ -107,6 +107,15 @@ namespace MusicDBApp.View
             Console.WriteLine("5: Return to main menu");
         }
 
+        public void Queries()
+        {
+            Console.WriteLine("Simple: ");
+
+            Console.WriteLine("Advanced: ");
+
+            Console.WriteLine("Complex: ");
+        }
+
         /*
         public void DisplayVinyl(List<Vinyl> vinyl)
         {
