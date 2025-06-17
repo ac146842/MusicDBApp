@@ -251,6 +251,10 @@ namespace MusicDBApp
                         while (Notvalid);
                         break;
 
+                    case "7":
+                        view.Queries();
+                        break;
+
                     default:
                         Console.WriteLine("Invalid option please try again.");
                         Notvalid = false;
