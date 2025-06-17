@@ -56,7 +56,24 @@ public class StorageManager
         Console.WriteLine(row);
     }
 
+    public int UserID(int UserID)
+    {
+        int UserID = 0;
+        string sqlString = "SELECT User_ID FROM tblUser WHERE UserID = @User_ID AND Active = 1";
 
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            cmd.Parameters.AddWithValue("@User_ID", UserID);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    UserID = Convert.ToInt32(reader["User_ID"]);
+                }
+            }
+        }
+        return UserID;
+    }
 
     public List<RecordLabel> GetAllRecordLabel()
     {
