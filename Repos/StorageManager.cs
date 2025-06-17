@@ -162,24 +162,24 @@ public class StorageManager
         return reviewComments;
     }
 
-    public int AdvQuery1()
+    public void AdvQuery1()
     {
         string sqlString = "SELECT Artist_Name, Artist_ID, RecordLabel_ID FROM TblArtist WHERE Artist_Name LIKE 'A%' ORDER BY Artist_Name;";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            while (reader.Read())
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
-                int RecordLabelID = (reader["RecordLabel_ID"]).ToString();
-                string ArtistName = (reader["Artist_Name"]).ToString();
-                Console.WriteLine(ArtistID);
-                Console.WriteLine(ArtistName);
-                Console.WriteLine(RecordLabelID);
+
+                while (reader.Read())
+                {
+                    string artistName = reader["Artist_Name"].ToString();
+                    int artistID = Convert.ToInt32(reader["Artist_ID"]);
+                    int recordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
+                }
             }
         }
     }
-
 
     public int UpdateRecordLabelsName(int recordLabelID, string recordLabelName)
     {
