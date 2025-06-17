@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MusicDBApp.Model;
+using MusicDBApp.Repos;
 
 namespace MusicDBApp.View
 {
     public class ConsoleView
     {
+        private static StorageManager storageManager;
         public void WelcomeMenu()
         {
             Console.WriteLine("Welcome to MusicDB ");
