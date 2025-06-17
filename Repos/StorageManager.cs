@@ -38,10 +38,24 @@ public class StorageManager
         }
     }
 
-    public void PrintLine()
+    static void PrintLine()
     {
         Console.WriteLine(new string('-', Console.WindowWidth - 1));
     }
+
+    static void PrintRow(params string[] columns)
+    {
+        int width = (Console.WindowWidth - columns.Length - 1) / columns.Length; 
+        string row = "|";
+
+        foreach (string column in columns)
+        {
+            row += column.PadRight(width).Substring(0, width) + "|";
+        }
+
+        Console.WriteLine(row);
+    }
+
 
 
     public List<RecordLabel> GetAllRecordLabel()
@@ -175,16 +189,23 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
+                PrintLine();
+                PrintRow("Artist Name", "Artist ID", "Record Label ID");
 
                 while (reader.Read())
                 {
                     string artistName = reader["Artist_Name"].ToString();
                     int artistID = Convert.ToInt32(reader["Artist_ID"]);
                     int recordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
+
+                    PrintLine();
+                    PrintRow($"{artistName}", $"{artistID}", $"{recordLabelID}");
+                    PrintLine();
                 }
             }
         }
     }
+
 
     public int UpdateRecordLabelsName(int recordLabelID, string recordLabelName)
     {
