@@ -327,7 +327,7 @@ public class StorageManager
 
     public int DeleteRecordLabelByName(string recordLabelName)
     {
-        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblRecordLabel WHERE RecordLabel_Name = @recordLabelName", conn))
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblRecordLabel WHERE  RecordLabel_Name = @recordLabelName", conn))
         {
             cmd.Parameters.AddWithValue($"@recordLabelName", recordLabelName);
             return cmd.ExecuteNonQuery();
