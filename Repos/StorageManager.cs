@@ -56,9 +56,9 @@ public class StorageManager
         Console.WriteLine(row);
     }
 
-    public int UserID(int UserID)
+    public int GetUserID(int UserID)
     {
-        int UserID = 0;
+        int userID = 0;
         string sqlString = "SELECT User_ID FROM tblUser WHERE UserID = @User_ID AND Active = 1";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
@@ -72,7 +72,7 @@ public class StorageManager
                 }
             }
         }
-        return UserID;
+        return userID;
     }
 
     public List<RecordLabel> GetAllRecordLabel()
