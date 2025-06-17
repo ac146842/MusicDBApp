@@ -38,6 +38,11 @@ public class StorageManager
         }
     }
 
+    public void PrintLine()
+    {
+        Console.WriteLine(new string('-', Console.WindowWidth - 1));
+    }
+
 
     public List<RecordLabel> GetAllRecordLabel()
     {
