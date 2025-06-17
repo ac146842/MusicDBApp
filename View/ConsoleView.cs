@@ -11,7 +11,10 @@ namespace MusicDBApp.View
     {
         public void WelcomeMenu()
         {
-
+            Console.WriteLine("Welcome to MusicDB ");
+            Console.WriteLine("Please choose one of the following options: ");
+            Console.WriteLine("1. Login ");
+            Console.WriteLine("2. Register ");
         }
 
         public string DisplayMenu()
