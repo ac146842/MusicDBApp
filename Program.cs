@@ -304,6 +304,7 @@ namespace MusicDBApp
         {
             Console.WriteLine("Please enter your Username: ");
             string UserName = Console.ReadLine();
+
             Console.WriteLine("Please enter your Password: ");
             string Password = Console.ReadLine();
         }
