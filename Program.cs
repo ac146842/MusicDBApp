@@ -26,7 +26,7 @@ namespace MusicDBApp
             string choice;
 
             do
-            {                
+            {
                 tblchoice = view.DisplayMenu();
                 Console.Clear();
 
@@ -47,19 +47,19 @@ namespace MusicDBApp
                                         view.DisplayRecordLabels(recordLabels);
                                     }
                                     break;
-                                
+
                                 case "2":
                                     UpdateRecordLabelsName();
                                     break;
-                                
+
                                 case "3":
                                     InsertNewRecordLabels();
                                     break;
-                                 
+
                                 case "4":
                                     DeleteGenresByName();
                                     break;
-                                
+
                                 default:
                                     Console.WriteLine("Invalid option. Please try again.");
                                     break;
@@ -114,14 +114,14 @@ namespace MusicDBApp
                         {
                             choice = Console.ReadLine();
                             switch (choice)
-                            { 
+                            {
                                 case "1":
                                     {
                                         List<Vinyl> vinyl = storageManager.GetAllVinyl();
                                         view.DisplayVinyls(vinyl);
                                     }
                                     break;
-                                
+
                                 case "2":
                                     UpdateVinylsName();
                                     break;
@@ -133,7 +133,7 @@ namespace MusicDBApp
                                 case "4":
                                     DeleteGenresByName();
                                     break;
-                                
+
                                 default:
                                     Console.WriteLine("Invalid option. Please try again.");
                                     break;
@@ -141,7 +141,7 @@ namespace MusicDBApp
                         }
                         while (Notvalid);
                         break;
-         
+
 
                     case "4":
                         view.tblGenre();
@@ -159,7 +159,7 @@ namespace MusicDBApp
                                     }
                                     break;
 
-                                case "2":                                                                   
+                                case "2":
                                     UpdateGenresName();
                                     break;
 
@@ -372,7 +372,7 @@ namespace MusicDBApp
             int rowsAffected = storageManager.UpdateReviewComments(ReviewCommentID, ShortReview);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
-        
+
 
         private static void InsertNewRecordLabels()
         {
@@ -413,6 +413,6 @@ namespace MusicDBApp
             string genreName = view.GetInput();
             int rowsaffected = storageManager.DeleteRecordLabelByName(genreName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
-        }        
+        }
     }
 }

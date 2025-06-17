@@ -199,7 +199,7 @@ namespace MusicDBApp.View
 
         public string GetInput()
         {
-           return Console.ReadLine();
+            return Console.ReadLine();
         }
 
         public int GetIntInput()

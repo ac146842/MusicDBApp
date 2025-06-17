@@ -191,12 +191,12 @@ public class StorageManager
         }
     }
 
-    public int UpdateArtistsName(int ArtistID, string ArtistName) 
+    public int UpdateArtistsName(int ArtistID, string ArtistName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblArtist SET Artist_Name = @Artist_Name WHERE Artist_ID = @Artist_ID", conn))
         {
             cmd.Parameters.AddWithValue("@Artist_Name", ArtistName);
-            cmd.Parameters.AddWithValue("@Artist_ID", ArtistID); 
+            cmd.Parameters.AddWithValue("@Artist_ID", ArtistID);
             return cmd.ExecuteNonQuery();
         }
     }
@@ -206,7 +206,7 @@ public class StorageManager
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblVinyl SET Vinyl_Name = @Vinyl_Name WHERE Vinyl_ID = @Vinyl_ID", conn))
         {
             cmd.Parameters.AddWithValue("@Vinyl_Name", VinylName);
-            cmd.Parameters.AddWithValue("@Vinyl_ID", VinylID); 
+            cmd.Parameters.AddWithValue("@Vinyl_ID", VinylID);
             return cmd.ExecuteNonQuery();
         }
     }
@@ -228,7 +228,7 @@ public class StorageManager
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblReviews SET Reviewer_Name = @Reviewer_Name WHERE Review_ID = @Review_ID", conn))
         {
             cmd.Parameters.AddWithValue("@Reviewer_Name", ReviewerName);
-            cmd.Parameters.AddWithValue("@Review_ID", ReviewID); 
+            cmd.Parameters.AddWithValue("@Review_ID", ReviewID);
             return cmd.ExecuteNonQuery();
         }
     }
