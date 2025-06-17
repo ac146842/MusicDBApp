@@ -9,6 +9,11 @@ namespace MusicDBApp.View
 {
     public class ConsoleView
     {
+        public void WelcomeMenu()
+        {
+
+        }
+
         public string DisplayMenu()
         {
             Console.WriteLine("Welcome to MusicDB ");
