@@ -255,6 +255,38 @@ namespace MusicDBApp
                         view.Queries();
                         break;
 
+                        do
+                        {
+                            choice = Console.ReadLine();
+                            switch (choice)
+                            {
+                                case "1":
+                                    {
+                                        view.AdvQry1();
+                                    }
+                                    break;
+
+                                case "2":
+                                    //UpdateReviewersName();
+                                    break;
+
+                                case "3":
+                                    //InsertNewGenres();
+                                    break;
+
+                                case "4":
+                                    //DeleteGenresByName();
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Invalid option. Please try again.");
+                                    break;
+                            }
+                        }
+
+                        while (Notvalid);
+                        break;
+
                     default:
                         Console.WriteLine("Invalid option please try again.");
                         Notvalid = false;

@@ -162,7 +162,7 @@ public class StorageManager
         return reviewComments;
     }
 
-    public void AdvQuery1()
+    public void AdvQry1()
     {
         string sqlString = "SELECT Artist_Name, Artist_ID, RecordLabel_ID FROM TblArtist WHERE Artist_Name LIKE 'A%' ORDER BY Artist_Name;";
 
