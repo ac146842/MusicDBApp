@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
@@ -161,7 +162,25 @@ public class StorageManager
         return reviewComments;
     }
 
-    
+    public int AdvQuery1()
+    {
+        string sqlString = "SELECT Artist_Name, Artist_ID, RecordLabel_ID FROM TblArtist WHERE Artist_Name LIKE 'A%' ORDER BY Artist_Name;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            while (reader.Read())
+            {
+                int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
+                int RecordLabelID = (reader["RecordLabel_ID"]).ToString();
+                string ArtistName = (reader["Artist_Name"]).ToString();
+                Console.WriteLine(ArtistID);
+                Console.WriteLine(ArtistName);
+                Console.WriteLine(RecordLabelID);
+            }
+        }
+    }
+
+
     public int UpdateRecordLabelsName(int recordLabelID, string recordLabelName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblRecordLabel SET RecordLabel_Name = @RecordLabel_Name WHERE RecordLabel_ID = @RecordLabel_ID", conn))
@@ -271,6 +290,9 @@ public class StorageManager
             return cmd.ExecuteNonQuery();
         }
     }
+
+
+
 
     public void CloseConnection()
     {
