@@ -29,6 +29,7 @@ namespace MusicDBApp.View
             Console.WriteLine("4. tblGenre");
             Console.WriteLine("5. tblReviews");
             Console.WriteLine("6. tblReviewComments");
+            Console.WriteLine("7. Queries");
 
             return Console.ReadLine();
         }
