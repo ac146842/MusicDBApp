@@ -262,6 +262,8 @@ namespace MusicDBApp
                 }
             }
             while (true);
+
+            storageManager.CloseConnection();
         }
 
 
@@ -411,6 +413,6 @@ namespace MusicDBApp
             string genreName = view.GetInput();
             int rowsaffected = storageManager.DeleteRecordLabelByName(genreName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
-        } 
+        }        
     }
 }
