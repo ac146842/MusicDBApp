@@ -1,4 +1,5 @@
-﻿using MusicDBApp;
+﻿using System.Reflection.Metadata.Ecma335;
+using MusicDBApp;
 using MusicDBApp.Model;
 using MusicDBApp.Repos;
 using MusicDBApp.View;
@@ -406,6 +407,6 @@ namespace MusicDBApp
             string genreName = view.GetInput();
             int rowsaffected = storageManager.DeleteRecordLabelByName(genreName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
-        }
+        } 
     }
 }
