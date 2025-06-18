@@ -58,7 +58,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "4":
-                                    DeleteGenresByName();
+                                    DeleteRecordLabelByName();
                                     break;
 
                                 default:
@@ -96,7 +96,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "4":
-                                    DeleteGenresByName();
+                                    DeleteArtistByName();
                                     break;
 
                                 default:
@@ -132,7 +132,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "4":
-                                    DeleteGenresByName();
+                                    DeleteVinylByName();
                                     break;
 
                                 default:
@@ -205,7 +205,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "4":
-                                    DeleteGenresByName();
+                                    DeleteReviewByName();
                                     break;
 
                                 default:
@@ -241,7 +241,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "4":
-                                    DeleteGenresByName();
+                                    DeleteReviewCommentByName();
                                     break;
 
                                 default:
