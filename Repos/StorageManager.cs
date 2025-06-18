@@ -45,7 +45,7 @@ public class StorageManager
 
     static void PrintRow(params string[] columns)
     {
-        int width = (Console.WindowWidth - columns.Length - 1) / columns.Length; 
+        int width = (Console.WindowWidth - columns.Length - 1) / columns.Length;
         string row = "|";
 
         foreach (string column in columns)
@@ -333,7 +333,6 @@ public class StorageManager
         }
     }
 
-    //delete vinyl and date of release
     public int DeleteVinylByName(string vinylName)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblVinyl WHERE Vinyl_Name = @vinylName", conn))
@@ -348,7 +347,7 @@ public class StorageManager
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE Genre_Name = @genreName", conn))
         {
             cmd.Parameters.AddWithValue($"@genreName", genreName);
-             return cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery();
         }
     }
 
