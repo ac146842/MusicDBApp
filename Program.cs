@@ -463,7 +463,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
-        //delete vinyl name and date of release
+
         private static void DeleteVinylByName()
         {
             view.DisplayMessage("Enter the Vinyl to delete");

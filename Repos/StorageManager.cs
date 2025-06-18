@@ -337,7 +337,7 @@ public class StorageManager
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblVinyl WHERE Vinyl_Name = @vinylName", conn))
         {
-            cmd.Parameters.AddWithValue($"@artistName", vinylName);
+            cmd.Parameters.AddWithValue($"@vinylName", vinylName);
             return cmd.ExecuteNonQuery();
         }
     }
