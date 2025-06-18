@@ -318,10 +318,10 @@ public class StorageManager
 
     public int DeleteGenreByName(string genreName)
     {
-        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE genreName = @Genre_Name", conn))
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE Genre_Name = @genreName", conn))
         {
-            cmd.Parameters.AddWithValue($"@Genre_Name", genreName);
-            return cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue($"@genreName", genreName);
+             return cmd.ExecuteNonQuery();
         }
     }
 
