@@ -297,7 +297,7 @@ public class StorageManager
 
     public void AdvQry5()
     {
-        string sqlString = "SELECT Short_Review, Review_Date FROM tblReviewComments WHERE LENGTH(Short_Review) <= 30 ORDER BY Short_Review;";
+        string sqlString = "SELECT Short_Review, Review_Date FROM tblReviewComments WHERE LEN(Short_Review) <= 30 ORDER BY Short_Review;";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
