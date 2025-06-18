@@ -316,15 +316,16 @@ public class StorageManager
     }
 
 
-    public int DeleteLocationByName(string genreName)
+    public int DeleteGenreByName(string genreName)
     {
-        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE Genre_Name = @genreName", conn))
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE genreName = @Genre_Name", conn))
         {
-            cmd.Parameters.AddWithValue($"@genreName", genreName);
+            cmd.Parameters.AddWithValue($"@Genre_Name", genreName);
             return cmd.ExecuteNonQuery();
         }
     }
 
+    /*
     public int DeleteRecordLabelByName(string recordLabelName)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblRecordLabel WHERE  RecordLabel_Name = @recordLabelName", conn))
@@ -333,7 +334,7 @@ public class StorageManager
             return cmd.ExecuteNonQuery();
         }
     }
-
+    */
 
 
 

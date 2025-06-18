@@ -451,7 +451,7 @@ namespace MusicDBApp
         {
             view.DisplayMessage("Enter the Genre Name to delete");
             string genreName = view.GetInput();
-            int rowsaffected = storageManager.DeleteRecordLabelByName(genreName);
+            int rowsaffected = storageManager.DeleteGenreByName(genreName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
     }
