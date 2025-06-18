@@ -352,15 +352,23 @@ public class StorageManager
     }
 
     //delete every column
-    public int DeleteReviewByName(string ReviewerName)
+    public int DeleteReviewByName(string reviewName)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviews WHERE Reviewer_Name = @reviewName", conn))
         {
-            cmd.Parameters.AddWithValue($"@artistName", ReviewerName);
+            cmd.Parameters.AddWithValue($"@reviewName", reviewName);
             return cmd.ExecuteNonQuery();
         }
     }
 
+    public int DeleteReviewCommentByName(string shortReview)
+    {
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviewComments WHERE Short_Review = @shortReview", conn))
+        {
+            cmd.Parameters.AddWithValue($"@shortReview", shortReview);
+            return cmd.ExecuteNonQuery();
+        }
+    }
 
     public void CloseConnection()
     {
