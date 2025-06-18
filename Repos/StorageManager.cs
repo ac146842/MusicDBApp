@@ -284,7 +284,7 @@ public class StorageManager
 
                 while (reader.Read())
                 {
-                    DateTime ReviewDate = reader["ReviewDate"].ToString();
+                    string ReviewDate = reader["ReviewDate"].ToString();
                     string ShortReview = reader["ShortReview"].ToString();
 
                     PrintLine();
