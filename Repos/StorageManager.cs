@@ -324,6 +324,15 @@ public class StorageManager
         }
     }
 
+    public int DeleteArtistByName(string artistName)
+    {
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblArtist WHERE Artist_Name = @artistName", conn))
+        {
+            cmd.Parameters.AddWithValue($"@artistName", artistName);
+            return cmd.ExecuteNonQuery();
+        }
+    }
+
 
     public int DeleteGenreByName(string genreName)
     {

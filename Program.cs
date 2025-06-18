@@ -455,6 +455,8 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
+
+
         private static void DeleteGenresByName()
         {
             view.DisplayMessage("Enter the Genre Name to delete");
