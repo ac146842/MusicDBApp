@@ -447,6 +447,14 @@ namespace MusicDBApp
             view.DisplayMessage($"new Genre {genre.Genre_Name} with Description {genre.Description} inserted with ID {generateID}");
         }
 
+        private static void DeleteRecordLabelByName()
+        {
+            view.DisplayMessage("Enter the Record Label to delete");
+            string recordLabelName = view.GetInput();
+            int rowsaffected = storageManager.DeleteRecordLabelByName(recordLabelName);
+            view.DisplayMessage($"Rows affected: {rowsaffected}");
+        }
+
         private static void DeleteGenresByName()
         {
             view.DisplayMessage("Enter the Genre Name to delete");
