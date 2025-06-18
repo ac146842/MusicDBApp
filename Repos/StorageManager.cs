@@ -247,6 +247,30 @@ public class StorageManager
         }
     }
 
+    public void AdvQry3()
+    {
+        string sqlString = "SELECT Reviewer_Name, Out_Of_5 FROM TblReviews WHERE Out_Of_5 > 3 ORDER BY Out_Of_5;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                PrintLine();
+                PrintRow("Reviewer Name", "Out Of 5");
+
+                while (reader.Read())
+                {
+                    string ReviewerName = reader["Reviewer_Name"].ToString();
+                    string OutOf5 = reader["Out_Of_5"].ToString();
+
+                    PrintLine();
+                    PrintRow($"{ReviewerName}", $"{OutOf5}");
+                    PrintLine();
+                }
+            }
+        }
+    }
+
 
     public int UpdateRecordLabelsName(int recordLabelID, string recordLabelName)
     {

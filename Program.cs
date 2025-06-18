@@ -263,6 +263,10 @@ namespace MusicDBApp
                                 case "1":
                                     storageManager.AdvQry1();
                                     break;
+
+                                case "2":
+                                    storageManager.AdvQry2();
+                                    break;
                             }
                         }
                         while (true);
@@ -493,7 +497,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
-        //delete out of 5 column
+        
         private static void DeleteReviewByName()
         {
             view.DisplayMessage("Enter the Review Name to delete");
