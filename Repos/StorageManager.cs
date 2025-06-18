@@ -294,7 +294,7 @@ public class StorageManager
             }
         }
     }
-    //
+    
     public void AdvQry5()
     {
         string sqlString = "SELECT Short_Review, Review_Date FROM tblReviewComments WHERE LEN(Short_Review) <= 30 ORDER BY Short_Review;";
@@ -313,6 +313,31 @@ public class StorageManager
 
                     PrintLine();
                     PrintRow($"{ReviewDate}", $"{ShortReview}");
+                    PrintLine();
+                }
+            }
+        }
+    }
+
+    public void CmxQry6()
+    {
+        string sqlString = "SELECT a.Artist_Name, AVG(r.Out_Of_5) AS AvgRating, a.RecordLabel_ID FROM TblArtist a, TblVinyl v, TblReviews r WHERE a.Artist_ID = v.Artist_ID  AND v.Vinyl_ID = r.Vinyl_ID GROUP BY a.Artist_Name";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                PrintLine();
+                PrintRow("Review Date", "Short Review");
+
+                while (reader.Read())
+                {
+                    string artistName = reader["Artist_Name"].ToString();
+                    string OutOf5 = reader["Out_Of_5"].ToString();
+                    string RecordLabelID = reader["RecordLabel_ID"].ToString();
+
+                    PrintLine();
+                    PrintRow($"{artistName}", $"{OutOf5}");
                     PrintLine();
                 }
             }
