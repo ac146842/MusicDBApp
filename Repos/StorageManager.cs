@@ -295,6 +295,30 @@ public class StorageManager
         }
     }
 
+    public void AdvQry5()
+    {
+        string sqlString = "SELECT Short_Review, Review_Date FROM tblReviewComments WHERE LENGTH(Short_Review) <= 30 ORDER BY Short_Review;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                PrintLine();
+                PrintRow("Review Date", "Short Review");
+
+                while (reader.Read())
+                {
+                    string ReviewDate = reader["ReviewDate"].ToString();
+                    string ShortReview = reader["ShortReview"].ToString();
+
+                    PrintLine();
+                    PrintRow($"{ReviewDate}", $"{ShortReview}");
+                    PrintLine();
+                }
+            }
+        }
+    }
+
 
     public int UpdateRecordLabelsName(int recordLabelID, string recordLabelName)
     {
