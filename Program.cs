@@ -463,6 +463,14 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
+        private static void DeleteVinylByName()
+        {
+            view.DisplayMessage("Enter the Vinyl to delete");
+            string vinylName = view.GetInput();
+            int rowsaffected = storageManager.DeleteVinylByName(vinylName);
+            view.DisplayMessage($"Rows affected: {rowsaffected}");
+        }
+
         private static void DeleteGenresByName()
         {
             view.DisplayMessage("Enter the Genre Name to delete");
