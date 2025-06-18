@@ -455,7 +455,13 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
-
+        private static void DeleteArtistByName()
+        {
+            view.DisplayMessage("Enter the Artist to delete");
+            string artistName = view.GetInput();
+            int rowsaffected = storageManager.DeleteArtistByName(artistName);
+            view.DisplayMessage($"Rows affected: {rowsaffected}");
+        }
 
         private static void DeleteGenresByName()
         {
