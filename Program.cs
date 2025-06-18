@@ -267,6 +267,10 @@ namespace MusicDBApp
                                 case "2":
                                     storageManager.AdvQry2();
                                     break;
+
+                                case "3":
+                                    storageManager.AdvQry3();
+                                    break;
                             }
                         }
                         while (true);
