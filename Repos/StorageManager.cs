@@ -351,7 +351,16 @@ public class StorageManager
         }
     }
 
-       
+    //delete every column
+    public int DeleteReviewByName(string ReviewerName)
+    {
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviews WHERE Reviewer_Name = @reviewName", conn))
+        {
+            cmd.Parameters.AddWithValue($"@artistName", ReviewerName);
+            return cmd.ExecuteNonQuery();
+        }
+    }
+
 
     public void CloseConnection()
     {
