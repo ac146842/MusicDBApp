@@ -478,5 +478,23 @@ namespace MusicDBApp
             int rowsaffected = storageManager.DeleteGenreByName(genreName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
+
+        //delete out of 5 column
+        private static void DeleteReviewByName()
+        {
+            view.DisplayMessage("Enter the Review Name to delete");
+            string reviewName = view.GetInput();
+            int rowsaffected = storageManager.DeleteReviewByName(reviewName);
+            view.DisplayMessage($"Rows affected: {rowsaffected}");
+        }
+
+        //delete short review and review date
+        private static void DeleteReviewCommentByName()
+        {
+            view.DisplayMessage("Enter the Review Comment to delete");
+            string shortReview = view.GetInput();
+            int rowsaffected = storageManager.DeleteReviewCommentByName(shortReview);
+            view.DisplayMessage($"Rows affected: {rowsaffected}");
+        }
     }
 }
