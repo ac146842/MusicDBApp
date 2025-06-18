@@ -223,6 +223,30 @@ public class StorageManager
         }
     }
 
+    public void AdvQry2()
+    {
+        string sqlString = "SELECT Genre_Name, Description FROM tblGenre WHERE Genre_Name > 'M' ORDER BY Genre_Name;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                PrintLine();
+                PrintRow("Genre Name", "Description");
+
+                while (reader.Read())
+                {
+                    string GenreName = reader["Genre_Name"].ToString();
+                    string Description = reader["Description"].ToString();
+
+                    PrintLine();
+                    PrintRow($"{GenreName}", $"{Description}");
+                    PrintLine();
+                }
+            }
+        }
+    }
+
 
     public int UpdateRecordLabelsName(int recordLabelID, string recordLabelName)
     {
@@ -361,11 +385,11 @@ public class StorageManager
         }
     }
 
-    public int DeleteReviewCommentByName(string shortReview)
+    public int DeleteReviewCommentByID(int ReviewCommentID)
     {
-        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviewComments WHERE Short_Review = @shortReview", conn))
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviewComments WHERE ReviewComment_ID = @ReviewCommentID", conn))
         {
-            cmd.Parameters.AddWithValue($"@shortReview", shortReview);
+            cmd.Parameters.AddWithValue($"@ReviewCommentID", ReviewCommentID);
             return cmd.ExecuteNonQuery();
         }
     }

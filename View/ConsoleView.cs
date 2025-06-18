@@ -121,14 +121,6 @@ namespace MusicDBApp.View
 
         public void Queries()
         {
-            Console.WriteLine("Simple: ");
-            Console.WriteLine("1. ");
-            Console.WriteLine("2. ");
-            Console.WriteLine("3. ");
-            Console.WriteLine("4. ");
-            Console.WriteLine("5. ");
-            Console.WriteLine(" ");
-
             Console.WriteLine("Advanced: ");
             Console.WriteLine("1. ");
             Console.WriteLine("2. ");

@@ -240,8 +240,8 @@ namespace MusicDBApp
                                     InsertNewGenres();
                                     break;
 
-                                case "4":
-                                    DeleteReviewCommentByName();
+                                case "4":                                   
+                                    //DeleteReviewCommentByID();
                                     break;
 
                                 default:
@@ -254,6 +254,19 @@ namespace MusicDBApp
 
                     case "7":
                         view.Queries();
+
+                        do
+                        {
+                            choice = Console.ReadLine();
+                            switch (choice)
+                            {
+                                case "1":
+                                    storageManager.AdvQry1();
+                                    break;
+                            }
+                        }
+                        while (true);
+
                         break;
                         /*
                         do
@@ -490,12 +503,14 @@ namespace MusicDBApp
         }
 
         //delete short review and review date
-        private static void DeleteReviewCommentByName()
+        /*
+        private static void DeleteReviewCommentByID()
         {
             view.DisplayMessage("Enter the Review Comment to delete");
-            string shortReview = view.GetInput();
-            int rowsaffected = storageManager.DeleteReviewCommentByName(shortReview);
+            int ReviewCommentID = view.GetInput();
+            int rowsaffected = storageManager.DeleteReviewCommentByID(ReviewCommentID);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
+        */
     }
 }
