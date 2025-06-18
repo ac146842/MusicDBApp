@@ -333,6 +333,7 @@ public class StorageManager
         }
     }
 
+    //delete vinyl and date of release
     public int DeleteVinylByName(string vinylName)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblVinyl WHERE Vinyl_Name = @vinylName", conn))
