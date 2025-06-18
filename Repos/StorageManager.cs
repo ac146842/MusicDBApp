@@ -333,6 +333,14 @@ public class StorageManager
         }
     }
 
+    public int DeleteVinylByName(string vinylName)
+    {
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblVinyl WHERE Vinyl_Name = @vinylName", conn))
+        {
+            cmd.Parameters.AddWithValue($"@artistName", vinylName);
+            return cmd.ExecuteNonQuery();
+        }
+    }
 
     public int DeleteGenreByName(string genreName)
     {
