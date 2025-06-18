@@ -271,6 +271,30 @@ public class StorageManager
         }
     }
 
+    public void AdvQry4()
+    {
+        string sqlString = "SELECT Review_Date, Short_Review FROM TblReviewComments WHERE Review_Date BETWEEN '2010-12-31' AND '2020-12-31' ORDER BY Review_Date;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                PrintLine();
+                PrintRow("Review Date", "Short Review");
+
+                while (reader.Read())
+                {
+                    DateTime ReviewDate = reader["ReviewDate"].ToString();
+                    string ShortReview = reader["ShortReview"].ToString();
+
+                    PrintLine();
+                    PrintRow($"{ReviewDate}", $"{ShortReview}");
+                    PrintLine();
+                }
+            }
+        }
+    }
+
 
     public int UpdateRecordLabelsName(int recordLabelID, string recordLabelName)
     {
