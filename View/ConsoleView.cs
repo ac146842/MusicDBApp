@@ -119,7 +119,7 @@ namespace MusicDBApp.View
             Console.WriteLine("5: Return to main menu");
         }
 
-        public void Queries()
+        public void QueryOptions()
         {
             Console.WriteLine("Simple: ");
             Console.WriteLine("1. ");
@@ -128,7 +128,21 @@ namespace MusicDBApp.View
             Console.WriteLine("4. ");
             Console.WriteLine("5. ");
             Console.WriteLine(" ");
+        }
 
+        public void SmpQueries()
+        {
+            Console.WriteLine("Simple: ");
+            Console.WriteLine("1. ");
+            Console.WriteLine("2. ");
+            Console.WriteLine("3. ");
+            Console.WriteLine("4. ");
+            Console.WriteLine("5. ");
+            Console.WriteLine(" ");
+        }
+
+        public void AdvQueries()
+        {
             Console.WriteLine("Advanced: ");
             Console.WriteLine("6. ");
             Console.WriteLine("7. ");
@@ -136,7 +150,10 @@ namespace MusicDBApp.View
             Console.WriteLine("9. ");
             Console.WriteLine("10. ");
             Console.WriteLine(" ");
+        }
 
+        public void CmxQueries()
+        {
             Console.WriteLine("Complex: ");
             Console.WriteLine("11. ");
             Console.WriteLine("12. ");

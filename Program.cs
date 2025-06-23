@@ -252,8 +252,9 @@ namespace MusicDBApp
                         while (Notvalid);
                         break;
 
+                        
                     case "7":
-                        view.Queries();
+                        view.QueryOptions();
 
                         do
                         {
@@ -305,6 +306,8 @@ namespace MusicDBApp
                                     break;
                             }
                         }
+                        
+
                         while (true);
 
                         break;
