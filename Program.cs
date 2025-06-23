@@ -43,7 +43,7 @@ namespace MusicDBApp
                             switch (choice)
                             {
                                 case "1":
-                                    {
+                                    {                                       
                                         List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
                                         view.DisplayRecordLabels(recordLabels);
                                     }

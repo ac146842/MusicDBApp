@@ -599,7 +599,6 @@ public class StorageManager
         }
     }
 
-    //delete out of 5
     public int DeleteReviewByName(string reviewName)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviews WHERE Reviewer_Name = @reviewName", conn))
