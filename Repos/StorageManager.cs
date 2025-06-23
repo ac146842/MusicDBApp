@@ -246,7 +246,7 @@ public class StorageManager
         }
     }
 
-    /*
+    
     public void SmpQry3()
     {
         string sqlString = "SELECT * FROM tblReviewComments ORDER by Short_Review;";
@@ -260,10 +260,10 @@ public class StorageManager
 
                 while (reader.Read())
                 {
-                    string ShortReview = reader["Short_Review"].ToString();
+                    string ShortReview = (reader["Short_Review"]).ToString();
                     int ReviewID = Convert.ToInt32(reader["Review_ID"]);
                     int ReviewCommentID = Convert.ToInt32(reader["ReviewComment_ID"]);
-                    DateTime ReviewDate = Convert.ToInt32(reader["Review_Date"]);
+                    DateTime ReviewDate = Convert.ToDateTime(reader["Review_Date"]);
 
                     PrintLine();
                     PrintRow($"{ShortReview}", $"{ReviewID}", $"{ReviewCommentID}", $"{ReviewDate}");
@@ -272,7 +272,6 @@ public class StorageManager
             }
         }
     }
-    */
 
     public void SmpQry4()
     {

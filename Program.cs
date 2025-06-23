@@ -268,11 +268,11 @@ namespace MusicDBApp
                                     storageManager.SmpQry2();
                                     break;
 
-                                /*
+                                
                                 case "3":
                                     storageManager.SmpQry3();
                                     break;
-                                */
+                                
 
                                 case "4":
                                     storageManager.SmpQry4();
