@@ -267,38 +267,40 @@ namespace MusicDBApp
                                 case "2":
                                     storageManager.SmpQry2();
                                     break;
-
                                 
                                 case "3":
                                     storageManager.SmpQry3();
-                                    break;
-                                
+                                    break;                                
 
                                 case "4":
                                     storageManager.SmpQry4();
                                     break;
 
                                 case "5":
-                                    storageManager.AdvQry1();
+                                    storageManager.SmpQry5();
                                     break;
 
                                 case "6":
-                                    storageManager.AdvQry2();
+                                    storageManager.AdvQry1();
                                     break;
 
                                 case "7":
-                                    storageManager.AdvQry3();
+                                    storageManager.AdvQry2();
                                     break;
 
                                 case "8":
-                                    storageManager.AdvQry4();
+                                    storageManager.AdvQry3();
                                     break;
 
                                 case "9":
-                                    storageManager.AdvQry5();
+                                    storageManager.AdvQry4();
                                     break;
 
                                 case "10":
+                                    storageManager.AdvQry5();
+                                    break;
+
+                                case "11":
                                     storageManager.CmxQry6();
                                     break;
                             }

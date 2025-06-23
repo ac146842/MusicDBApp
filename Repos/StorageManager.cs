@@ -299,6 +299,32 @@ public class StorageManager
         }
     }
 
+    public void SmpQry5()
+    {
+        string sqlString = "SELECT * FROM tblVinyl ORDER by Vinyl_ID;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                PrintLine();
+                PrintRow("VinylID", "Artist ID", "Vinyl Name ID", "Date Of Release");
+
+                while (reader.Read())
+                {
+                    int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
+                    int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
+                    string VinylName = reader["Vinyl_Name"].ToString();
+                    DateTime DateOfRelease = Convert.ToDateTime(reader["Date_Of_Release"]);
+
+                    PrintLine();
+                    PrintRow($"{VinylID}", $"{ArtistID}", $"{VinylName}", $"{DateOfRelease}");
+                    PrintLine();
+                }
+            }
+        }
+    }
+
     public void AdvQry1()
     {
         string sqlString = "SELECT Artist_Name, Artist_ID, RecordLabel_ID FROM TblArtist WHERE Artist_Name LIKE 'A%' ORDER BY Artist_Name;";
