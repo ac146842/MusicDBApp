@@ -207,7 +207,7 @@ public class StorageManager
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 PrintLine();
-                PrintRow("Genre");
+                PrintRow("Genre", "Genre ID");
 
                 while (reader.Read())
                 {
@@ -216,6 +216,30 @@ public class StorageManager
 
                     PrintLine();
                     PrintRow($"{GenreName}", $"{GenreID}");
+                    PrintLine();
+                }
+            }
+        }
+    }
+
+    public void SmpQry2()
+    {
+        string sqlString = "SELECT * FROM tblRecordLabel ORDER by RecordLabel_ID;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                PrintLine();
+                PrintRow("Record Label", "Record Label ID");
+
+                while (reader.Read())
+                {
+                    string RecordLabelName = reader["RecordLabel_Name"].ToString();
+                    int RecordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
+
+                    PrintLine();
+                    PrintRow($"{RecordLabelName}", $"{RecordLabelID}");
                     PrintLine();
                 }
             }
