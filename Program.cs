@@ -260,27 +260,27 @@ namespace MusicDBApp
                             choice = Console.ReadLine();
                             switch (choice)
                             {
-                                case "1":
+                                case "5":
                                     storageManager.AdvQry1();
                                     break;
 
-                                case "2":
+                                case "6":
                                     storageManager.AdvQry2();
                                     break;
 
-                                case "3":
+                                case "7":
                                     storageManager.AdvQry3();
                                     break;
 
-                                case "4":
+                                case "8":
                                     storageManager.AdvQry4();
                                     break;
 
-                                case "5":
+                                case "9":
                                     storageManager.AdvQry5();
                                     break;
 
-                                case "6":
+                                case "10":
                                     storageManager.CmxQry6();
                                     break;
                             }

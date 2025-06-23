@@ -198,6 +198,30 @@ public class StorageManager
         return reviewComments;
     }
 
+    public void SmpQry1()
+    {
+        string sqlString = "SELECT * FROM tblGenre ORDER by Genre_ID;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                PrintLine();
+                PrintRow("Genre");
+
+                while (reader.Read())
+                {
+                    string GenreName = reader["Genre_Name"].ToString();
+                    int GenreID = Convert.ToInt32(reader["Genre_ID"]);
+
+                    PrintLine();
+                    PrintRow($"{GenreName}", $"{GenreID}");
+                    PrintLine();
+                }
+            }
+        }
+    }
+
     public void AdvQry1()
     {
         string sqlString = "SELECT Artist_Name, Artist_ID, RecordLabel_ID FROM TblArtist WHERE Artist_Name LIKE 'A%' ORDER BY Artist_Name;";
