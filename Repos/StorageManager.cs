@@ -246,7 +246,7 @@ public class StorageManager
         }
     }
 
-    
+    /*
     public void SmpQry3()
     {
         string sqlString = "SELECT * FROM tblReviewComments ORDER by Short_Review;";
@@ -272,6 +272,38 @@ public class StorageManager
             }
         }
     }
+    */
+
+    public void SmpQry4()
+    {
+        string sqlString = "SELECT * FROM tblReviews ORDER by Review_ID;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                PrintLine();
+                PrintRow("Record Label", "Record Label ID");
+
+                while (reader.Read())
+                {
+                    string ReviewerName = reader["Reviewer_Name"].ToString();
+                    int ReviewID = Convert.ToInt32(reader["Review_ID"]);
+
+                    PrintLine();
+                    PrintRow($"{ReviewerName}", $"{ReviewID}");
+                    PrintLine();
+                }
+            }
+        }
+    }
+
+    /*
+    int ReviewID = Convert.ToInt32(reader["Review_ID"]);
+    string ReviewerName = reader["Reviewer_Name"].ToString();
+    int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
+    decimal OutOf5 = Convert.ToDecimal(reader["Out_Of_5"]);
+    */
 
     public void AdvQry1()
     {
