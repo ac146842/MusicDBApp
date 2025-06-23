@@ -274,6 +274,10 @@ namespace MusicDBApp
                                     break;
                                 */
 
+                                case "4":
+                                    storageManager.SmpQry4();
+                                    break;
+
                                 case "5":
                                     storageManager.AdvQry1();
                                     break;

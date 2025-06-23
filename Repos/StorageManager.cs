@@ -283,27 +283,22 @@ public class StorageManager
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 PrintLine();
-                PrintRow("Record Label", "Record Label ID");
+                PrintRow("Record Label", "Record Label ID", "Vinyl ID", "Out of 5 Rating");
 
                 while (reader.Read())
                 {
                     string ReviewerName = reader["Reviewer_Name"].ToString();
                     int ReviewID = Convert.ToInt32(reader["Review_ID"]);
+                    int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
+                    decimal OutOf5 = Convert.ToDecimal(reader["Out_Of_5"]);
 
                     PrintLine();
-                    PrintRow($"{ReviewerName}", $"{ReviewID}");
+                    PrintRow($"{ReviewerName}", $"{ReviewID}", $"{VinylID}", $"{OutOf5}");
                     PrintLine();
                 }
             }
         }
     }
-
-    /*
-    int ReviewID = Convert.ToInt32(reader["Review_ID"]);
-    string ReviewerName = reader["Reviewer_Name"].ToString();
-    int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
-    decimal OutOf5 = Convert.ToDecimal(reader["Out_Of_5"]);
-    */
 
     public void AdvQry1()
     {
