@@ -55,30 +55,92 @@ public class StorageManager
 
         Console.WriteLine(row);
     }
-    public (int userID, int roleID) GetUserIDRoleID(string username, string password)
-    {
-        int userID = 0;
-        int roleID = 0;
 
-        string sqlString = "SELECT User_ID, Role_ID FROM tblUser WHERE User_Name = @Username AND Password = @Password AND Active = 1";
+    public string getUsername(string username)
+    {       
+        string sqlString = "SELECT Username FROM tblUser WHERE User_Name = @User_Name";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            cmd.Parameters.AddWithValue("@Username", username);
-            cmd.Parameters.AddWithValue("@Password", password);
+            cmd.Parameters.AddWithValue("@User_Name", username);
+ 
 
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
                 {
-                    userID = Convert.ToInt32(reader["User_ID"]);
-                    roleID = Convert.ToInt32(reader["Role_ID"]);
+                    username = reader["User_Name"].ToString();
                 }
             }
         }
-        return (userID, roleID);
+        return (username);
     }
 
+    public string getPassword(string username)
+    {
+        string Password = "";
+
+        string sqlString = "SELECT Password FROM tblUser WHERE username = @User_Name";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            cmd.Parameters.AddWithValue("@Username", username);
+
+
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    username = reader["Password"].ToString();
+                }
+            }
+        }
+        return (Password);
+    }
+
+    public int getRoleID(string username)
+    {
+        int roleID = 0;
+
+        string sqlString = "SELECT roleID FROM tblUser WHERE username = @User_Name";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            cmd.Parameters.AddWithValue("@Username", username);
+
+
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    username = reader["Role_ID"].ToString();
+                }
+            }
+        }
+        return (roleID);
+    }
+
+    public int getUserID(string username)
+    {
+        int userID = 0;
+
+        string sqlString = "SELECT User_ID FROM tblUser WHERE username = @User_ID";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            cmd.Parameters.AddWithValue("@Username", username);
+
+
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    username = reader["User_ID"].ToString();
+                }
+            }
+        }
+        return (userID);
+    }
 
     public List<RecordLabel> GetAllRecordLabel()
     {

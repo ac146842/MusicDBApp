@@ -33,11 +33,11 @@ namespace MusicDBApp
 
                 switch (tblchoice)
                 {
-
+                    
                     case "1":
                         view.LoginMenu();
                         break;
-
+                    
                     case "2":
                         view.RegisterMenu();
                         break;

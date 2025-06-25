@@ -22,53 +22,56 @@ namespace MusicDBApp.View
             return Console.ReadLine();
         }
 
-        /*
-        public (int userID, int roleID) LoginMenu()
+
+        public void LoginMenu()
         {
-            Console.WriteLine("Please Enter your User: ");
-            Console.WriteLine(" ");
-            string Username = Console.ReadLine();
 
-            Console.WriteLine("Please Enter your Password: ");
-            Console.WriteLine(" ");
-            string Password = Console.ReadLine();
+            Console.WriteLine("Please choose one of the following options: ");
 
-            var (userID, roleID) = View.LoginMenu();
+            Console.WriteLine("Please enter your Username: ");
+            string InputtedUsername = Console.ReadLine();
 
-            if (userID > 0)
+            Console.WriteLine("Please enter your Password: ");
+            string InputtedPassword = Console.ReadLine();
+
+            string Username = storageManager.getUsername(InputtedUsername);
+            string Password = storageManager.getPassword(InputtedUsername);
+            int roleID = storageManager.getRoleID(InputtedUsername);
+            int userID = storageManager.getUserID(InputtedUsername);
+
+            if (InputtedUsername.Equals(Username) && InputtedUsername.Equals(Password))
             {
-
                 if (roleID == 1)
                 {
-                    Console.WriteLine("admin");
-                    
+                    DisplayAdminMenu();
                 }
-                else if (roleID == 2)
-    {
-        Console.WriteLine("user");
 
-    }
+                else
+                {
+                    if (roleID == 2)
+                    {
+                        //DisplayUserMenu();
+                    }
+                }
             }
             else
             {
-                // Login failed, maybe retry or exit
+                Console.WriteLine("Please re enter your details");
+                LoginMenu();
             }
-
         }
-        */
-
+        
         public string RegisterMenu()
         {
-            Console.WriteLine("Welcome to MusicDB ");
+
             Console.WriteLine("Please choose one of the following options: ");
-            Console.WriteLine("1. Login ");
-            Console.WriteLine("2. Register ");
+
 
             return Console.ReadLine();
         }
 
 
-        public string DisplayMenu()
+        public string DisplayAdminMenu()
         {
             Console.WriteLine("Welcome to MusicDB ");
             Console.WriteLine("Menu: ");
