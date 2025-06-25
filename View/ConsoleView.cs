@@ -25,7 +25,9 @@ namespace MusicDBApp.View
         public string LoginMenu()
         {
             Console.WriteLine("Please Enter your User: ");
+            Console.WriteLine(" ");
             Console.WriteLine("Please Enter your Password: ");
+            Console.WriteLine(" ");
 
             return Console.ReadLine();
         }
