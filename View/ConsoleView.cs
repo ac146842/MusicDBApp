@@ -31,7 +31,13 @@ namespace MusicDBApp.View
             Console.WriteLine(" ");
             string Password = Console.ReadLine();
 
-            return $"Username: {Username}, Password: {Password}";
+            int userID = GetUserID(Username, Password);
+
+            if (userID == -1)
+            {
+                Console.WriteLine("Invalid Username or Password. Please try again.");
+                return null;
+            }   
         }
 
         public string RegisterMenu()

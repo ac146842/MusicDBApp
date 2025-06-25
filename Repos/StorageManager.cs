@@ -55,27 +55,30 @@ public class StorageManager
 
         Console.WriteLine(row);
     }
-
-    public int GetUserID(string Username, string Password)
+    public (int userID, int roleID) GetUserIDRoleID(string username, string password)
     {
         int userID = 0;
-        string sqlString = "SELECT User_ID FROM tblUser WHERE Username = @Username AND Password = @Password AND Active = 1";
+        int roleID = 0;
+
+        string sqlString = "SELECT User_ID, Role_ID FROM tblUser WHERE User_Name = @Username AND Password = @Password AND Active = 1";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            cmd.Parameters.AddWithValue("@Username", Username);
-            cmd.Parameters.AddWithValue("@Password", Password);
+            cmd.Parameters.AddWithValue("@Username", username);
+            cmd.Parameters.AddWithValue("@Password", password);
 
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                while (reader.Read())
+                if (reader.Read())
                 {
                     userID = Convert.ToInt32(reader["User_ID"]);
+                    roleID = Convert.ToInt32(reader["Role_ID"]);
                 }
             }
         }
-        return userID;
+        return (userID, roleID);
     }
+
 
     public List<RecordLabel> GetAllRecordLabel()
     {
