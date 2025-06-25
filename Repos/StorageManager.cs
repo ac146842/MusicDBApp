@@ -246,7 +246,7 @@ public class StorageManager
         }
     }
 
-    
+
     public void SmpQry3()
     {
         string sqlString = "SELECT * FROM tblReviewComments ORDER by Short_Review;";
@@ -421,7 +421,7 @@ public class StorageManager
             }
         }
     }
-    
+
     public void AdvQry5()
     {
         string sqlString = "SELECT Short_Review, Review_Date FROM tblReviewComments WHERE LEN(Short_Review) <= 30 ORDER BY Short_Review;";

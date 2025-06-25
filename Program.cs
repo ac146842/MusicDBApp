@@ -32,7 +32,7 @@ namespace MusicDBApp
                 Console.Clear();
 
                 switch (tblchoice)
-                {                
+                {
 
                     case "1":
                         view.LoginMenu();

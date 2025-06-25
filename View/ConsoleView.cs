@@ -26,10 +26,12 @@ namespace MusicDBApp.View
         {
             Console.WriteLine("Please Enter your User: ");
             Console.WriteLine(" ");
+            string Username = Console.ReadLine();
             Console.WriteLine("Please Enter your Password: ");
             Console.WriteLine(" ");
+            string Password = Console.ReadLine();
 
-            return Console.ReadLine();
+            return $"Username: {Username}, Password: {Password}";
         }
 
         public string RegisterMenu()
