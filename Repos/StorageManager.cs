@@ -56,10 +56,10 @@ public class StorageManager
         Console.WriteLine(row);
     }
 
-    public int GetUserID(int UserID)
+    public int GetUserID(string Username, string Password)
     {
         int userID = 0;
-        string sqlString = "SELECT User_ID FROM tblUser WHERE UserID = @User_ID AND Active = 1";
+        string sqlString = "SELECT User_ID FROM tblUser WHERE Username = @Username AND Password = @Password AND Active = 1";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
