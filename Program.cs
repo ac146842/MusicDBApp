@@ -28,6 +28,13 @@ namespace MusicDBApp
 
             do
             {
+                tblchoice = view.WelcomeMenu();
+            }
+            while (true);
+
+            /*
+            do
+            {
                 tblchoice = view.DisplayMenu();
                 Console.Clear();
 
@@ -343,7 +350,7 @@ namespace MusicDBApp
 
                         while (Notvalid);
                         break;
-                        */
+                        
                     default:
                         Console.WriteLine("Invalid option please try again.");
                         Notvalid = false;
@@ -352,8 +359,12 @@ namespace MusicDBApp
             }
             while (true);
 
+            */
+
             storageManager.CloseConnection();
         }
+
+        
 
 
         private static void Login()

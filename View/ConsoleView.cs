@@ -12,7 +12,7 @@ namespace MusicDBApp.View
     {
         private static StorageManager storageManager;
 
-        public void WelcomeMenu()
+        public string WelcomeMenu()
         {
             Console.WriteLine("Welcome to MusicDB ");
             Console.WriteLine("Please choose one of the following options: ");
@@ -31,7 +31,7 @@ namespace MusicDBApp.View
             Console.WriteLine("1. View all Records in Genres");
             Console.WriteLine("2. Update a Genres name by Genre_ID");
             Console.WriteLine("3. Insert a new Genre");
-            Console.WriteLine("4. Delete a Genre by Gemre_Name");
+            Console.WriteLine("4. Delete a Genre by Genre_Name");
             */
 
 
@@ -121,12 +121,10 @@ namespace MusicDBApp.View
 
         public void QueryOptions()
         {
-            Console.WriteLine("Simple: ");
-            Console.WriteLine("1. ");
-            Console.WriteLine("2. ");
-            Console.WriteLine("3. ");
-            Console.WriteLine("4. ");
-            Console.WriteLine("5. ");
+            Console.WriteLine("Choose one of the folling: ");
+            Console.WriteLine("1. Simple");
+            Console.WriteLine("2. Advanced");
+            Console.WriteLine("3. Complex");
             Console.WriteLine(" ");
         }
 
