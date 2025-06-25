@@ -63,12 +63,15 @@ public class StorageManager
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            cmd.Parameters.AddWithValue("@User_ID", UserID);
+            cmd.Parameters.AddWithValue("@Username", Username);
+            cmd.Parameters.AddWithValue("@Password", Password);
+
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    UserID = Convert.ToInt32(reader["User_ID"]);
+                    string Username = reader["Username"].ToString();
+                    string Password = reader["Password"].ToString();
                 }
             }
         }
