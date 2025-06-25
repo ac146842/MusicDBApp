@@ -29,17 +29,20 @@ namespace MusicDBApp
             do
             {
                 tblchoice = view.WelcomeMenu();
-            }
-            while (true);
-
-            /*
-            do
-            {
-                tblchoice = view.DisplayMenu();
                 Console.Clear();
 
                 switch (tblchoice)
-                {
+                {                
+
+                    case "1":
+                        view.LoginMenu();
+                        break;
+
+                    case "2":
+                        view.RegisterMenu();
+                        break;
+
+                    /*
                     case "1":
                         view.tblRecordLabel();
                         Notvalid = false;
@@ -50,7 +53,7 @@ namespace MusicDBApp
                             switch (choice)
                             {
                                 case "1":
-                                    {                                       
+                                    {
                                         List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
                                         view.DisplayRecordLabels(recordLabels);
                                     }
@@ -247,7 +250,7 @@ namespace MusicDBApp
                                     InsertNewGenres();
                                     break;
 
-                                case "4":                                   
+                                case "4":
                                     //DeleteReviewCommentByID();
                                     break;
 
@@ -259,7 +262,7 @@ namespace MusicDBApp
                         while (Notvalid);
                         break;
 
-                        
+
                     case "7":
                         view.QueryOptions();
 
@@ -275,10 +278,10 @@ namespace MusicDBApp
                                 case "2":
                                     storageManager.SmpQry2();
                                     break;
-                                
+
                                 case "3":
                                     storageManager.SmpQry3();
-                                    break;                                
+                                    break;
 
                                 case "4":
                                     storageManager.SmpQry4();
@@ -313,44 +316,44 @@ namespace MusicDBApp
                                     break;
                             }
                         }
-                        
+
 
                         while (true);
 
                         break;
-                        /*
-                        do
+                    /*
+                    do
+                    {
+                        choice = Console.ReadLine();
+                        switch (choice)
                         {
-                            choice = Console.ReadLine();
-                            switch (choice)
-                            {
-                                case "1":
-                                    {
-                                        view.AdvQry1();
-                                    }
-                                    break;
+                            case "1":
+                                {
+                                    view.AdvQry1();
+                                }
+                                break;
 
-                                case "2":
-                                    //UpdateReviewersName();
-                                    break;
+                            case "2":
+                                //UpdateReviewersName();
+                                break;
 
-                                case "3":
-                                    //InsertNewGenres();
-                                    break;
+                            case "3":
+                                //InsertNewGenres();
+                                break;
 
-                                case "4":
-                                    //DeleteGenresByName();
-                                    break;
+                            case "4":
+                                //DeleteGenresByName();
+                                break;
 
-                                default:
-                                    Console.WriteLine("Invalid option. Please try again.");
-                                    break;
-                            }
+                            default:
+                                Console.WriteLine("Invalid option. Please try again.");
+                                break;
                         }
+                    }
 
-                        while (Notvalid);
-                        break;
-                        
+                    while (Notvalid);
+                    break;
+                    */
                     default:
                         Console.WriteLine("Invalid option please try again.");
                         Notvalid = false;
@@ -359,12 +362,8 @@ namespace MusicDBApp
             }
             while (true);
 
-            */
-
             storageManager.CloseConnection();
         }
-
-        
 
 
         private static void Login()
@@ -547,7 +546,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
-        
+
         private static void DeleteReviewByName()
         {
             view.DisplayMessage("Enter the Review Name to delete");

@@ -18,6 +18,26 @@ namespace MusicDBApp.View
             Console.WriteLine("Please choose one of the following options: ");
             Console.WriteLine("1. Login ");
             Console.WriteLine("2. Register ");
+
+            return Console.ReadLine();
+        }
+
+        public string LoginMenu()
+        {
+            Console.WriteLine("Please Enter your User: ");
+            Console.WriteLine("Please Enter your Password: ");
+
+            return Console.ReadLine();
+        }
+
+        public string RegisterMenu()
+        {
+            Console.WriteLine("Welcome to MusicDB ");
+            Console.WriteLine("Please choose one of the following options: ");
+            Console.WriteLine("1. Login ");
+            Console.WriteLine("2. Register ");
+
+            return Console.ReadLine();
         }
 
 
