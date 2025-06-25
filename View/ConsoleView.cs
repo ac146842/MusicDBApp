@@ -22,23 +22,40 @@ namespace MusicDBApp.View
             return Console.ReadLine();
         }
 
-        public string LoginMenu()
+        /*
+        public (int userID, int roleID) LoginMenu()
         {
             Console.WriteLine("Please Enter your User: ");
             Console.WriteLine(" ");
             string Username = Console.ReadLine();
+
             Console.WriteLine("Please Enter your Password: ");
             Console.WriteLine(" ");
             string Password = Console.ReadLine();
 
-            int userID = GetUserID(Username, Password);
+            var (userID, roleID) = View.LoginMenu();
 
-            if (userID == -1)
+            if (userID > 0)
             {
-                Console.WriteLine("Invalid Username or Password. Please try again.");
-                return null;
-            }   
+
+                if (roleID == 1)
+                {
+                    Console.WriteLine("admin");
+                    
+                }
+                else if (roleID == 2)
+    {
+        Console.WriteLine("user");
+
+    }
+            }
+            else
+            {
+                // Login failed, maybe retry or exit
+            }
+
         }
+        */
 
         public string RegisterMenu()
         {
