@@ -59,7 +59,7 @@ public class StorageManager
     public int GetUserID(string Username, string Password)
     {
         int userID = 0;
-        string sqlString = "SELECT User_ID FROM tblUser WHERE Username = @Username AND Password = @Password AND Active = 1";
+        string sqlString = "SELECT Username, Password FROM tblUser WHERE Username = @Username AND Password = @Password AND Active = 1";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
@@ -70,8 +70,8 @@ public class StorageManager
             {
                 while (reader.Read())
                 {
-                    string Username = reader["Username"].ToString();
-                    string Password = reader["Password"].ToString();
+                    Username = reader["Username"].ToString();
+                    Password = reader["Password"].ToString();
                 }
             }
         }
