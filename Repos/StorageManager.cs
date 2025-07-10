@@ -414,7 +414,7 @@ public class StorageManager
 
     public void AdvQry4()
     {
-        string sqlString = "SELECT Review_Date, Short_Review FROM TblReviewComments WHERE Review_Date BETWEEN '2010-12-31' AND '2020-12-31' ORDER BY Review_Date;";
+        string sqlString = "SELECT Review_Date, Short_Review FROM tblReviewComments WHERE Review_Date BETWEEN '2010-12-31' AND '2020-12-31' ORDER BY Review_Date;";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
@@ -433,7 +433,7 @@ public class StorageManager
 
     public void AdvQry5()
     {
-        string sqlString = "SELECT Short_Review, Review_Date FROM tblReviewComments WHERE LEN(Short_Review) <= 30 ORDER BY Short_Review;";
+        string sqlString = "SELECT Short_Review, Review_Date FROM tblReviewComments WHERE LEN(CAST(Short_Review AS NVARCHAR(MAX))) <= 30 ORDER BY Short_Review; ";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
@@ -441,10 +441,10 @@ public class StorageManager
             {
                 while (reader.Read())
                 {
-                    string ReviewDate = reader["ReviewDate"].ToString();
-                    string ShortReview = reader["ShortReview"].ToString();
+                    DateTime ReviewDate = Convert.ToDateTime(reader["Review_Date"]);
+                    string ShortReview = reader["Short_Review"].ToString();
 
-                    Console.WriteLine($"Short Review: {ShortReview}, Review Date: {ReviewDate}");
+                    Console.WriteLine($"Short Review: {ShortReview}, Review Date: {ReviewDate.ToString("yyyy-MM-dd")}");
                 }
             }
         }
@@ -452,7 +452,7 @@ public class StorageManager
 
     public void CmxQry6()
     {
-        string sqlString = "SELECT a.Artist_Name, AVG(r.Out_Of_5) AS AvgRating, a.RecordLabel_ID FROM TblArtist a, TblVinyl v, TblReviews r WHERE a.Artist_ID = v.Artist_ID  AND v.Vinyl_ID = r.Vinyl_ID GROUP BY a.Artist_Name";
+        string sqlString = "SELECT a.Artist_Name, AVG(r.Out_Of_5) AS AvgRating, a.RecordLabel_ID FROM TblArtist a, TblVinyl v, TblReviews r WHERE a.Artist_ID = v.Artist_ID  AND v.Vinyl_ID = r.Vinyl_ID GROUP BY a.Artist_Name, a.RecordLabel_ID";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
@@ -463,6 +463,8 @@ public class StorageManager
                     string artistName = reader["Artist_Name"].ToString();
                     string OutOf5 = reader["Out_Of_5"].ToString();
                     string RecordLabelID = reader["RecordLabel_ID"].ToString();
+
+                    Console.WriteLine($"Artist Name: {artistName}, Rating: {OutOf5}");
                 }
             }
         }
