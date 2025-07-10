@@ -50,8 +50,9 @@ namespace MusicDBApp
 
 
 
-            public static void AdminMenu()
-        { 
+        public static void AdminMenu()
+       
+        {  
             while (true)
             {
                 
@@ -85,6 +86,49 @@ namespace MusicDBApp
                     case "7":
                         view.QueryOptions();
                         
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option. Please try again.");
+                        break;
+                }
+            }
+        }
+
+        public static void UserMenu()
+        {
+            while (true)
+            {
+
+                string choice = view.DisplayUserMenu();
+                switch (choice)
+                {
+                    case "1":
+                        view.tblRecordLabel();
+
+                        break;
+                    case "2":
+                        view.tblArtist();
+
+                        break;
+                    case "3":
+                        view.tblVinyl();
+
+                        break;
+                    case "4":
+                        view.tblGenre();
+
+                        break;
+                    case "5":
+                        view.tblReviews();
+
+                        break;
+                    case "6":
+                        view.tblReviewComments();
+
+                        break;
+                    case "7":
+                        view.QueryOptions();
+
                         break;
                     default:
                         Console.WriteLine("Invalid option. Please try again.");

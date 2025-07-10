@@ -76,9 +76,9 @@ namespace MusicDBApp.View
 
         public string DisplayAdminMenu()
         {
-            Console.WriteLine("Welcome to MusicDB ");
+            Console.WriteLine("Welcome to MusicDB (admin)");
             Console.WriteLine("Menu: ");
-            Console.WriteLine("Choose an option from 1-6");
+            Console.WriteLine("Choose an option from 1-7");
 
             /*           
             Console.WriteLine("1. View all Records in Genres");
@@ -95,6 +95,23 @@ namespace MusicDBApp.View
             Console.WriteLine("5. tblReviews");
             Console.WriteLine("6. tblReviewComments");
             Console.WriteLine("7. Queries");
+
+            return Console.ReadLine();
+        }
+
+
+        public string DisplayUserMenu()
+        {
+            Console.WriteLine("Welcome to MusicDB (user)");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("Choose an option from 1-7");
+
+            Console.WriteLine("1. tblRecordLabel");
+            Console.WriteLine("2. tblArtist");
+            Console.WriteLine("3. tblVinyl");
+            Console.WriteLine("4. tblGenre");
+            Console.WriteLine("5. tblReviews");
+            Console.WriteLine("6. tblReviewComments");
 
             return Console.ReadLine();
         }
