@@ -137,6 +137,11 @@ namespace MusicDBApp
             }
         }
 
+        public static void Queries() 
+        { 
+
+        }
+
         /*
         do
         {

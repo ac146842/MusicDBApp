@@ -532,7 +532,6 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-
         }
 
         public void QueryOptions()
@@ -542,6 +541,27 @@ namespace MusicDBApp.View
             Console.WriteLine("2. Advanced");
             Console.WriteLine("3. Complex");
             Console.WriteLine(" ");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    SmpQueries();
+                    break;
+
+                case "2":
+                    AdvQueries();
+                    break;
+
+                case "3":
+                    CmxQueries();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
         }
 
         public void SmpQueries()
