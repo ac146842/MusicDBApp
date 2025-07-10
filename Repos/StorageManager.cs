@@ -376,7 +376,7 @@ public class StorageManager
 
     public void AdvQry2()
     {
-        string sqlString = "SELECT Genre_Name, Description FROM tblGenre WHERE Genre_Name > 'M' ORDER BY CAST(Genre_Name AS NVARCHAR(MAX));";
+        string sqlString = "SELECT Genre_Name, Description FROM tblGenre WHERE CAST(Genre_Name AS NVARCHAR(MAX)) > 'M' ORDER BY CAST(Genre_Name AS NVARCHAR(MAX));";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
@@ -422,8 +422,8 @@ public class StorageManager
             {
                 while (reader.Read())
                 {
-                    string ReviewDate = reader["ReviewDate"].ToString();
-                    string ShortReview = reader["ShortReview"].ToString();
+                    string ReviewDate = reader["Review_Date"].ToString();
+                    string ShortReview = reader["Short_Review"].ToString();
 
                     Console.WriteLine($"Short Review: {ShortReview}, Review Date: {ReviewDate}");
                 }
