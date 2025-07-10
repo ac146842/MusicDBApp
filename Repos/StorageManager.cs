@@ -461,10 +461,10 @@ public class StorageManager
                 while (reader.Read())
                 {
                     string artistName = reader["Artist_Name"].ToString();
-                    string OutOf5 = reader["Out_Of_5"].ToString();
+                    decimal avgRating = Convert.ToDecimal(reader["AvgRating"]);
                     string RecordLabelID = reader["RecordLabel_ID"].ToString();
 
-                    Console.WriteLine($"Artist Name: {artistName}, Rating: {OutOf5}");
+                    Console.WriteLine($"Artist Name: {artistName}, Average Rating: {avgRating:F2}");
                 }
             }
         }
