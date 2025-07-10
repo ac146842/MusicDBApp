@@ -57,13 +57,13 @@ public class StorageManager
     }
 
     public string getUsername(string username)
-    {       
+    {
         string sqlString = "SELECT Username FROM tblUser WHERE User_Name = @User_Name";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
             cmd.Parameters.AddWithValue("@User_Name", username);
- 
+
 
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
@@ -80,11 +80,36 @@ public class StorageManager
     {
         string Password = "";
 
-        string sqlString = "SELECT Password FROM tblUser WHERE username = @User_Name";
+        string sqlString = "SELECT Password FROM tblUser WHERE password = @Password";
+
+
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            cmd.Parameters.AddWithValue("@Username", username);
+            cmd.Parameters.AddWithValue("@password", username);
+
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    Password = reader["Password"].ToString();
+                }
+            }
+        }
+        return Password;
+    }
+
+
+    /*
+    public string getPassword(string username)
+    {
+        string Password = "";
+
+        string sqlString = "SELECT Password FROM tblUser WHERE User_Name = @User_Name";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            cmd.Parameters.AddWithValue("@User_Name", username);
 
 
             using (SqlDataReader reader = cmd.ExecuteReader())
@@ -97,16 +122,18 @@ public class StorageManager
         }
         return (Password);
     }
+    */
 
     public int getRoleID(string username)
     {
         int roleID = 0;
 
-        string sqlString = "SELECT roleID FROM tblUser WHERE username = @User_Name";
+        string sqlString = "SELECT Role_ID FROM tblUser WHERE roleID = @Role_ID";
+
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            cmd.Parameters.AddWithValue("@Username", username);
+            cmd.Parameters.AddWithValue("@roleID", username);
 
 
             using (SqlDataReader reader = cmd.ExecuteReader())

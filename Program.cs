@@ -11,14 +11,18 @@ namespace MusicDBApp
     {
         private static StorageManager storageManager;
         private static ConsoleView view;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
             //school connection
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\sqlcode\\MusicDB.mdf\";Integrated Security=True;Connect Timeout=30;Encrypt=True";
+            //string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\sqlcode\\MusicDB.mdf\";Integrated Security=True;Connect Timeout=30;Encrypt=True";
+            //home
+            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             storageManager = new StorageManager(connectionString);
-            view = new ConsoleView();
+            view = new ConsoleView(storageManager);
+
 
             // string tblchoice = view.TblDisplayMenu();
             // string choice = view.DisplayMenu();
@@ -33,11 +37,11 @@ namespace MusicDBApp
 
                 switch (tblchoice)
                 {
-                    
+
                     case "1":
                         view.LoginMenu();
                         break;
-                    
+
                     case "2":
                         view.RegisterMenu();
                         break;
