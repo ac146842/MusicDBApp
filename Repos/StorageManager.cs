@@ -58,7 +58,7 @@ public class StorageManager
 
     public string getUsername(string username)
     {
-        string sqlString = "SELECT Username FROM tblUser WHERE User_Name = @User_Name";
+        string sqlString = "SELECT User_Name FROM tblUser WHERE User_Name = @User_Name";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
