@@ -38,23 +38,12 @@ public class StorageManager
         }
     }
 
+
     static void PrintLine()
     {
         Console.WriteLine(new string('-', Console.WindowWidth - 1));
     }
 
-    static void PrintRow(params string[] columns)
-    {
-        int width = (Console.WindowWidth - columns.Length - 1) / columns.Length;
-        string row = "|";
-
-        foreach (string column in columns)
-        {
-            row += column.PadRight(width).Substring(0, width) + "|";
-        }
-
-        Console.WriteLine(row);
-    }
 
     public string getUsername(string username)
     {
@@ -93,32 +82,6 @@ public class StorageManager
         }
         return Password;
     }
-
-
-
-    /*
-    public string getPassword(string username)
-    {
-        string Password = "";
-
-        string sqlString = "SELECT Password FROM tblUser WHERE User_Name = @User_Name";
-
-        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
-        {
-            cmd.Parameters.AddWithValue("@User_Name", username);
-
-
-            using (SqlDataReader reader = cmd.ExecuteReader())
-            {
-                if (reader.Read())
-                {
-                    username = reader["Password"].ToString();
-                }
-            }
-        }
-        return (Password);
-    }
-    */
 
     public int getRoleID(string username)
     {
@@ -297,17 +260,10 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Genre", "Genre ID");
-
                 while (reader.Read())
                 {
                     string GenreName = reader["Genre_Name"].ToString();
                     int GenreID = Convert.ToInt32(reader["Genre_ID"]);
-
-                    PrintLine();
-                    PrintRow($"{GenreName}", $"{GenreID}");
-                    PrintLine();
                 }
             }
         }
@@ -321,17 +277,10 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Record Label", "Record Label ID");
-
                 while (reader.Read())
                 {
                     string RecordLabelName = reader["RecordLabel_Name"].ToString();
                     int RecordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
-
-                    PrintLine();
-                    PrintRow($"{RecordLabelName}", $"{RecordLabelID}");
-                    PrintLine();
                 }
             }
         }
@@ -346,19 +295,12 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Short Review", "Review ID", "Vinyl ID", "Out of 5 rating");
-
                 while (reader.Read())
                 {
                     string ShortReview = (reader["Short_Review"]).ToString();
                     int ReviewID = Convert.ToInt32(reader["Review_ID"]);
                     int ReviewCommentID = Convert.ToInt32(reader["ReviewComment_ID"]);
                     DateTime ReviewDate = Convert.ToDateTime(reader["Review_Date"]);
-
-                    PrintLine();
-                    PrintRow($"{ShortReview}", $"{ReviewID}", $"{ReviewCommentID}", $"{ReviewDate}");
-                    PrintLine();
                 }
             }
         }
@@ -372,19 +314,12 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Record Label", "Record Label ID", "Vinyl ID", "Out of 5 Rating");
-
                 while (reader.Read())
                 {
                     string ReviewerName = reader["Reviewer_Name"].ToString();
                     int ReviewID = Convert.ToInt32(reader["Review_ID"]);
                     int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
                     decimal OutOf5 = Convert.ToDecimal(reader["Out_Of_5"]);
-
-                    PrintLine();
-                    PrintRow($"{ReviewerName}", $"{ReviewID}", $"{VinylID}", $"{OutOf5}");
-                    PrintLine();
                 }
             }
         }
@@ -398,19 +333,12 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("VinylID", "Artist ID", "Vinyl Name ID", "Date Of Release");
-
                 while (reader.Read())
                 {
                     int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
                     int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
                     string VinylName = reader["Vinyl_Name"].ToString();
                     DateTime DateOfRelease = Convert.ToDateTime(reader["Date_Of_Release"]);
-
-                    PrintLine();
-                    PrintRow($"{VinylID}", $"{ArtistID}", $"{VinylName}", $"{DateOfRelease}");
-                    PrintLine();
                 }
             }
         }
@@ -424,18 +352,11 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Artist Name", "Artist ID", "Record Label ID");
-
                 while (reader.Read())
                 {
                     string artistName = reader["Artist_Name"].ToString();
                     int artistID = Convert.ToInt32(reader["Artist_ID"]);
                     int recordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
-
-                    PrintLine();
-                    PrintRow($"{artistName}", $"{artistID}", $"{recordLabelID}");
-                    PrintLine();
                 }
             }
         }
@@ -449,17 +370,10 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Genre Name", "Description");
-
                 while (reader.Read())
                 {
                     string GenreName = reader["Genre_Name"].ToString();
                     string Description = reader["Description"].ToString();
-
-                    PrintLine();
-                    PrintRow($"{GenreName}", $"{Description}");
-                    PrintLine();
                 }
             }
         }
@@ -473,17 +387,10 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Reviewer Name", "Out Of 5");
-
                 while (reader.Read())
                 {
                     string ReviewerName = reader["Reviewer_Name"].ToString();
                     string OutOf5 = reader["Out_Of_5"].ToString();
-
-                    PrintLine();
-                    PrintRow($"{ReviewerName}", $"{OutOf5}");
-                    PrintLine();
                 }
             }
         }
@@ -497,17 +404,10 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Review Date", "Short Review");
-
                 while (reader.Read())
                 {
                     string ReviewDate = reader["ReviewDate"].ToString();
                     string ShortReview = reader["ShortReview"].ToString();
-
-                    PrintLine();
-                    PrintRow($"{ReviewDate}", $"{ShortReview}");
-                    PrintLine();
                 }
             }
         }
@@ -521,17 +421,10 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Review Date", "Short Review");
-
                 while (reader.Read())
                 {
                     string ReviewDate = reader["ReviewDate"].ToString();
                     string ShortReview = reader["ShortReview"].ToString();
-
-                    PrintLine();
-                    PrintRow($"{ReviewDate}", $"{ShortReview}");
-                    PrintLine();
                 }
             }
         }
@@ -545,18 +438,11 @@ public class StorageManager
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                PrintLine();
-                PrintRow("Review Date", "Short Review");
-
                 while (reader.Read())
                 {
                     string artistName = reader["Artist_Name"].ToString();
                     string OutOf5 = reader["Out_Of_5"].ToString();
                     string RecordLabelID = reader["RecordLabel_ID"].ToString();
-
-                    PrintLine();
-                    PrintRow($"{artistName}", $"{OutOf5}");
-                    PrintLine();
                 }
             }
         }

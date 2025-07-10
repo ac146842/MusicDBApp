@@ -155,6 +155,33 @@ namespace MusicDBApp.View
             }
         }
 
+        public void tblRecordLabelU()
+        {
+            Console.WriteLine("Welcome to tblRecordlabel");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View all existing Record Labels");
+            Console.WriteLine("2: Return to main menu");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
+                    DisplayRecordLabels(recordLabels);
+                    break;
+
+                case "2":
+                    Program.UpdateRecordLabelsName(); //return to main menu
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
+        }
+
         public void tblArtistA()
         {
             Console.WriteLine("Welcome to tblArtist");
@@ -185,6 +212,33 @@ namespace MusicDBApp.View
 
                 case "4":
                     Program.DeleteArtistByName();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
+        }
+
+        public void tblArtistU()
+        {
+            Console.WriteLine("Welcome to tblArtist");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View all existing Artists");
+            Console.WriteLine("5: Return to main menu");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<Artist> artists = storageManager.GetAllArtist();
+                    DisplayArtists(artists);
+                    break;
+
+                case "2":  //return menu
+                    Program.UpdateArtistsName();
                     break;
 
                 default:
@@ -231,6 +285,33 @@ namespace MusicDBApp.View
             }
         }
 
+        public void tblVinylU()
+        {
+            Console.WriteLine("Welcome to tblVinyl");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblVinyl");
+            Console.WriteLine("5: Return to main menu");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<Vinyl> vinyls = storageManager.GetAllVinyl();
+                    DisplayVinyls(vinyls);
+                    break;
+
+                case "2":
+                    Program.UpdateVinylsName();
+                    break;  //retrun menu
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
+        }
+
         public void tblGenreA()
         {
             Console.WriteLine("Welcome to tblGenre");
@@ -261,6 +342,33 @@ namespace MusicDBApp.View
 
                 case "4":
                     Program.DeleteRecordLabelByName();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
+        }
+
+        public void tblGenreU()
+        {
+            Console.WriteLine("Welcome to tblGenre");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblGenre");
+            Console.WriteLine("5: Return to main menu"); //return menu
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<Genres> genres = storageManager.GetAllGenres();
+                    DisplayGenres(genres);
+                    break;
+
+                case "2":
+                    Program.UpdateVinylsName(); //retrun menu
                     break;
 
                 default:
@@ -308,6 +416,34 @@ namespace MusicDBApp.View
 
         }
 
+        public void tblReviewsU()
+        {
+            Console.WriteLine("Welcome to tblReviews");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblReviews");
+            Console.WriteLine("5: Return to main menu");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<Reviews> reviews = storageManager.GetAllReviews();
+                    DisplayReviews(reviews);
+                    break;
+
+                case "2":
+                    Program.UpdateVinylsName(); //return menu
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
+
+        }
+
         public void tblReviewCommentsA()
         {
             Console.WriteLine("Welcome to tblReviewComments");
@@ -338,6 +474,34 @@ namespace MusicDBApp.View
 
                 case "4":
                     Program.DeleteRecordLabelByName();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
+
+        }
+
+        public void tblReviewCommentsU()
+        {
+            Console.WriteLine("Welcome to tblReviewComments");
+            Console.WriteLine("Please choose one of the following options");
+            Console.WriteLine("Menu: ");
+            Console.WriteLine("1: View All records in tblReviewComments");
+            Console.WriteLine("5: Return to main menu");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
+                    DisplayReviewComments(reviewComments);
+                    break;
+
+                case "2":
+                    Program.UpdateVinylsName(); //return menu
                     break;
 
                 default:
