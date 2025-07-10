@@ -264,6 +264,8 @@ public class StorageManager
                 {
                     string GenreName = reader["Genre_Name"].ToString();
                     int GenreID = Convert.ToInt32(reader["Genre_ID"]);
+
+                    Console.WriteLine($"Name: {GenreName}");
                 }
             }
         }
@@ -281,6 +283,8 @@ public class StorageManager
                 {
                     string RecordLabelName = reader["RecordLabel_Name"].ToString();
                     int RecordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
+
+                    Console.WriteLine($"Name: {RecordLabelName}");
                 }
             }
         }
@@ -289,7 +293,7 @@ public class StorageManager
 
     public void SmpQry3()
     {
-        string sqlString = "SELECT * FROM tblReviewComments ORDER by Short_Review;";
+        string sqlString = "SELECT * FROM tblReviewComments ORDER BY CAST(Short_Review AS NVARCHAR(MAX));";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
@@ -301,6 +305,8 @@ public class StorageManager
                     int ReviewID = Convert.ToInt32(reader["Review_ID"]);
                     int ReviewCommentID = Convert.ToInt32(reader["ReviewComment_ID"]);
                     DateTime ReviewDate = Convert.ToDateTime(reader["Review_Date"]);
+
+                    Console.WriteLine($"Review: {ShortReview}, Date and Time: {ReviewCommentID}");
                 }
             }
         }
