@@ -123,29 +123,30 @@ public class StorageManager
         return (Password);
     }
     */
-
+    
     public int getRoleID(string username)
     {
         int roleID = 0;
 
-        string sqlString = "SELECT Role_ID FROM tblUser WHERE Role_ID = @Role_ID";
+        string sqlString = "SELECT Role_ID FROM tblUser WHERE User_Name = @User_Name";
 
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            cmd.Parameters.AddWithValue("@Role_ID", username);
+            cmd.Parameters.AddWithValue("@User_Name", username);
 
 
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
                 {
-                    username = reader["Role_ID"].ToString();
+                    roleID = Convert.ToInt32(reader["Role_ID"]);
                 }
             }
         }
         return (roleID);
     }
+    
 
     public int getUserID(string username)
     {
