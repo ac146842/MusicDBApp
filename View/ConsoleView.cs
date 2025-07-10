@@ -231,7 +231,7 @@ namespace MusicDBApp.View
             {
                 case "1":
                     List<Genres> genres = storageManager.GetAllGenres();
-                    DisplayVinyls(genres);
+                    DisplayGenres(genres);
                     break;
 
                 case "2":
