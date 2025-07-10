@@ -149,6 +149,10 @@ namespace MusicDBApp.View
                     Program.DeleteRecordLabelByName();
                     break;
 
+                case "5":
+                    DisplayAdminMenu(); //return to main menu
+                    break;
+
                 default:
                     Console.WriteLine("Invalid option Please try again");
                     break;
@@ -173,7 +177,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    Program.UpdateRecordLabelsName(); //return to main menu
+                    DisplayUserMenu(); //return to main menu
                     break;
 
                 default:
@@ -214,6 +218,10 @@ namespace MusicDBApp.View
                     Program.DeleteArtistByName();
                     break;
 
+                case "5":
+                    DisplayAdminMenu(); //return to main menu
+                    break;
+
                 default:
                     Console.WriteLine("Invalid option Please try again");
                     break;
@@ -226,7 +234,7 @@ namespace MusicDBApp.View
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View all existing Artists");
-            Console.WriteLine("5: Return to main menu");
+            Console.WriteLine("2: Return to main menu");
 
             string choice = Console.ReadLine();
 
@@ -238,7 +246,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":  //return menu
-                    Program.UpdateArtistsName();
+                    DisplayUserMenu();
                     break;
 
                 default:
@@ -279,6 +287,10 @@ namespace MusicDBApp.View
                     Program.DeleteRecordLabelByName();
                     break;
 
+                case "5":
+                    DisplayAdminMenu(); //return to main menu
+                    break;
+
                 default:
                     Console.WriteLine("Invalid option Please try again");
                     break;
@@ -291,7 +303,7 @@ namespace MusicDBApp.View
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblVinyl");
-            Console.WriteLine("5: Return to main menu");
+            Console.WriteLine("2: Return to main menu");
 
             string choice = Console.ReadLine();
 
@@ -303,7 +315,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    Program.UpdateVinylsName();
+                    DisplayUserMenu();
                     break;  //retrun menu
 
                 default:
@@ -344,6 +356,10 @@ namespace MusicDBApp.View
                     Program.DeleteRecordLabelByName();
                     break;
 
+                case "5":
+                    DisplayAdminMenu(); //return to main menu
+                    break;
+
                 default:
                     Console.WriteLine("Invalid option Please try again");
                     break;
@@ -356,7 +372,7 @@ namespace MusicDBApp.View
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblGenre");
-            Console.WriteLine("5: Return to main menu"); //return menu
+            Console.WriteLine("2: Return to main menu"); //return menu
 
             string choice = Console.ReadLine();
 
@@ -368,7 +384,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    Program.UpdateVinylsName(); //retrun menu
+                    DisplayUserMenu();
                     break;
 
                 default:
@@ -409,6 +425,10 @@ namespace MusicDBApp.View
                     Program.DeleteRecordLabelByName();
                     break;
 
+                case "5":
+                    DisplayAdminMenu(); //return to main menu
+                    break;
+
                 default:
                     Console.WriteLine("Invalid option Please try again");
                     break;
@@ -422,7 +442,7 @@ namespace MusicDBApp.View
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblReviews");
-            Console.WriteLine("5: Return to main menu");
+            Console.WriteLine("2: Return to main menu");
 
             string choice = Console.ReadLine();
 
@@ -434,7 +454,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    Program.UpdateVinylsName(); //return menu
+                    DisplayUserMenu(); //return menu
                     break;
 
                 default:
@@ -476,6 +496,10 @@ namespace MusicDBApp.View
                     Program.DeleteRecordLabelByName();
                     break;
 
+                case "5":
+                    DisplayAdminMenu(); //return to main menu
+                    break;
+
                 default:
                     Console.WriteLine("Invalid option Please try again");
                     break;
@@ -489,7 +513,7 @@ namespace MusicDBApp.View
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblReviewComments");
-            Console.WriteLine("5: Return to main menu");
+            Console.WriteLine("2: Return to main menu");
 
             string choice = Console.ReadLine();
 
@@ -501,7 +525,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    Program.UpdateVinylsName(); //return menu
+                    DisplayUserMenu();
                     break;
 
                 default:
