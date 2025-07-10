@@ -422,10 +422,10 @@ public class StorageManager
             {
                 while (reader.Read())
                 {
-                    string ReviewDate = reader["Review_Date"].ToString();
+                    DateTime ReviewDate = Convert.ToDateTime(reader["Review_Date"]);
                     string ShortReview = reader["Short_Review"].ToString();
 
-                    Console.WriteLine($"Short Review: {ShortReview}, Review Date: {ReviewDate}");
+                    Console.WriteLine($"Short Review: {ShortReview}, Review Date: {ReviewDate.ToString("yyyy-MM-dd")}");
                 }
             }
         }
