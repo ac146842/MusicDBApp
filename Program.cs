@@ -103,27 +103,27 @@ namespace MusicDBApp
                 switch (choice)
                 {
                     case "1":
-                       // view.tblRecordLabel();
+                       view.tblRecordLabelU();
 
                         break;
                     case "2":
-                        //view.tblArtist();
+                        view.tblArtistU();
 
                         break;
                     case "3":
-                        //view.tblVinyl();
+                        view.tblVinylU();
 
                         break;
                     case "4":
-                      //  view.tblGenre();
+                        view.tblGenreU();
 
                         break;
                     case "5":
-                      //  view.tblReviews();
+                        view.tblReviewsU();
 
                         break;
                     case "6":
-                        //view.tblReviewComments();
+                        view.tblReviewCommentsU();
 
                         break;
                     case "7":
