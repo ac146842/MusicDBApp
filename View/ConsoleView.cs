@@ -534,40 +534,11 @@ namespace MusicDBApp.View
             }
         }
 
-        public void QueryOptions()
-        {
-            Console.WriteLine("Choose one of the folling: ");
-            Console.WriteLine("1. Simple");
-            Console.WriteLine("2. Advanced");
-            Console.WriteLine("3. Complex");
-            Console.WriteLine(" ");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
-            {
-                case "1":
-                    SmpQueries();
-                    break;
-
-                case "2":
-                    AdvQueries();
-                    break;
-
-                case "3":
-                    CmxQueries();
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
-            }
-        }
-
-        public string SmpQueries()
+        public string QueryOptions()
         {
             Console.WriteLine("Please select one of the following: ");
-            Console.WriteLine("Simple: ");
+
+            Console.WriteLine("Simple");
             Console.WriteLine("1. ");
             Console.WriteLine("2. ");
             Console.WriteLine("3. ");
@@ -575,11 +546,6 @@ namespace MusicDBApp.View
             Console.WriteLine("5. ");
             Console.WriteLine(" ");
 
-            return Console.ReadLine();
-        }
-
-        public void AdvQueries()
-        {
             Console.WriteLine("Advanced: ");
             Console.WriteLine("6. ");
             Console.WriteLine("7. ");
@@ -587,10 +553,7 @@ namespace MusicDBApp.View
             Console.WriteLine("9. ");
             Console.WriteLine("10. ");
             Console.WriteLine(" ");
-        }
 
-        public void CmxQueries()
-        {
             Console.WriteLine("Complex: ");
             Console.WriteLine("11. ");
             Console.WriteLine("12. ");
@@ -598,6 +561,8 @@ namespace MusicDBApp.View
             Console.WriteLine("14. ");
             Console.WriteLine("15 ");
             Console.WriteLine(" ");
+
+            return Console.ReadLine();
         }
 
         /*

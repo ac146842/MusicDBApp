@@ -12,6 +12,9 @@ namespace MusicDBApp
         private static StorageManager storageManager;
         private static ConsoleView view;
 
+        string tblchoice;
+        string choice;
+
         static void Main(string[] args)
         {
             //school connection
@@ -83,9 +86,67 @@ namespace MusicDBApp
                         view.tblReviewCommentsA();
                         
                         break;
+
                     case "7":
                         view.QueryOptions();
-                        
+
+                        while (true)
+                        {
+                            Console.Write("Please enter one of the following options: ");
+                            string queryChoice = Console.ReadLine();
+
+                            switch (queryChoice)
+                            {
+                                case "1":
+                                    storageManager.SmpQry1();
+                                    break;
+
+                                case "2":
+                                    storageManager.SmpQry2();
+                                    break;
+
+                                case "3":
+                                    storageManager.SmpQry3();
+                                    break;
+
+                                case "4":
+                                    storageManager.SmpQry4();
+                                    break;
+
+                                case "5":
+                                    storageManager.SmpQry5();
+                                    break;
+
+                                case "6":
+                                    storageManager.AdvQry1();
+                                    break;
+
+                                case "7":
+                                    storageManager.AdvQry2();
+                                    break;
+
+                                case "8":
+                                    storageManager.AdvQry3();
+                                    break;
+
+                                case "9":
+                                    storageManager.AdvQry4();
+                                    break;
+
+                                case "10":
+                                    storageManager.AdvQry5();
+                                    break;
+
+                                case "11":
+                                    storageManager.CmxQry6();
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Invalid query option. Try again.");
+                                    break;
+                            }
+                        }
+
                         break;
                     default:
                         Console.WriteLine("Invalid option. Please try again.");
@@ -98,79 +159,33 @@ namespace MusicDBApp
         {
             while (true)
             {
-
                 string choice = view.DisplayUserMenu();
+
                 switch (choice)
                 {
                     case "1":
-                       view.tblRecordLabelU();
-
+                        view.tblRecordLabelU();
                         break;
                     case "2":
                         view.tblArtistU();
-
                         break;
                     case "3":
                         view.tblVinylU();
-
                         break;
                     case "4":
                         view.tblGenreU();
-
                         break;
                     case "5":
                         view.tblReviewsU();
-
                         break;
                     case "6":
                         view.tblReviewCommentsU();
-
-                        break;
-                    case "7":
-                        view.QueryOptions();
-
-                        break;
-                    default:
-                        Console.WriteLine("Invalid option. Please try again.");
-                        break;
+                        break;                    
                 }
             }
         }
 
-        public static void SmpQueryMenu()
-        {
-            while (true)
-            {
-                string choice = view.SmpQueries();
 
-                switch (choice)
-                {
-                    case "1":
-                        Console.WriteLine("Query 1");
-                        break;
-
-                    case "2":
-                        Console.WriteLine("Query 2");
-                        break;
-
-                    case "3":
-                        Console.WriteLine("Query 3");
-                        break;
-
-                    case "4":
-                        Console.WriteLine("Query 4");
-                        break;
-
-                    case "5":
-                        Console.WriteLine("Query 5");
-                        break;
-
-                    default:
-                        Console.WriteLine("Invalid option please try again.");
-                        break;
-                }
-            }
-        }
 
         /*
         do
