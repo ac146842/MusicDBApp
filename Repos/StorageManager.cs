@@ -326,6 +326,8 @@ public class StorageManager
                     int ReviewID = Convert.ToInt32(reader["Review_ID"]);
                     int VinylID = Convert.ToInt32(reader["Vinyl_ID"]);
                     decimal OutOf5 = Convert.ToDecimal(reader["Out_Of_5"]);
+
+                    Console.WriteLine($"Reviewer Name: {ReviewerName}, Rating: {OutOf5}");
                 }
             }
         }
@@ -345,6 +347,8 @@ public class StorageManager
                     int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
                     string VinylName = reader["Vinyl_Name"].ToString();
                     DateTime DateOfRelease = Convert.ToDateTime(reader["Date_Of_Release"]);
+
+                    Console.WriteLine($"Vinyl Name: {VinylName}, Release date: {DateOfRelease}");
                 }
             }
         }
