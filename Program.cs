@@ -137,9 +137,39 @@ namespace MusicDBApp
             }
         }
 
-        public static void Queries() 
-        { 
+        public static void SmpQueryMenu()
+        {
+            while (true)
+            {
+                string choice = view.SmpQueries();
 
+                switch (choice)
+                {
+                    case "1":
+                        Console.WriteLine("Query 1");
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Query 2");
+                        break;
+
+                    case "3":
+                        Console.WriteLine("Query 3");
+                        break;
+
+                    case "4":
+                        Console.WriteLine("Query 4");
+                        break;
+
+                    case "5":
+                        Console.WriteLine("Query 5");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option please try again.");
+                        break;
+                }
+            }
         }
 
         /*

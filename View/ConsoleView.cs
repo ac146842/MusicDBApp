@@ -564,8 +564,9 @@ namespace MusicDBApp.View
             }
         }
 
-        public void SmpQueries()
+        public string SmpQueries()
         {
+            Console.Write("Please select one of the following: ");
             Console.WriteLine("Simple: ");
             Console.WriteLine("1. ");
             Console.WriteLine("2. ");
@@ -573,6 +574,8 @@ namespace MusicDBApp.View
             Console.WriteLine("4. ");
             Console.WriteLine("5. ");
             Console.WriteLine(" ");
+
+            return Console.ReadLine();
         }
 
         public void AdvQueries()
