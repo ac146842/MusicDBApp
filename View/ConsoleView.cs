@@ -48,7 +48,7 @@ namespace MusicDBApp.View
             {
                 if (roleID == 1)
                 {
-                    DisplayAdminMenu();
+                    Program.AdminMenuLoop();
                 }
 
                 else if (roleID == 2)

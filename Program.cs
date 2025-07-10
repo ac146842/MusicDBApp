@@ -27,357 +27,108 @@ namespace MusicDBApp
             // string tblchoice = view.TblDisplayMenu();
             // string choice = view.DisplayMenu();
             bool Notvalid = true;
-            string tblchoice;
-            string choice;
+            string tblchoice;           
 
-            do
+            string choice = view.WelcomeMenu();
+
+            switch (choice)
             {
-                tblchoice = view.WelcomeMenu();
-                Console.Clear();
+                case "1":
+                    view.LoginMenu();
+                    break;
 
-                switch (tblchoice)
+                case "2":
+                    Console.WriteLine("register");
+                    break;
+
+                default:
+                    Console.WriteLine("Please try again.");
+                    break;
+            }
+        }
+
+
+
+
+            public static void AdminMenuLoop()
+        { 
+            while (true)
+            {
+                string choice = view.DisplayAdminMenu();
+                switch (choice)
                 {
-
-                    case "1":
-                        view.LoginMenu();
-                        break;
-
-                    case "2":
-                        view.RegisterMenu();
-                        break;
-
-                    /*
                     case "1":
                         view.tblRecordLabel();
-                        Notvalid = false;
-
-                        do
-                        {
-                            choice = Console.ReadLine();
-                            switch (choice)
-                            {
-                                case "1":
-                                    {
-                                        List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
-                                        view.DisplayRecordLabels(recordLabels);
-                                    }
-                                    break;
-
-                                case "2":
-                                    UpdateRecordLabelsName();
-                                    break;
-
-                                case "3":
-                                    InsertNewRecordLabels();
-                                    break;
-
-                                case "4":
-                                    DeleteRecordLabelByName();
-                                    break;
-
-                                default:
-                                    Console.WriteLine("Invalid option. Please try again.");
-                                    break;
-                            }
-                        }
-                        while (Notvalid);
                         break;
-
-                        break;
-
                     case "2":
                         view.tblArtist();
-                        Notvalid = false;
-
-                        do
-                        {
-                            choice = Console.ReadLine();
-                            switch (choice)
-                            {
-                                case "1":
-                                    {
-                                        List<Artist> artists = storageManager.GetAllArtist();
-                                        view.DisplayArtists(artists);
-                                    }
-                                    break;
-
-                                case "2":
-                                    UpdateArtistsName();
-                                    break;
-
-                                case "3":
-                                    InsertNewArtists();
-                                    break;
-
-                                case "4":
-                                    DeleteArtistByName();
-                                    break;
-
-                                default:
-                                    Console.WriteLine("Invalid option. Please try again.");
-                                    break;
-                            }
-                        }
-                        while (Notvalid);
                         break;
-
                     case "3":
                         view.tblVinyl();
-                        Notvalid = false;
-
-                        do
-                        {
-                            choice = Console.ReadLine();
-                            switch (choice)
-                            {
-                                case "1":
-                                    {
-                                        List<Vinyl> vinyl = storageManager.GetAllVinyl();
-                                        view.DisplayVinyls(vinyl);
-                                    }
-                                    break;
-
-                                case "2":
-                                    UpdateVinylsName();
-                                    break;
-
-                                case "3":
-                                    InsertNewGenres();
-                                    break;
-
-                                case "4":
-                                    DeleteVinylByName();
-                                    break;
-
-                                default:
-                                    Console.WriteLine("Invalid option. Please try again.");
-                                    break;
-                            }
-                        }
-                        while (Notvalid);
                         break;
-
-
                     case "4":
                         view.tblGenre();
-                        Notvalid = false;
-
-                        do
-                        {
-                            choice = Console.ReadLine();
-                            switch (choice)
-                            {
-                                case "1":
-                                    {
-                                        List<Genres> genres = storageManager.GetAllGenres();
-                                        view.DisplayGenres(genres);
-                                    }
-                                    break;
-
-                                case "2":
-                                    UpdateGenresName();
-                                    break;
-
-                                case "3":
-                                    InsertNewGenres();
-                                    break;
-
-                                case "4":
-                                    DeleteGenresByName();
-                                    break;
-
-                                default:
-                                    Console.WriteLine("Invalid option. Please try again.");
-                                    break;
-                            }
-                        }
-                        while (Notvalid);
                         break;
-
                     case "5":
                         view.tblReviews();
-                        Notvalid = false;
-
-                        do
-                        {
-                            choice = Console.ReadLine();
-                            switch (choice)
-                            {
-                                case "1":
-                                    {
-                                        List<Reviews> reviews = storageManager.GetAllReviews();
-                                        view.DisplayReviews(reviews);
-                                    }
-                                    break;
-
-                                case "2":
-                                    UpdateReviewersName();
-                                    break;
-
-                                case "3":
-                                    InsertNewGenres();
-                                    break;
-
-                                case "4":
-                                    DeleteReviewByName();
-                                    break;
-
-                                default:
-                                    Console.WriteLine("Invalid option. Please try again.");
-                                    break;
-                            }
-                        }
-                        while (Notvalid);
                         break;
-
                     case "6":
                         view.tblReviewComments();
-                        Notvalid = false;
-
-                        do
-                        {
-                            choice = Console.ReadLine();
-                            switch (choice)
-                            {
-                                case "1":
-                                    {
-                                        List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
-                                        view.DisplayReviewComments(reviewComments);
-                                    }
-                                    break;
-
-                                case "2":
-                                    UpdateReviewComments();
-                                    break;
-
-                                case "3":
-                                    InsertNewGenres();
-                                    break;
-
-                                case "4":
-                                    //DeleteReviewCommentByID();
-                                    break;
-
-                                default:
-                                    Console.WriteLine("Invalid option. Please try again.");
-                                    break;
-                            }
-                        }
-                        while (Notvalid);
                         break;
-
-
                     case "7":
                         view.QueryOptions();
-
-                        do
-                        {
-                            choice = Console.ReadLine();
-                            switch (choice)
-                            {
-                                case "1":
-                                    storageManager.SmpQry1();
-                                    break;
-
-                                case "2":
-                                    storageManager.SmpQry2();
-                                    break;
-
-                                case "3":
-                                    storageManager.SmpQry3();
-                                    break;
-
-                                case "4":
-                                    storageManager.SmpQry4();
-                                    break;
-
-                                case "5":
-                                    storageManager.SmpQry5();
-                                    break;
-
-                                case "6":
-                                    storageManager.AdvQry1();
-                                    break;
-
-                                case "7":
-                                    storageManager.AdvQry2();
-                                    break;
-
-                                case "8":
-                                    storageManager.AdvQry3();
-                                    break;
-
-                                case "9":
-                                    storageManager.AdvQry4();
-                                    break;
-
-                                case "10":
-                                    storageManager.AdvQry5();
-                                    break;
-
-                                case "11":
-                                    storageManager.CmxQry6();
-                                    break;
-                            }
-                        }
-
-
-                        while (true);
-
                         break;
-                    /*
-                    do
-                    {
-                        choice = Console.ReadLine();
-                        switch (choice)
-                        {
-                            case "1":
-                                {
-                                    view.AdvQry1();
-                                }
-                                break;
-
-                            case "2":
-                                //UpdateReviewersName();
-                                break;
-
-                            case "3":
-                                //InsertNewGenres();
-                                break;
-
-                            case "4":
-                                //DeleteGenresByName();
-                                break;
-
-                            default:
-                                Console.WriteLine("Invalid option. Please try again.");
-                                break;
-                        }
-                    }
-
-                    while (Notvalid);
-                    break;
-                    */
                     default:
-                        Console.WriteLine("Invalid option please try again.");
-                        Notvalid = false;
+                        Console.WriteLine("Invalid option. Please try again.");
                         break;
                 }
             }
-            while (true);
-
-            storageManager.CloseConnection();
         }
 
-
-        private static void Login()
+        /*
+        do
         {
-            Console.WriteLine("Please enter your Username: ");
-            string UserName = Console.ReadLine();
+            choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    {
+                        view.AdvQry1();
+                    }
+                    break;
 
-            Console.WriteLine("Please enter your Password: ");
-            string Password = Console.ReadLine();
+                case "2":
+                    //UpdateReviewersName();
+                    break;
+
+                case "3":
+                    //InsertNewGenres();
+                    break;
+
+                case "4":
+                    //DeleteGenresByName();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option. Please try again.");
+                    break;
+            }
         }
+
+        while (Notvalid);
+        break;
+
+        default:
+            Console.WriteLine("Invalid option please try again.");
+            Notvalid = false;
+            break;
+    }
+}
+while (true);
+
+storageManager.CloseConnection();
+}
+*/
 
 
         /*
