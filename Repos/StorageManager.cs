@@ -152,18 +152,18 @@ public class StorageManager
     {
         int userID = 0;
 
-        string sqlString = "SELECT User_ID FROM tblUser WHERE User_ID = @User_ID";
+        string sqlString = "SELECT User_ID FROM tblUser WHERE User_Name = @User_Name";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            cmd.Parameters.AddWithValue("@User_ID", username);
+            cmd.Parameters.AddWithValue("@User_Name", username);
 
 
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
                 {
-                    username = reader["User_ID"].ToString();
+                    userID = Convert.ToInt32(reader["User_ID"]);
                 }
             }
         }
