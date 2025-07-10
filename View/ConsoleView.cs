@@ -31,7 +31,7 @@ namespace MusicDBApp.View
         public void LoginMenu()
         {
 
-            Console.WriteLine("Please choose one of the following options: ");
+            Console.WriteLine("Please enter your login credentials: ");
 
             Console.WriteLine("Please enter your Username: ");
             string InputtedUsername = Console.ReadLine();
@@ -44,19 +44,16 @@ namespace MusicDBApp.View
             int roleID = storageManager.getRoleID(InputtedUsername);
             int userID = storageManager.getUserID(InputtedUsername);
 
-            if (InputtedUsername.Equals(Username) && InputtedUsername.Equals(Password))
+            if (!string.IsNullOrEmpty(Username) && InputtedUsername.Equals(Username) && InputtedPassword.Equals(Password))
             {
                 if (roleID == 1)
                 {
                     DisplayAdminMenu();
                 }
 
-                else
+                else if (roleID == 2)
                 {
-                    if (roleID == 2)
-                    {
-                        //DisplayUserMenu();
-                    }
+                    // DisplayUserMenu();
                 }
             }
             else

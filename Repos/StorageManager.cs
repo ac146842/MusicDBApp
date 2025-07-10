@@ -79,15 +79,10 @@ public class StorageManager
     public string getPassword(string username)
     {
         string Password = "";
-
-        string sqlString = "SELECT Password FROM tblUser WHERE password = @Password";
-
-
-
+        string sqlString = "SELECT Password FROM tblUser WHERE User_Name = @User_Name";
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            cmd.Parameters.AddWithValue("@password", username);
-
+            cmd.Parameters.AddWithValue("@User_Name", username);
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
@@ -98,6 +93,7 @@ public class StorageManager
         }
         return Password;
     }
+
 
 
     /*
@@ -123,7 +119,7 @@ public class StorageManager
         return (Password);
     }
     */
-    
+
     public int getRoleID(string username)
     {
         int roleID = 0;
