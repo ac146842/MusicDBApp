@@ -50,7 +50,7 @@ namespace MusicDBApp
 
 
 
-            public static void AdminMenuLoop()
+            public static void AdminMenu()
         { 
             while (true)
             {

@@ -49,12 +49,12 @@ namespace MusicDBApp.View
             {
                 if (roleID == 1)
                 {
-                    Program.AdminMenuLoop();
+                    Program.AdminMenu();
                 }
 
                 else if (roleID == 2)
                 {
-                    // DisplayUserMenu();
+                    Program.UserMenu();
                 }
             }
             else
