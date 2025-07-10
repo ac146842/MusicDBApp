@@ -31,7 +31,7 @@ namespace MusicDBApp.View
 
         public void LoginMenu()
         {
-            Console.Clear();
+            
             Console.WriteLine("Please enter your login credentials: ");
 
             Console.WriteLine("Please enter your Username: ");
@@ -154,7 +154,8 @@ namespace MusicDBApp.View
             switch (choice)
             {
                 case "1":
-                        
+                    List<Artist> artists = storageManager.GetAllArtist();
+                    DisplayArtists(artists);
                     break;
 
                 case "2":
@@ -191,7 +192,8 @@ namespace MusicDBApp.View
             switch (choice)
             {
                 case "1":
-
+                    List<Vinyl> vinyls = storageManager.GetAllVinyl();
+                    DisplayVinyls(vinyls);
                     break;
 
                 case "2":
@@ -222,6 +224,32 @@ namespace MusicDBApp.View
             Console.WriteLine("3: Insert a new Genre");
             Console.WriteLine("4: Delete a Genre by Name");
             Console.WriteLine("5: Return to main menu");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<Genres> genres = storageManager.GetAllGenres();
+                    DisplayVinyls(genres);
+                    break;
+
+                case "2":
+                    Program.UpdateVinylsName();
+                    break;
+
+                case "3":
+                    // storageManager.InsertLocationArtists();
+                    break;
+
+                case "4":
+                    Program.DeleteRecordLabelByName();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
         }
 
         public void tblReviews()
@@ -234,6 +262,33 @@ namespace MusicDBApp.View
             Console.WriteLine("3: Insert a new Review");
             Console.WriteLine("4: Delete a Review by Name");
             Console.WriteLine("5: Return to main menu");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<Reviews> reviews = storageManager.GetAllReviews();
+                    DisplayReviews(reviews);
+                    break;
+
+                case "2":
+                    Program.UpdateVinylsName();
+                    break;
+
+                case "3":
+                    // storageManager.InsertLocationArtists();
+                    break;
+
+                case "4":
+                    Program.DeleteRecordLabelByName();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
+
         }
 
         public void tblReviewComments()
@@ -246,6 +301,33 @@ namespace MusicDBApp.View
             Console.WriteLine("3: Insert a new Review Comment");
             Console.WriteLine("4: Delete a Review Comment by Name");
             Console.WriteLine("5: Return to main menu");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
+                    DisplayReviewComments(reviewComments);
+                    break;
+
+                case "2":
+                    Program.UpdateVinylsName();
+                    break;
+
+                case "3":
+                    // storageManager.InsertLocationArtists();
+                    break;
+
+                case "4":
+                    Program.DeleteRecordLabelByName();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
+
         }
 
         public void QueryOptions()
