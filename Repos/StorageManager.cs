@@ -128,12 +128,12 @@ public class StorageManager
     {
         int roleID = 0;
 
-        string sqlString = "SELECT Role_ID FROM tblUser WHERE roleID = @Role_ID";
+        string sqlString = "SELECT Role_ID FROM tblUser WHERE Role_ID = @Role_ID";
 
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
-            cmd.Parameters.AddWithValue("@roleID", username);
+            cmd.Parameters.AddWithValue("@Role_ID", username);
 
 
             using (SqlDataReader reader = cmd.ExecuteReader())
