@@ -348,7 +348,7 @@ public class StorageManager
                     string VinylName = reader["Vinyl_Name"].ToString();
                     DateTime DateOfRelease = Convert.ToDateTime(reader["Date_Of_Release"]);
 
-                    Console.WriteLine($"Vinyl Name: {VinylName}, Release date: {DateOfRelease}");
+                    Console.WriteLine($"Vinyl Name: {VinylName}, Release date: {DateOfRelease.ToString("yyyy-MM-dd")}");
                 }
             }
         }
@@ -356,7 +356,7 @@ public class StorageManager
 
     public void AdvQry1()
     {
-        string sqlString = "SELECT Artist_Name, Artist_ID, RecordLabel_ID FROM TblArtist WHERE Artist_Name LIKE 'A%' ORDER BY Artist_Name;";
+        string sqlString = "SELECT Artist_Name, Artist_ID, RecordLabel_ID FROM TblArtist WHERE Artist_Name LIKE 'A%' ORDER BY CAST(Artist_Name AS NVARCHAR(MAX));";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
@@ -367,6 +367,8 @@ public class StorageManager
                     string artistName = reader["Artist_Name"].ToString();
                     int artistID = Convert.ToInt32(reader["Artist_ID"]);
                     int recordLabelID = Convert.ToInt32(reader["RecordLabel_ID"]);
+
+                    Console.WriteLine($"Artist Name: {artistName}");
                 }
             }
         }
@@ -374,7 +376,7 @@ public class StorageManager
 
     public void AdvQry2()
     {
-        string sqlString = "SELECT Genre_Name, Description FROM tblGenre WHERE Genre_Name > 'M' ORDER BY Genre_Name;";
+        string sqlString = "SELECT Genre_Name, Description FROM tblGenre WHERE Genre_Name > 'M' ORDER BY CAST(Genre_Name AS NVARCHAR(MAX));";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
@@ -384,6 +386,8 @@ public class StorageManager
                 {
                     string GenreName = reader["Genre_Name"].ToString();
                     string Description = reader["Description"].ToString();
+
+                    Console.WriteLine($"Genre Name: {GenreName}, Description: {Description}");
                 }
             }
         }
@@ -401,6 +405,8 @@ public class StorageManager
                 {
                     string ReviewerName = reader["Reviewer_Name"].ToString();
                     string OutOf5 = reader["Out_Of_5"].ToString();
+
+                    Console.WriteLine($"Reviewer Name: {ReviewerName}, Rating: {OutOf5}");
                 }
             }
         }
@@ -418,6 +424,8 @@ public class StorageManager
                 {
                     string ReviewDate = reader["ReviewDate"].ToString();
                     string ShortReview = reader["ShortReview"].ToString();
+
+                    Console.WriteLine($"Short Review: {ShortReview}, Review Date: {ReviewDate}");
                 }
             }
         }
@@ -435,6 +443,8 @@ public class StorageManager
                 {
                     string ReviewDate = reader["ReviewDate"].ToString();
                     string ShortReview = reader["ShortReview"].ToString();
+
+                    Console.WriteLine($"Short Review: {ShortReview}, Review Date: {ReviewDate}");
                 }
             }
         }
