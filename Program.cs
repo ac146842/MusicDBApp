@@ -192,7 +192,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
-        private static void UpdateArtistsName()
+        public static void UpdateArtistsName()
         {
             view.DisplayMessage("Enter the Artist_ID to update: ");
             int ArtistID = view.GetIntInput();
@@ -202,7 +202,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
-        private static void UpdateVinylsName()
+        public static void UpdateVinylsName()
         {
             view.DisplayMessage("Enter the Vinyl_ID to update: ");
             int VinylID = view.GetIntInput();
@@ -254,7 +254,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"new Record Label {recordLabel.RecordLabel_Name} inserted with ID {generateID}");
         }
 
-        private static void InsertNewArtists()
+        public static void InsertNewArtists()
         {
             view.DisplayMessage("Enter the new Artist name: ");
             string ArtistName = view.GetInput();
@@ -264,6 +264,19 @@ storageManager.CloseConnection();
             int generateID = storageManager.InsertLocationArtists(artist);
             view.DisplayMessage($"new Artist {artist.Artist_Name} inserted with ID {generateID}");
         }
+
+        /*
+        public static void InsertNewVinyls()
+        {
+            view.DisplayMessage("Enter the new Vinyl name: ");
+            string vinylName = view.GetInput();
+            int VinylID = 0;
+            int RecordLabelID = 0;
+            Vinyl vinyl = new Vinyl(VinylName, ArtistID, RecordLabelID);
+            int generateID = storageManager.InsertLocationVinyls(vinyl);
+            view.DisplayMessage($"new Artist {vinyl.Vinyl_Name} inserted with ID {generateID}");
+        }
+        */
 
         private static void InsertNewGenres()
         {
@@ -285,7 +298,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
-        private static void DeleteArtistByName()
+        public static void DeleteArtistByName()
         {
             view.DisplayMessage("Enter the Artist to delete");
             string artistName = view.GetInput();
