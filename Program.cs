@@ -27,8 +27,9 @@ namespace MusicDBApp
             // string tblchoice = view.TblDisplayMenu();
             // string choice = view.DisplayMenu();
             bool Notvalid = true;
-            string tblchoice;           
+            string tblchoice;
 
+            Console.Clear();
             string choice = view.WelcomeMenu();
 
             switch (choice)
@@ -54,29 +55,37 @@ namespace MusicDBApp
         { 
             while (true)
             {
+                
                 string choice = view.DisplayAdminMenu();
                 switch (choice)
                 {
                     case "1":
                         view.tblRecordLabel();
+
                         break;
                     case "2":
                         view.tblArtist();
+
                         break;
                     case "3":
                         view.tblVinyl();
+
                         break;
                     case "4":
                         view.tblGenre();
+
                         break;
                     case "5":
                         view.tblReviews();
+                     
                         break;
                     case "6":
                         view.tblReviewComments();
+                        
                         break;
                     case "7":
                         view.QueryOptions();
+                        
                         break;
                     default:
                         Console.WriteLine("Invalid option. Please try again.");
@@ -173,7 +182,7 @@ storageManager.CloseConnection();
         */
 
 
-        private static void UpdateRecordLabelsName()
+        public static void UpdateRecordLabelsName()
         {
             view.DisplayMessage("Enter the RecordLabel_ID to update: ");
             int RecordLabelID = view.GetIntInput();
@@ -235,7 +244,7 @@ storageManager.CloseConnection();
         }
 
 
-        private static void InsertNewRecordLabels()
+        public static void InsertNewRecordLabels()
         {
             view.DisplayMessage("Enter the new Record Label name: ");
             string RecordLabelName = view.GetInput();
@@ -268,7 +277,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"new Genre {genre.Genre_Name} with Description {genre.Description} inserted with ID {generateID}");
         }
 
-        private static void DeleteRecordLabelByName()
+        public static void DeleteRecordLabelByName()
         {
             view.DisplayMessage("Enter the Record Label to delete");
             string recordLabelName = view.GetInput();

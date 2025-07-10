@@ -19,6 +19,7 @@ namespace MusicDBApp.View
 
         public string WelcomeMenu()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to MusicDB ");
             Console.WriteLine("Please choose one of the following options: ");
             Console.WriteLine("1. Login ");
@@ -30,7 +31,7 @@ namespace MusicDBApp.View
 
         public void LoginMenu()
         {
-
+            Console.Clear();
             Console.WriteLine("Please enter your login credentials: ");
 
             Console.WriteLine("Please enter your Username: ");
@@ -109,6 +110,32 @@ namespace MusicDBApp.View
             Console.WriteLine("3: Insert a new Record Label");
             Console.WriteLine("4: Delete a Record Label by Name");
             Console.WriteLine("5: Return to main menu");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
+                    DisplayRecordLabels(recordLabels);
+                    break;
+
+                case "2":
+                    Program.UpdateRecordLabelsName();
+                    break;
+
+                case "3":
+                    Program.InsertNewRecordLabels();
+                    break;
+
+                case "4":
+                    Program.DeleteRecordLabelByName();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option Please try again");
+                    break;
+            }
         }
 
         public void tblArtist()
