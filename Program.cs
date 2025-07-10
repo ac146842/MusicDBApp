@@ -14,7 +14,6 @@ namespace MusicDBApp
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
             //school connection
             //string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ac146842\\OneDrive - Avondale College\\12TPI\\DBfile\\sqlcode\\MusicDB.mdf\";Integrated Security=True;Connect Timeout=30;Encrypt=True";
             //home
