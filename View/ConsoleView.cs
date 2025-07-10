@@ -117,7 +117,7 @@ namespace MusicDBApp.View
         }
 
 
-        public void tblRecordLabel()
+        public void tblRecordLabelA()
         {
             Console.WriteLine("Welcome to tblRecordlabel");
             Console.WriteLine("Please choose one of the following options");
@@ -155,7 +155,7 @@ namespace MusicDBApp.View
             }
         }
 
-        public void tblArtist()
+        public void tblArtistA()
         {
             Console.WriteLine("Welcome to tblArtist");
             Console.WriteLine("Please choose one of the following options");
@@ -193,7 +193,7 @@ namespace MusicDBApp.View
             }
         }
 
-        public void tblVinyl()
+        public void tblVinylA()
         {
             Console.WriteLine("Welcome to tblVinyl");
             Console.WriteLine("Please choose one of the following options");
@@ -231,7 +231,7 @@ namespace MusicDBApp.View
             }
         }
 
-        public void tblGenre()
+        public void tblGenreA()
         {
             Console.WriteLine("Welcome to tblGenre");
             Console.WriteLine("Please choose one of the following options");
@@ -269,7 +269,7 @@ namespace MusicDBApp.View
             }
         }
 
-        public void tblReviews()
+        public void tblReviewsA()
         {
             Console.WriteLine("Welcome to tblReviews");
             Console.WriteLine("Please choose one of the following options");
@@ -308,7 +308,7 @@ namespace MusicDBApp.View
 
         }
 
-        public void tblReviewComments()
+        public void tblReviewCommentsA()
         {
             Console.WriteLine("Welcome to tblReviewComments");
             Console.WriteLine("Please choose one of the following options");

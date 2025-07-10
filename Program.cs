@@ -60,27 +60,27 @@ namespace MusicDBApp
                 switch (choice)
                 {
                     case "1":
-                        view.tblRecordLabel();
+                        view.tblRecordLabelA();
 
                         break;
                     case "2":
-                        view.tblArtist();
+                        view.tblArtistA();
 
                         break;
                     case "3":
-                        view.tblVinyl();
+                        view.tblVinylA();
 
                         break;
                     case "4":
-                        view.tblGenre();
+                        view.tblGenreA();
 
                         break;
                     case "5":
-                        view.tblReviews();
+                        view.tblReviewsA();
                      
                         break;
                     case "6":
-                        view.tblReviewComments();
+                        view.tblReviewCommentsA();
                         
                         break;
                     case "7":
@@ -103,27 +103,27 @@ namespace MusicDBApp
                 switch (choice)
                 {
                     case "1":
-                        view.tblRecordLabel();
+                       // view.tblRecordLabel();
 
                         break;
                     case "2":
-                        view.tblArtist();
+                        //view.tblArtist();
 
                         break;
                     case "3":
-                        view.tblVinyl();
+                        //view.tblVinyl();
 
                         break;
                     case "4":
-                        view.tblGenre();
+                      //  view.tblGenre();
 
                         break;
                     case "5":
-                        view.tblReviews();
+                      //  view.tblReviews();
 
                         break;
                     case "6":
-                        view.tblReviewComments();
+                        //view.tblReviewComments();
 
                         break;
                     case "7":
