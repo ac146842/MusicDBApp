@@ -566,7 +566,7 @@ namespace MusicDBApp.View
 
         public string SmpQueries()
         {
-            Console.Write("Please select one of the following: ");
+            Console.WriteLine("Please select one of the following: ");
             Console.WriteLine("Simple: ");
             Console.WriteLine("1. ");
             Console.WriteLine("2. ");
