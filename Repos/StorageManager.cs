@@ -519,7 +519,7 @@ public class StorageManager
                 while (reader.Read())
                 {
                     string artistName = reader["Artist_Name"].ToString();
-                    decimal highestRating = Convert.ToDecimal(reader["HighestVinylRating"]);
+                    decimal highestRating = Convert.ToDecimal(reader["HighestVinyl"]);
 
                     Console.WriteLine($"Artist Name: {artistName}, Highest Rating: {highestRating:F2}");
                 }
