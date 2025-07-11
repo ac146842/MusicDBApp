@@ -687,7 +687,28 @@ public class StorageManager
         }
     }
 
+    public int InsertLocationReviews(Reviews review)
+    {
+        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblReviews (Vinyl_ID, Reviewer_Name, Out_Of_5) VALUES (@Vinyl_ID, @Reviewer_Name, @Out_Of_5); SELECT SCOPE_IDENTITY();", conn))
+        {
+            cmd.Parameters.AddWithValue("@Vinyl_ID", review.Vinyl_ID);
+            cmd.Parameters.AddWithValue("@Reviewer_Name", review.Reviewer_Name);
+            cmd.Parameters.AddWithValue("@Out_Of_5", review.Out_Of_5);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+    }
 
+    public int InsertLocationReviewComments(ReviewComments reviewComments)
+    {
+        using (SqlCommand cmd = new SqlCommand(
+            "INSERT INTO tblReviewComments (Review_ID, Short_Review, Review_Date) VALUES (@Review_ID, @Short_Review, @Review_Date); SELECT SCOPE_IDENTITY();", conn))
+        {
+            cmd.Parameters.AddWithValue("@Review_ID", reviewComments.Review_ID);
+            cmd.Parameters.AddWithValue("@Short_Review", reviewComments.Short_Review);
+            cmd.Parameters.AddWithValue("@Review_Date", reviewComments.Review_Date);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+    }
 
     public int DeleteRecordLabelByName(string recordLabelName)
     {
