@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using MusicDBApp.Model;
 using MusicDBApp.Repos;
 
@@ -88,7 +89,13 @@ namespace MusicDBApp.View
             if (rowsInserted > 0)
             {
                 Console.WriteLine("Registration successful");
-                return newUsername; 
+
+                Console.WriteLine("Press Y to go back to login menu and N to exit the app");
+                string choice = Console.ReadLine().ToUpper();
+                if (choice == "Y")
+                {
+                    
+                }
             }
             else
             {
