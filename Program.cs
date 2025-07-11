@@ -366,7 +366,7 @@ storageManager.CloseConnection();
             view.DisplayMessage("Enter the artist's name: ");
             string artistName = view.GetInput();
             view.DisplayMessage("Enter the record label ID: ");
-            int recordLabelID = int.Parse(view.GetInput());
+            int recordLabelID = view.GetIntInput();
             Artist artist = new Artist(artistName, recordLabelID);
             int artistID = storageManager.InsertLocationArtists(artist);
             view.DisplayMessage($"New artist '{artist.Artist_Name}' inserted with ID {artistID}");
@@ -378,7 +378,7 @@ storageManager.CloseConnection();
             view.DisplayMessage("Enter the new Vinyl name: ");
             string vinylName = view.GetInput();
             view.DisplayMessage("Enter the Artist ID: ");
-            int artistID = int.Parse(view.GetInput());
+            int artistID = view.GetIntInput();
             view.DisplayMessage("Enter the release date (yyyy-mm-dd): ");
             DateTime releaseDate = DateTime.Parse(view.GetInput());
             Vinyl vinyl = new Vinyl(vinylName, artistID, releaseDate);
@@ -396,6 +396,32 @@ storageManager.CloseConnection();
             Genres genre = new Genres(genreName, genreID, Description);
             int generateID = storageManager.InsertLocationGenres(genre);
             view.DisplayMessage($"new Genre {genre.Genre_Name} with Description {genre.Description} inserted with ID {generateID}");
+        }
+
+        public static void InsertNewReview()
+        {
+            view.DisplayMessage("Enter the Vinyl ID to review: ");
+            int vinylID = view.GetIntInput();
+            view.DisplayMessage("Enter your name: ");
+            string reviewerName = view.GetInput();
+
+            decimal OutOf5 = 0;
+            while (true)
+            {
+                view.DisplayMessage("Rating out of 5 (Can't be less than 0 or more than 5): ");
+                OutOf5 = view.GetIntInput();
+                if (OutOf5 > 5 || OutOf5 < 0)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Invalid rating. Please enter a number between 0 and 5.");
+                }
+            }
+            Reviews review = new Reviews(vinylID, reviewerName, OutOf5);
+            int reviewID = storageManager.InsertLocationReviews(review);
+            view.DisplayMessage($"New review inserted with ID {reviewID}");
         }
 
         public static void DeleteRecordLabelByName()
