@@ -439,7 +439,7 @@ storageManager.CloseConnection();
 
         public static void DeleteRecordLabelByName()
         {
-            view.DisplayMessage("Enter the Record Label to delete");
+            view.DisplayMessage("Enter the Record Label Name to delete");
             string recordLabelName = view.GetInput();
             int rowsaffected = storageManager.DeleteRecordLabelByName(recordLabelName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
