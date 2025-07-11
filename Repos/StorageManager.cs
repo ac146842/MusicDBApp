@@ -746,11 +746,11 @@ public class StorageManager
         }
     }
 
-    public int DeleteReviewByName(string reviewName)
+    public int DeleteReviewByName(int reviewID)
     {
-        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviews WHERE Reviewer_Name = @reviewName", conn))
+        using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviews WHERE Review_ID = @Review_ID", conn))
         {
-            cmd.Parameters.AddWithValue($"@reviewName", reviewName);
+            cmd.Parameters.AddWithValue($"@Review_ID", reviewID);
             return cmd.ExecuteNonQuery();
         }
     }

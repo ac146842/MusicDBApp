@@ -464,7 +464,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "3":
-                    //Program.In
+                    Program.InsertNewReview();
                     break;
 
                 case "4":
@@ -535,7 +535,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "3":
-                    // storageManager.InsertLocationArtists();
+                    Program.InsertNewReviewComment();
                     break;
 
                 case "4":

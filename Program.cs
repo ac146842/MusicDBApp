@@ -471,15 +471,14 @@ storageManager.CloseConnection();
         }
 
 
-        public static void DeleteReviewByName()
+        public static void DeleteReviewByID()
         {
-            view.DisplayMessage("Enter the Review Name to delete");
-            string reviewName = view.GetInput();
-            int rowsaffected = storageManager.DeleteReviewByName(reviewName);
+            view.DisplayMessage("Enter the Review ID to delete: ");
+            int reviewID = view.GetIntInput();
+            int rowsaffected = storageManager.DeleteReviewByName(reviewID);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
-
-        /*
+        
         private static void DeleteReviewCommentByID()
         {
             view.DisplayMessage("Enter the Review Comment to delete");
@@ -487,6 +486,6 @@ storageManager.CloseConnection();
             int rowsaffected = storageManager.DeleteReviewCommentByID(ReviewCommentID);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
-        */
+        
     }
 }
