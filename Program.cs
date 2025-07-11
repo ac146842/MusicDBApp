@@ -51,8 +51,6 @@ namespace MusicDBApp
         }
 
 
-
-
         public static void AdminMenu()
        
         {  
