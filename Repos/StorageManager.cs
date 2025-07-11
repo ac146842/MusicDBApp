@@ -627,7 +627,7 @@ public class StorageManager
 
     public int UpdateReviewComments(int ReviewCommentID, string ShortReview)
     {
-        using (SqlCommand cmd = new SqlCommand($"UPDATE tblReviewComments SET ShortReview = @Short_Review WHERE ReviewComment_ID = @ReviewComment_ID", conn))
+        using (SqlCommand cmd = new SqlCommand($"UPDATE tblReviewComments SET Short_Review = @Short_Review WHERE ReviewComment_ID = @ReviewComment_ID", conn))
         {
             cmd.Parameters.AddWithValue("@Short_Review", ShortReview);
             cmd.Parameters.AddWithValue("@ReviewComment_ID", ReviewCommentID);
