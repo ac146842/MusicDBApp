@@ -138,7 +138,7 @@ namespace MusicDBApp
                                     break;
 
                                 case "11":
-                                    storageManager.CmxQry6();
+                                    storageManager.CmxQry1();
                                     break;
 
                                 default:

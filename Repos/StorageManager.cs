@@ -348,7 +348,7 @@ public class StorageManager
                     string VinylName = reader["Vinyl_Name"].ToString();
                     DateTime DateOfRelease = Convert.ToDateTime(reader["Date_Of_Release"]);
 
-                    Console.WriteLine($"Vinyl Name: {VinylName}, Release date: {DateOfRelease.ToString("yyyy-MM-dd")}");
+                    Console.WriteLine($"Vinyl Name: {VinylName}, Release date: {DateOfRelease:yyyy-MM-dd}");
                 }
             }
         }
@@ -425,7 +425,7 @@ public class StorageManager
                     DateTime ReviewDate = Convert.ToDateTime(reader["Review_Date"]);
                     string ShortReview = reader["Short_Review"].ToString();
 
-                    Console.WriteLine($"Short Review: {ShortReview}, Review Date: {ReviewDate.ToString("yyyy-MM-dd")}");
+                    Console.WriteLine($"Short Review: {ShortReview}, Review Date: {ReviewDate:yyyy-MM-dd}");
                 }
             }
         }
@@ -450,7 +450,7 @@ public class StorageManager
         }
     }
 
-    public void CmxQry6()
+    public void CmxQry1()
     {
         string sqlString = "SELECT a.Artist_Name, AVG(r.Out_Of_5) AS AvgRating, a.RecordLabel_ID FROM TblArtist a, TblVinyl v, TblReviews r WHERE a.Artist_ID = v.Artist_ID  AND v.Vinyl_ID = r.Vinyl_ID GROUP BY a.Artist_Name, a.RecordLabel_ID";
 
@@ -465,6 +465,82 @@ public class StorageManager
                     string RecordLabelID = reader["RecordLabel_ID"].ToString();
 
                     Console.WriteLine($"Artist Name: {artistName}, Average Rating: {avgRating:F2}");
+                }
+            }
+        }
+    }
+
+    public void CmxQry2()
+    {
+        string sqlString = "SELECT a.Artist_Name, COUNT(v.Vinyl_ID) AS VinylCount FROM tblArtist a, tblVinyl v WHERE a.Artist_ID = v.Artist_ID GROUP BY a.Artist_Name ORDER BY VinylCount DESC;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string artistName = reader["Artist_Name"].ToString();
+                    int vinylCount = Convert.ToInt32(reader["VinylCount"]);
+
+                    Console.WriteLine($"Artist Name: {artistName}, Vinyl Count: {vinylCount}");
+                }
+            }
+        }
+    }
+
+    public void CmxQry3()
+    {
+        string sqlString = "SELECT a.Artist_ID, a.Artist_Name, MIN(v.Date_Of_Release) AS EarliestDate FROM TblArtist a, TblVinyl v WHERE a.Artist_ID = v.Artist_ID GROUP BY a.Artist_ID ORDER BY EarliestDate;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string artistName = reader["Artist_Name"].ToString();
+                    DateTime earliestDate = Convert.ToDateTime(reader["EarliestDate"]);
+
+                    Console.WriteLine($"Artist Name: {artistName}, Earliest Date: {earliestDate:yyyy-MM-dd}");
+                }
+            }
+        }
+    }
+
+    public void CmxQry4()
+    {
+        string sqlString = "SELECT a.Artist_Name, v.Vinyl_Name, MAX(r.Out_Of_5) AS HighestVinyl FROM TblArtist a, TblVinyl v, TblReviews r WHERE a.Artist_ID = v.Artist_ID AND v.Vinyl_ID = r.Vinyl_ID GROUP BY a.Artist_Name ORDER BY HighestVinyl DESC;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string artistName = reader["Artist_Name"].ToString();
+                    decimal highestRating = Convert.ToDecimal(reader["HighestVinylRating"]);
+
+                    Console.WriteLine($"Artist Name: {artistName}, Highest Rating: {highestRating:F2}");
+                }
+            }
+        }
+    }
+
+    public void CmxQry5()
+    {
+        string sqlString = "SELECT r.RecordLabel_ID, r.RecordLabel_Name, COUNT(a.Artist_Name) AS TotalArtists FROM TblRecordLabel r, TblArtist a WHERE r.RecordLabel_ID = a.RecordLabel_ID GROUP BY r.RecordLabel_ID;";
+
+        using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string recordLabelName = reader["RecordLabel_Name"].ToString();
+                    int totalArtists = Convert.ToInt32(reader["TotalArtists"]);
+
+                    Console.WriteLine($"Record Label: {recordLabelName}, Total Artists: {totalArtists:F2}");
                 }
             }
         }
