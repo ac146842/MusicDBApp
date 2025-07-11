@@ -95,12 +95,14 @@ namespace MusicDBApp.View
 
                 if (choice == "Y")
                 {
-                    LoginMenu();
+                    WelcomeMenu();
+                    return newUsername;
                 }
 
                 else if (choice == "N")
                 {
                     Environment.Exit(0);
+                    return null;
                 }
 
                 else
