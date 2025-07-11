@@ -468,7 +468,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "4":
-                    Program.DeleteReviewByName();
+                    Program.DeleteReviewByID();
                     break;
 
                 case "5":

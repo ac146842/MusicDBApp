@@ -759,7 +759,7 @@ public class StorageManager
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviewComments WHERE ReviewComment_ID = @ReviewCommentID", conn))
         {
-            cmd.Parameters.AddWithValue($"@ReviewCommentID", ReviewCommentID);
+            cmd.Parameters.AddWithValue($"@ReviewComment_ID", ReviewCommentID);
             return cmd.ExecuteNonQuery();
         }
     }
