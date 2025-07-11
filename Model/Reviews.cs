@@ -12,8 +12,8 @@ namespace MusicDBApp.Model
         public int Review_ID { get; set; }
         public int Vinyl_ID { get; set; }
         public decimal Out_Of_5 { get; set; }
-        public int VinylID { get; }
-        public string ReviewerName { get; }
+        public int VinylID { get; set; }
+        public string ReviewerName { get; set;  }
 
         public Reviews(string inReviewer_Name, int inReview_ID, int inVinyl_ID, decimal inOut_Of_5)
         {
@@ -25,8 +25,8 @@ namespace MusicDBApp.Model
 
         public Reviews(int vinylID, string reviewerName, decimal out_Of_5)
         {
-            VinylID = vinylID;
-            ReviewerName = reviewerName;
+            Vinyl_ID = vinylID;
+            Reviewer_Name = reviewerName;
             Out_Of_5 = out_Of_5;
         }
     }
