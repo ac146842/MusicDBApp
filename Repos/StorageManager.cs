@@ -700,8 +700,7 @@ public class StorageManager
 
     public int InsertLocationReviewComments(ReviewComments reviewComments)
     {
-        using (SqlCommand cmd = new SqlCommand(
-            "INSERT INTO tblReviewComments (Review_ID, Short_Review, Review_Date) VALUES (@Review_ID, @Short_Review, @Review_Date); SELECT SCOPE_IDENTITY();", conn))
+        using (SqlCommand cmd = new SqlCommand("INSERT INTO tblReviewComments (Review_ID, Short_Review, Review_Date) VALUES (@Review_ID, @Short_Review, @Review_Date); SELECT SCOPE_IDENTITY();", conn))               
         {
             cmd.Parameters.AddWithValue("@Review_ID", reviewComments.Review_ID);
             cmd.Parameters.AddWithValue("@Short_Review", reviewComments.Short_Review);
@@ -761,6 +760,15 @@ public class StorageManager
         {
             cmd.Parameters.AddWithValue($"@ReviewComment_ID", ReviewCommentID);
             return cmd.ExecuteNonQuery();
+        }
+    }
+
+    public bool ReviewExists(int ReviewCommentID)
+    {
+        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblReviewComments WHERE ReviewComment_ID = @ReviewComment_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@ReviewComment_ID", ReviewCommentID);
+            return (int)cmd.ExecuteScalar() > 0;
         }
     }
 

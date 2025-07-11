@@ -489,6 +489,20 @@ storageManager.CloseConnection();
         {
             view.DisplayMessage("Enter the Review Comment ID to delete");
             int ReviewCommentID = view.GetIntInput();
+
+            while (true)
+            {
+                if (storageManager.ReviewExists(ReviewCommentID))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Review ID either does not exist or wasn't found, please try again.");
+                    DeleteReviewCommentByID();
+                }
+            }
+
             int rowsaffected = storageManager.DeleteReviewCommentByID(ReviewCommentID);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }       
