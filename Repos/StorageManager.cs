@@ -208,7 +208,7 @@ public class StorageManager
                     int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
                     string VinylName = reader["Vinyl_Name"].ToString();
                     DateTime DateOfRelease = Convert.ToDateTime(reader["Date_Of_Release"]);
-                    vinyls.Add(new Vinyl(VinylName, VinylID, DateOfRelease));
+                    vinyls.Add(new Vinyl(VinylName, ArtistID, VinylID, DateOfRelease));
                 }
             }
         }
@@ -660,7 +660,7 @@ public class StorageManager
         {
             cmd.Parameters.AddWithValue("@Vinyl_Name", vinyl.Vinyl_Name);
             cmd.Parameters.AddWithValue("@Artist_ID", vinyl.Artist_ID);
-            cmd.Parameters.AddWithValue("@Release_Date", vinyl.Release_Date);
+            cmd.Parameters.AddWithValue("@Release_Date", vinyl.Date_Of_Release);
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }

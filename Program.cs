@@ -381,7 +381,7 @@ storageManager.CloseConnection();
             int artistID = view.GetIntInput();
             view.DisplayMessage("Enter the release date (yyyy-mm-dd): ");
             DateTime releaseDate = DateTime.Parse(view.GetInput());
-            Vinyl vinyl = new Vinyl(vinylName, artistID, releaseDate);
+            Vinyl vinyl = new Vinyl(vinylName, artistID, artistID, releaseDate);
             int generatedID = storageManager.InsertLocationVinyls(vinyl);
             view.DisplayMessage($"New vinyl '{vinyl.Vinyl_Name}' inserted with ID {generatedID}");
         }
