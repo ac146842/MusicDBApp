@@ -540,7 +540,7 @@ public class StorageManager
                     string recordLabelName = reader["RecordLabel_Name"].ToString();
                     int totalArtists = Convert.ToInt32(reader["TotalArtists"]);
 
-                    Console.WriteLine($"Record Label: {recordLabelName}, Total Artists: {totalArtists:F2}");
+                    Console.WriteLine($"Record Label: {recordLabelName}, Total Artists: {totalArtists:F0}");
                 }
             }
         }
