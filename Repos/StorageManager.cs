@@ -510,7 +510,7 @@ public class StorageManager
 
     public void CmxQry4()
     {
-        string sqlString = "SELECT a.Artist_Name, v.Vinyl_Name, MAX(r.Out_Of_5) AS HighestVinyl FROM TblArtist a, TblVinyl v, TblReviews r WHERE a.Artist_ID = v.Artist_ID AND v.Vinyl_ID = r.Vinyl_ID GROUP BY a.Artist_Name ORDER BY HighestVinyl DESC;";
+        string sqlString = "SELECT a.Artist_Name, v.Vinyl_Name, MAX(r.Out_Of_5) AS HighestVinyl FROM TblArtist a, TblVinyl v, TblReviews r WHERE a.Artist_ID = v.Artist_ID AND v.Vinyl_ID = r.Vinyl_ID GROUP BY a.Artist_Name, v.Vinyl_Name ORDER BY HighestVinyl DESC;";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
