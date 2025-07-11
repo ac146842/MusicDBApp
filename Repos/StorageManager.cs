@@ -656,11 +656,11 @@ public class StorageManager
 
     public int InsertLocationVinyls(Vinyl vinyl)
     {
-        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblVinyl (Vinyl_Name, Artist_ID, Release_Date) VALUES (@Vinyl_Name, @Artist_ID, @Release_Date); SELECT SCOPE_IDENTITY();", conn))
+        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblVinyl (Vinyl_Name, Artist_ID, Date_Of_Release) VALUES (@Vinyl_Name, @Artist_ID, @Date_Of_Release); SELECT SCOPE_IDENTITY();", conn))
         {
             cmd.Parameters.AddWithValue("@Vinyl_Name", vinyl.Vinyl_Name);
             cmd.Parameters.AddWithValue("@Artist_ID", vinyl.Artist_ID);
-            cmd.Parameters.AddWithValue("@Release_Date", vinyl.Date_Of_Release);
+            cmd.Parameters.AddWithValue("@Date_Of_Release", vinyl.Date_Of_Release);
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }

@@ -381,7 +381,7 @@ storageManager.CloseConnection();
             int artistID = view.GetIntInput();
             view.DisplayMessage("Enter the release date (yyyy-mm-dd): ");
             DateTime releaseDate = DateTime.Parse(view.GetInput());
-            Vinyl vinyl = new Vinyl(vinylName, artistID, artistID, releaseDate);
+            Vinyl vinyl = new Vinyl(vinylName, artistID, releaseDate);
             int generatedID = storageManager.InsertLocationVinyls(vinyl);
             view.DisplayMessage($"New vinyl '{vinyl.Vinyl_Name}' inserted with ID {generatedID}");
         }
@@ -409,7 +409,7 @@ storageManager.CloseConnection();
             while (true)
             {
                 view.DisplayMessage("Rating out of 5 (Can't be less than 0 or more than 5): ");
-                OutOf5 = view.GetIntInput();
+                decimal OutOf5 = decimal.Parse(view.GetInput());
                 if (OutOf5 > 5 || OutOf5 < 0)
                 {
                     break;

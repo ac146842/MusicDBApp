@@ -20,5 +20,11 @@ namespace MusicDBApp.Model
             Artist_ID = artistID;
             Date_Of_Release = releaseDate;
         }
+        public Vinyl(string vinylName, int artistID, DateTime releaseDate)
+        {
+            Vinyl_Name = vinylName;
+            Artist_ID = artistID;
+            Date_Of_Release = releaseDate;
+        }
     }
 }
