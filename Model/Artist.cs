@@ -14,9 +14,9 @@ namespace MusicDBApp.Model
 
         public Artist(string Artist_Name, int Artist_ID, int RecordLabel_ID)
         {
-            Artist_Name = Artist_Name;
-            Artist_ID = Artist_ID;
-            RecordLabel_ID = RecordLabel_ID;
+            this.Artist_Name = Artist_Name;
+            this.Artist_ID = Artist_ID;
+            this.RecordLabel_ID = RecordLabel_ID;
         }
 
         public Artist(string name, int recordLabelID)
