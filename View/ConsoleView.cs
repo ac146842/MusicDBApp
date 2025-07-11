@@ -66,11 +66,16 @@ namespace MusicDBApp.View
 
         public string RegisterMenu()
         {
+            Console.WriteLine("User Registration");
 
-            Console.WriteLine("Please choose one of the following options: ");
+            Console.WriteLine("(Max 100 characters)");
+            Console.WriteLine("Please enter your desired username: ");
+            string newUsername = Console.ReadLine();
 
+            Console.WriteLine("(Max 100 characters)");
+            Console.WriteLine("Please enter your desired password: ");
+            string newPassword = Console.ReadLine();
 
-            return Console.ReadLine();
         }
 
 
