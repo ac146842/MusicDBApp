@@ -409,7 +409,7 @@ storageManager.CloseConnection();
             while (true)
             {
                 view.DisplayMessage("Rating out of 5 (Can't be less than 0 or more than 5): ");
-                decimal OutOf5 = decimal.Parse(view.GetInput());
+                OutOf5 = decimal.Parse(view.GetInput());
                 if (OutOf5 > 5 || OutOf5 < 0)
                 {
                     break;
