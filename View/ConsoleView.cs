@@ -80,9 +80,21 @@ namespace MusicDBApp.View
             if (storageManager.UserExists(newUsername))
             {
                 Console.WriteLine("Username already exists, please choose another one");
-                RegisterMenu();                
+                return RegisterMenu();                
             }
+            
+            int rowsInserted = storageManager.RegisterUser(newUsername, newPassword, roleID: 2);
 
+            if (rowsInserted > 0)
+            {
+                Console.WriteLine("Registration successful");
+                return newUsername; 
+            }
+            else
+            {
+                Console.WriteLine("Registration failed please try again.");
+                return RegisterMenu();
+            }
         }
         
 
