@@ -141,6 +141,22 @@ namespace MusicDBApp
                                     storageManager.CmxQry1();
                                     break;
 
+                                case "12":
+                                    storageManager.CmxQry2();
+                                    break;
+
+                                case "13":
+                                    storageManager.CmxQry3();
+                                    break;
+
+                                case "14":
+                                    storageManager.CmxQry4();
+                                    break;
+
+                                case "15":
+                                    storageManager.CmxQry5();
+                                    break;
+
                                 default:
                                     Console.WriteLine("Invalid query option. Try again.");
                                     break;
