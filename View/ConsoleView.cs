@@ -92,9 +92,21 @@ namespace MusicDBApp.View
 
                 Console.WriteLine("Press Y to go back to login menu and N to exit the app");
                 string choice = Console.ReadLine().ToUpper();
+
                 if (choice == "Y")
                 {
-                    
+                    LoginMenu();
+                }
+
+                else if (choice == "N")
+                {
+                    Environment.Exit(0);
+                }
+
+                else
+                {
+                    Console.WriteLine("Invalid choice, please try again.");
+                    return RegisterMenu();
                 }
             }
             else
