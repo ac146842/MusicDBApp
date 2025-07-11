@@ -491,7 +491,7 @@ public class StorageManager
 
     public void CmxQry3()
     {
-        string sqlString = "SELECT a.Artist_ID, a.Artist_Name, MIN(v.Date_Of_Release) AS EarliestDate FROM TblArtist a, TblVinyl v WHERE a.Artist_ID = v.Artist_ID GROUP BY a.Artist_ID ORDER BY EarliestDate;";
+        string sqlString = "SELECT a.Artist_ID, a.Artist_Name, MIN(v.Date_Of_Release) AS EarliestDate FROM TblArtist a, TblVinyl v WHERE a.Artist_ID = v.Artist_ID GROUP BY a.Artist_ID, a.Artist_Name ORDER BY EarliestDate;";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
