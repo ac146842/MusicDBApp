@@ -129,6 +129,18 @@ public class StorageManager
         return (userID);
     }
 
+    public bool UserExists(string username)
+    {
+        string sql = "SELECT * FROM tblUser WHERE User_Name = @username";
+
+        using (SqlCommand cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@username", username);
+            int count = (int)cmd.ExecuteScalar();
+            return count > 0;
+        }
+    }
+
     public List<RecordLabel> GetAllRecordLabel()
     {
         List<RecordLabel> recordLabels = new List<RecordLabel>();
