@@ -141,6 +141,20 @@ public class StorageManager
         }
     }
 
+    public int RegisterUser(string username, string password, int roleID)
+    {
+        string sql = "INSERT INTO tblUser (User_Name, Password, Role_ID) VALUES (@username, @password, @roleID)";
+
+        using (SqlCommand cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@roleID", roleID);
+
+            return cmd.ExecuteNonQuery(); // returns number of rows affected
+        }
+    }
+
     public List<RecordLabel> GetAllRecordLabel()
     {
         List<RecordLabel> recordLabels = new List<RecordLabel>();

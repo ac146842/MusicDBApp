@@ -64,6 +64,7 @@ namespace MusicDBApp.View
             }
         }
 
+        
         public string RegisterMenu()
         {
             Console.WriteLine("User Registration");
@@ -76,7 +77,14 @@ namespace MusicDBApp.View
             Console.WriteLine("Please enter your desired password: ");
             string newPassword = Console.ReadLine();
 
+            if (storageManager.UserExists(newUsername))
+            {
+                Console.WriteLine("Username already exists, please choose another one");
+                RegisterMenu();                
+            }
+
         }
+        
 
 
         public string DisplayAdminMenu()
