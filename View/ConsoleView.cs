@@ -518,7 +518,7 @@ namespace MusicDBApp.View
             Console.WriteLine("1: View All records in tblReviewComments");
             Console.WriteLine("2: Update Review Comment by ReviewComment_ID");
             Console.WriteLine("3: Insert a new Review Comment");
-            Console.WriteLine("4: Delete a Review Comment by Name");
+            Console.WriteLine("4: Delete a Review Comment by ID");
             Console.WriteLine("5: Return to main menu");
 
             string choice = Console.ReadLine();
