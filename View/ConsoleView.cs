@@ -539,7 +539,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "4":
-                    //Program.DeleteReviewCommentByID();
+                    Program.DeleteReviewCommentByID();
                     break;
 
                 case "5":

@@ -479,7 +479,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
         
-        private static void DeleteReviewCommentByID()
+        public static void DeleteReviewCommentByID()
         {
             view.DisplayMessage("Enter the Review Comment ID to delete");
             int ReviewCommentID = view.GetIntInput();
