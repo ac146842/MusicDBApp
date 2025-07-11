@@ -402,9 +402,15 @@ storageManager.CloseConnection();
         {
             view.DisplayMessage("Enter the Vinyl ID to review: ");
             int vinylID = view.GetIntInput();
+
+
             view.DisplayMessage("Enter your name: ");
             string reviewerName = view.GetInput();
-
+            if (string.IsNullOrEmpty(reviewerName))
+            {
+                reviewerName = "Anonymous";
+            }
+            
             decimal OutOf5 = 0;
             while (true)
             {
@@ -421,7 +427,7 @@ storageManager.CloseConnection();
             }
             Reviews review = new Reviews(vinylID, reviewerName, OutOf5);
             int reviewID = storageManager.InsertLocationReviews(review);
-            view.DisplayMessage($"New review inserted with ID {reviewID}");
+            view.DisplayMessage($"New review by {reviewerName} inserted with ID {reviewID}");
         }
 
         public static void InsertNewReviewComment()
