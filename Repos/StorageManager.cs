@@ -131,7 +131,7 @@ public class StorageManager
 
     public bool UserExists(string username)
     {
-        string sql = "SELECT * FROM tblUser WHERE User_Name = @username";
+        string sql = "SELECT COUNT(*) FROM tblUser WHERE User_Name = @username";
 
         using (SqlCommand cmd = new SqlCommand(sql, conn))
         {

@@ -41,7 +41,7 @@ namespace MusicDBApp
                     break;
 
                 case "2":
-                    Console.WriteLine("register");
+                    view.RegisterMenu();
                     break;
 
                 default:
