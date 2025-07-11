@@ -529,7 +529,7 @@ public class StorageManager
 
     public void CmxQry5()
     {
-        string sqlString = "SELECT r.RecordLabel_ID, r.RecordLabel_Name, COUNT(a.Artist_Name) AS TotalArtists FROM TblRecordLabel r, TblArtist a WHERE r.RecordLabel_ID = a.RecordLabel_ID GROUP BY r.RecordLabel_ID;";
+        string sqlString = "SELECT r.RecordLabel_ID, r.RecordLabel_Name, COUNT(a.Artist_Name) AS TotalArtists FROM TblRecordLabel r, TblArtist a WHERE r.RecordLabel_ID = a.RecordLabel_ID GROUP BY r.RecordLabel_ID, r.RecordLabel_Name;";
 
         using (SqlCommand cmd = new SqlCommand(sqlString, conn))
         {
