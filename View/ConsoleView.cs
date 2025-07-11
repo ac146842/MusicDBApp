@@ -326,7 +326,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "3":
-                   // storageManager.InsertLocationArtists();
+                    Program.InsertNewVinyls();
                     break;
 
                 case "4":
@@ -391,15 +391,15 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    Program.UpdateVinylsName();
+                    Program.UpdateGenresName();
                     break;
 
                 case "3":
-                    // storageManager.InsertLocationArtists();
+                   Program.InsertNewGenres();
                     break;
 
                 case "4":
-                    Program.DeleteRecordLabelByName();
+                    Program.DeleteGenresByName();
                     break;
 
                 case "5":
@@ -460,15 +460,15 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    Program.UpdateVinylsName();
+                    Program.UpdateReviewersName();
                     break;
 
                 case "3":
-                    // storageManager.InsertLocationArtists();
+                    //Program.In
                     break;
 
                 case "4":
-                    Program.DeleteRecordLabelByName();
+                    Program.DeleteReviewByName();
                     break;
 
                 case "5":
@@ -531,7 +531,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    Program.UpdateVinylsName();
+                    Program.UpdateReviewComments();
                     break;
 
                 case "3":
@@ -539,7 +539,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "4":
-                    Program.DeleteRecordLabelByName();
+                    //Program.DeleteReviewCommentByID();
                     break;
 
                 case "5":

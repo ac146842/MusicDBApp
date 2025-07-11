@@ -320,7 +320,7 @@ storageManager.CloseConnection();
         }
 
 
-        private static void UpdateGenresName()
+        public static void UpdateGenresName()
         {
             view.DisplayMessage("Enter the Genre_ID to update: ");
             int genreID = view.GetIntInput();
@@ -330,7 +330,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
-        private static void UpdateReviewersName()
+        public static void UpdateReviewersName()
         {
             view.DisplayMessage("Enter the Review_ID to update: ");
             int ReviewID = view.GetIntInput();
@@ -340,7 +340,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
-        private static void UpdateReviewComments()
+        public static void UpdateReviewComments()
         {
             view.DisplayMessage("Enter the Review_ID to update: ");
             int ReviewCommentID = view.GetIntInput();
@@ -363,13 +363,13 @@ storageManager.CloseConnection();
 
         public static void InsertNewArtists()
         {
-            view.DisplayMessage("Enter the new Artist name: ");
-            string ArtistName = view.GetInput();
-            int ArtistID = 0;
-            int RecordLabelID = 0;
-            Artist artist = new Artist(ArtistName, ArtistID, RecordLabelID);
-            int generateID = storageManager.InsertLocationArtists(artist);
-            view.DisplayMessage($"new Artist {artist.Artist_Name} inserted with ID {generateID}");
+            view.DisplayMessage("Enter the artist's name: ");
+            string artistName = view.GetInput();
+            view.DisplayMessage("Enter the record label ID: ");
+            int recordLabelID = int.Parse(view.GetInput());
+            Artist artist = new Artist(artistName, recordLabelID);
+            int artistID = storageManager.InsertLocationArtists(artist);
+            view.DisplayMessage($"New artist '{artist.Artist_Name}' inserted with ID {artistID}");
         }
 
 
@@ -386,7 +386,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"New vinyl '{vinyl.Vinyl_Name}' inserted with ID {generatedID}");
         }
 
-        private static void InsertNewGenres()
+        public static void InsertNewGenres()
         {
             view.DisplayMessage("Enter the new Genre name: ");
             string genreName = view.GetInput();
@@ -423,7 +423,7 @@ storageManager.CloseConnection();
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
-        private static void DeleteGenresByName()
+        public static void DeleteGenresByName()
         {
             view.DisplayMessage("Enter the Genre Name to delete");
             string genreName = view.GetInput();
@@ -432,7 +432,7 @@ storageManager.CloseConnection();
         }
 
 
-        private static void DeleteReviewByName()
+        public static void DeleteReviewByName()
         {
             view.DisplayMessage("Enter the Review Name to delete");
             string reviewName = view.GetInput();
@@ -440,7 +440,6 @@ storageManager.CloseConnection();
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
-        //delete short review and review date
         /*
         private static void DeleteReviewCommentByID()
         {

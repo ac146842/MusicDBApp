@@ -12,11 +12,17 @@ namespace MusicDBApp.Model
         public int Artist_ID { get; set; }
         public int RecordLabel_ID { get; set; }
 
-        public Artist(string inArtist_Name, int inArtist_ID, int inRecordLabel_ID)
+        public Artist(string Artist_Name, int Artist_ID, int RecordLabel_ID)
         {
-            Artist_Name = inArtist_Name;
-            Artist_ID = inArtist_ID;
-            RecordLabel_ID = inRecordLabel_ID;
+            Artist_Name = Artist_Name;
+            Artist_ID = Artist_ID;
+            RecordLabel_ID = RecordLabel_ID;
+        }
+
+        public Artist(string name, int recordLabelID)
+        {
+            Artist_Name = name;
+            RecordLabel_ID = recordLabelID;
         }
     }
 }
