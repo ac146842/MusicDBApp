@@ -424,6 +424,19 @@ storageManager.CloseConnection();
             view.DisplayMessage($"New review inserted with ID {reviewID}");
         }
 
+        public static void InsertNewReviewComment()
+        {
+            view.DisplayMessage("Enter the Review ID you are commenting on: ");
+            int reviewID = view.GetIntInput();
+            view.DisplayMessage("Enter your short comment: ");
+            string shortReivew = view.GetInput();
+            view.DisplayMessage("Enter the review date (YYYY-MM-DD): ");
+            DateTime reviewDate = DateTime.Parse(view.GetInput());
+            ReviewComments reviewComments = new ReviewComments(reviewID, shortReivew, reviewDate);
+            int reviewCommentsID = storageManager.InsertLocationReviewComments(reviewComments);
+            view.DisplayMessage($"New review comment inserted with ID {reviewCommentsID}");
+        }
+
         public static void DeleteRecordLabelByName()
         {
             view.DisplayMessage("Enter the Record Label to delete");

@@ -13,12 +13,19 @@ namespace MusicDBApp.Model
         public int ReviewComment_ID { get; set; }
         public DateTime Review_Date { get; set; }
 
-        public ReviewComments(string inShort_Review, int inReview_ID, int inReviewComment_ID, DateTime inReview_Date)
+        public ReviewComments(string Short_Review, int Review_ID, int ReviewComment_ID, DateTime Review_Date)
         {
-            Short_Review = inShort_Review;
-            Review_ID = inReview_ID;
-            ReviewComment_ID = inReviewComment_ID;
-            Review_Date = inReview_Date;
+            Short_Review = Short_Review;
+            Review_ID = Review_ID;
+            ReviewComment_ID = ReviewComment_ID;
+            Review_Date = Review_Date;
+        }
+
+        public ReviewComments(string shortreview, int reviewID, int commentID)
+        {
+            Short_Review = shortreview;
+            Review_ID = reviewID;
+            ReviewComment_ID = commentID;
         }
     }
 }
