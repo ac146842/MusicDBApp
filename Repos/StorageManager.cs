@@ -208,7 +208,7 @@ public class StorageManager
                     int ArtistID = Convert.ToInt32(reader["Artist_ID"]);
                     string VinylName = reader["Vinyl_Name"].ToString();
                     DateTime DateOfRelease = Convert.ToDateTime(reader["Date_Of_Release"]);
-                    vinyls.Add(new Vinyl(VinylName, VinylID, ArtistID, DateOfRelease));
+                    vinyls.Add(new Vinyl(VinylName, VinylID, DateOfRelease));
                 }
             }
         }
@@ -650,6 +650,17 @@ public class StorageManager
         {
             cmd.Parameters.AddWithValue("@Artist_Name", artist.Artist_Name);
             cmd.Parameters.AddWithValue("@RecordLabel_ID", artist.RecordLabel_ID);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+    }
+
+    public int InsertLocationVinyls(Vinyl vinyl)
+    {
+        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblVinyl (Vinyl_Name, Artist_ID, RecordLabel_ID) VALUES (@Vinyl_Name, @Artist_ID, @RecordLabel_ID); SELECT SCOPE_IDENTITY();", conn))
+        {
+            cmd.Parameters.AddWithValue("@Vinyl_Name", vinyl.Vinyl_Name);
+            cmd.Parameters.AddWithValue("@Artist_ID", vinyl.Artist_ID);
+            cmd.Parameters.AddWithValue("@RecordLabel_ID", vinyl.RecordLabel_ID);
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }

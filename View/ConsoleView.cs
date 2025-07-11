@@ -330,7 +330,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "4":
-                    Program.DeleteRecordLabelByName();
+                    Program.DeleteVinylByName();
                     break;
 
                 case "5":

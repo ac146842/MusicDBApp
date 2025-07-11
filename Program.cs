@@ -372,18 +372,19 @@ storageManager.CloseConnection();
             view.DisplayMessage($"new Artist {artist.Artist_Name} inserted with ID {generateID}");
         }
 
-        /*
+
         public static void InsertNewVinyls()
         {
             view.DisplayMessage("Enter the new Vinyl name: ");
             string vinylName = view.GetInput();
-            int VinylID = 0;
-            int RecordLabelID = 0;
-            Vinyl vinyl = new Vinyl(VinylName, ArtistID, RecordLabelID);
-            int generateID = storageManager.InsertLocationVinyls(vinyl);
-            view.DisplayMessage($"new Artist {vinyl.Vinyl_Name} inserted with ID {generateID}");
+            view.DisplayMessage("Enter the Artist ID: ");
+            int artistID = int.Parse(view.GetInput());
+            view.DisplayMessage("Enter the release date (yyyy-mm-dd): ");
+            DateTime releaseDate = DateTime.Parse(view.GetInput());
+            Vinyl vinyl = new Vinyl(vinylName, artistID, releaseDate);
+            int generatedID = storageManager.InsertLocationVinyls(vinyl);
+            view.DisplayMessage($"New vinyl '{vinyl.Vinyl_Name}' inserted with ID {generatedID}");
         }
-        */
 
         private static void InsertNewGenres()
         {
@@ -414,7 +415,7 @@ storageManager.CloseConnection();
         }
 
 
-        private static void DeleteVinylByName()
+        public static void DeleteVinylByName()
         {
             view.DisplayMessage("Enter the Vinyl to delete");
             string vinylName = view.GetInput();
