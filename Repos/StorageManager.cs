@@ -151,7 +151,7 @@ public class StorageManager
             cmd.Parameters.AddWithValue("@password", password);
             cmd.Parameters.AddWithValue("@roleID", roleID);
 
-            return cmd.ExecuteNonQuery(); // returns number of rows affected
+            return cmd.ExecuteNonQuery();
         }
     }
 
