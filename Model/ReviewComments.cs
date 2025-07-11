@@ -21,11 +21,11 @@ namespace MusicDBApp.Model
             Review_Date = Review_Date;
         }
 
-        public ReviewComments(string shortreview, int reviewID, int commentID)
+        public ReviewComments(int reviewID, string shortReview, DateTime reviewDate)
         {
-            Short_Review = shortreview;
             Review_ID = reviewID;
-            ReviewComment_ID = commentID;
+            Short_Review = shortReview;
+            Review_Date = reviewDate;
         }
     }
 }
