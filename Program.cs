@@ -216,7 +216,7 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the RecordLabel_ID to update: ");
                 RecordLabelID = view.GetIntInput();
 
-                if (RecordLabelID > 0)
+                if (storageManager.RecordLabelExists(RecordLabelID))
                 {
                     break;
                 }
@@ -253,7 +253,7 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the Artist_ID to update: ");
                 ArtistID = view.GetIntInput();
 
-                if (ArtistID > 0)
+                if (storageManager.ArtistExists(ArtistID))
                 {
                     break;
                 }
@@ -290,7 +290,7 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the Vinyl_ID to update: ");
                 VinylID = view.GetIntInput();
 
-                if (VinylID > 0)
+                if (storageManager.VinylExists(VinylID))
                 {
                     break;
                 }
@@ -328,7 +328,7 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the Genre_ID to update: ");
                 genreID = view.GetIntInput();
 
-                if (genreID > 0)
+                if (storageManager.GenreExists(genreID))
                 {
                     break;
                 }

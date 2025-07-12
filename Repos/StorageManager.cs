@@ -181,6 +181,15 @@ public class StorageManager
         }
     }
 
+    public bool GenreExists(int genreID)
+    {
+        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblGenre WHERE Genre_ID = @Genre_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@Genre_ID", genreID);
+            return (int)cmd.ExecuteScalar() > 0;
+        }
+    }
+
     public bool ReviewIDExists(int reviewID)
     {
         using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblReviews WHERE Review_ID = @Review_ID", conn))
