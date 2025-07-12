@@ -199,6 +199,15 @@ public class StorageManager
         }
     }
 
+    public bool ReviewCommentIDExists(int reviewCommentID)
+    {
+        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblReviewComments WHERE ReviewComment_ID = @ReviewComment_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@ReviewComment_ID", reviewCommentID);
+            return (int)cmd.ExecuteScalar() > 0;
+        }
+    }
+
     public List<RecordLabel> GetAllRecordLabel()
     {
         List<RecordLabel> recordLabels = new List<RecordLabel>();

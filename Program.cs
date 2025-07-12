@@ -365,7 +365,7 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the Review_ID to update: ");
                 ReviewID = view.GetIntInput();
 
-                if (ReviewID > 0)
+                if (storageManager.ReviewIDExists(ReviewID))
                 {
                     break;
                 }
@@ -402,7 +402,7 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the Review_ID to update: ");
                 ReviewCommentID = view.GetIntInput();
 
-                if (ReviewCommentID > 0)
+                if (storageManager.ReviewCommentIDExists(ReviewCommentID))
                 {
                     break;
                 }
