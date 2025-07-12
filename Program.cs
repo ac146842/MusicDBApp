@@ -90,8 +90,7 @@ namespace MusicDBApp
 
                         while (true)
                         {
-                            Console.Write("Please enter one of the following options: ");
-                            string queryChoice = Console.ReadLine();
+                            string queryChoice = view.QueryOptions();
 
                             switch (queryChoice)
                             {
