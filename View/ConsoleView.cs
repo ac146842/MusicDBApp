@@ -605,10 +605,10 @@ namespace MusicDBApp.View
             }
         }
 
-        public string QueryOptions()
+        public void QueryOptions()
         {
             Console.Clear();
-            Console.WriteLine("Please select one of the following: ");
+
 
             Console.WriteLine("Simple");
             Console.WriteLine("1. ");
@@ -633,8 +633,6 @@ namespace MusicDBApp.View
             Console.WriteLine("14. ");
             Console.WriteLine("15 ");
             Console.WriteLine(" ");
-
-            return Console.ReadLine();
         }
 
         public void DisplayRecordLabels(List<RecordLabel> recordLabels)
