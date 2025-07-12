@@ -44,7 +44,7 @@ public class StorageManager
         Console.WriteLine(new string('-', Console.WindowWidth - 1));
     }
 
-
+    // retrives username from database
     public string getUsername(string username)
     {
         string sqlString = "SELECT User_Name FROM tblUser WHERE User_Name = @User_Name";
@@ -65,6 +65,7 @@ public class StorageManager
         return (username);
     }
 
+    // retrives password matching a username from database 
     public string getPassword(string username)
     {
         string Password = "";
@@ -83,6 +84,7 @@ public class StorageManager
         return Password;
     }
 
+    // retrives role ID matching a username from database
     public int getRoleID(string username)
     {
         int roleID = 0;
@@ -105,8 +107,8 @@ public class StorageManager
         }
         return (roleID);
     }
-    
 
+    // retrives user ID matching a username from database
     public int getUserID(string username)
     {
         int userID = 0;
@@ -129,6 +131,7 @@ public class StorageManager
         return (userID);
     }
 
+    // Registers a new user in the database
     public int RegisterUser(string username, string password, int roleID)
     {
         string sql = "INSERT INTO tblUser (User_Name, Password, Role_ID) VALUES (@username, @password, @roleID)";
@@ -143,6 +146,7 @@ public class StorageManager
         }
     }
 
+    // Checks if a user with the given username exists in the database
     public bool UserExists(string username)
     {
         string sql = "SELECT COUNT(*) FROM tblUser WHERE User_Name = @username";
@@ -154,6 +158,8 @@ public class StorageManager
             return count > 0;
         }
     }
+
+    // Checks if a record label exists in the database
     public bool RecordLabelExists(int recordLabelID)
     {
         using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblRecordLabel WHERE RecordLabel_ID = @RecordLabel_ID", conn))
@@ -163,6 +169,7 @@ public class StorageManager
         }
     }
 
+    // Checks if an artist exists in the database
     public bool ArtistExists(int artistID)
     {
         using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblArtist WHERE Artist_ID = @Artist_ID", conn))
@@ -172,6 +179,7 @@ public class StorageManager
         }
     }
 
+    // Checks if a vinyl exists in the database
     public bool VinylExists(int vinylID)
     {
         using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblVinyl WHERE Vinyl_ID = @Vinyl_ID", conn))
@@ -181,6 +189,7 @@ public class StorageManager
         }
     }
 
+    // Checks if a genre exists in the database
     public bool GenreExists(int genreID)
     {
         using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblGenre WHERE Genre_ID = @Genre_ID", conn))
@@ -190,6 +199,7 @@ public class StorageManager
         }
     }
 
+    // Checks if a review exists in the database
     public bool ReviewIDExists(int reviewID)
     {
         using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblReviews WHERE Review_ID = @Review_ID", conn))
@@ -199,6 +209,7 @@ public class StorageManager
         }
     }
 
+    // Checks if a review comment exists in the database
     public bool ReviewCommentIDExists(int reviewCommentID)
     {
         using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblReviewComments WHERE ReviewComment_ID = @ReviewComment_ID", conn))
@@ -208,6 +219,7 @@ public class StorageManager
         }
     }
 
+    // Retrieves all records from the tblRecordLabel 
     public List<RecordLabel> GetAllRecordLabel()
     {
         List<RecordLabel> recordLabels = new List<RecordLabel>();
@@ -227,6 +239,7 @@ public class StorageManager
         return recordLabels;
     }
 
+    // Retrieves all records from the tblArtist
     public List<Artist> GetAllArtist()
     {
         List<Artist> artist = new List<Artist>();
@@ -247,6 +260,7 @@ public class StorageManager
         return artist;
     }
 
+    // Retrieves all records from the tblVinyl
     public List<Vinyl> GetAllVinyl()
     {
         List<Vinyl> vinyls = new List<Vinyl>();
@@ -268,6 +282,7 @@ public class StorageManager
         return vinyls;
     }
 
+    // Retrieves all records from the tblGenre
     public List<Genres> GetAllGenres()
     {
         List<Genres> genres = new List<Genres>();
@@ -288,6 +303,7 @@ public class StorageManager
         return genres;
     }
 
+    // Retrieves all records from the tblReviews
     public List<Reviews> GetAllReviews()
     {
         List<Reviews> reviews = new List<Reviews>();
@@ -309,6 +325,7 @@ public class StorageManager
         return reviews;
     }
 
+    // Retrieves all records from the tblReviewComments
     public List<ReviewComments> GetAllReviewComments()
     {
         List<ReviewComments> reviewComments = new List<ReviewComments>();
@@ -331,6 +348,7 @@ public class StorageManager
         return reviewComments;
     }
 
+    // runs sql simple queries
     public void SmpQry1()
     {
         string sqlString = "SELECT * FROM tblGenre ORDER by Genre_ID;";
@@ -433,6 +451,7 @@ public class StorageManager
         }
     }
 
+    // runs sql advanced queries
     public void AdvQry1()
     {
         string sqlString = "SELECT Artist_Name, Artist_ID, RecordLabel_ID FROM TblArtist WHERE Artist_Name LIKE 'A%' ORDER BY CAST(Artist_Name AS NVARCHAR(MAX));";
@@ -529,6 +548,7 @@ public class StorageManager
         }
     }
 
+    // runs sql complex queries
     public void CmxQry1()
     {
         string sqlString = "SELECT a.Artist_Name, AVG(r.Out_Of_5) AS AvgRating, a.RecordLabel_ID FROM TblArtist a, TblVinyl v, TblReviews r WHERE a.Artist_ID = v.Artist_ID  AND v.Vinyl_ID = r.Vinyl_ID GROUP BY a.Artist_Name, a.RecordLabel_ID";
@@ -625,7 +645,7 @@ public class StorageManager
         }
     }
 
-
+    // runs sql Update Record Label Name query
     public int UpdateRecordLabelsName(int recordLabelID, string recordLabelName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblRecordLabel SET RecordLabel_Name = @RecordLabel_Name WHERE RecordLabel_ID = @RecordLabel_ID", conn))
@@ -636,6 +656,7 @@ public class StorageManager
         }
     }
 
+    // runs sql Update Artist Name query
     public int UpdateArtistsName(int ArtistID, string ArtistName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblArtist SET Artist_Name = @Artist_Name WHERE Artist_ID = @Artist_ID", conn))
@@ -646,6 +667,7 @@ public class StorageManager
         }
     }
 
+    // runs sql Update Vinyl Name query
     public int UpdateVinylsName(int VinylID, string VinylName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblVinyl SET Vinyl_Name = @Vinyl_Name WHERE Vinyl_ID = @Vinyl_ID", conn))
@@ -656,8 +678,7 @@ public class StorageManager
         }
     }
 
-
-
+    // runs sql Update Genre Name query
     public int UpdateGenresName(int genreID, string genreName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblGenre SET Genre_Name = @Genre_Name WHERE Genre_ID = @Genre_ID", conn))
@@ -668,6 +689,7 @@ public class StorageManager
         }
     }
 
+    // runs sql Update Reviewers Name query
     public int UpdateReviewersName(int ReviewID, string ReviewerName)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblReviews SET Reviewer_Name = @Reviewer_Name WHERE Review_ID = @Review_ID", conn))
@@ -678,6 +700,7 @@ public class StorageManager
         }
     }
 
+    // runs sql Update Review Comments query
     public int UpdateReviewComments(int ReviewCommentID, string ShortReview)
     {
         using (SqlCommand cmd = new SqlCommand($"UPDATE tblReviewComments SET Short_Review = @Short_Review WHERE ReviewComment_ID = @ReviewComment_ID", conn))
@@ -688,6 +711,7 @@ public class StorageManager
         }
     }
 
+    // Inserts a new record label into the database
     public int InsertLocationRecordLabels(RecordLabel recordLabel)
     {
         using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblRecordLabel (RecordLabel_Name) VALUES (@RecordLabel_Name); SELECT SCOPE_IDENTITY();", conn))
@@ -697,6 +721,7 @@ public class StorageManager
         }
     }
 
+    // Inserts a new artist into the database
     public int InsertLocationArtists(Artist artist)
     {
         using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblArtist (Artist_Name, RecordLabel_ID) VALUES (@Artist_Name, @RecordLabel_ID); SELECT SCOPE_IDENTITY();", conn))
@@ -707,6 +732,7 @@ public class StorageManager
         }
     }
 
+    // Inserts a new vinyl into the database
     public int InsertLocationVinyls(Vinyl vinyl)
     {
         using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblVinyl (Vinyl_Name, Artist_ID, Date_Of_Release) VALUES (@Vinyl_Name, @Artist_ID, @Date_Of_Release); SELECT SCOPE_IDENTITY();", conn))
@@ -718,7 +744,7 @@ public class StorageManager
         }
     }
 
-
+    // Inserts a new genre into the database
     public int InsertLocationGenres(Genres genre)
     {
         using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblGenre (genre_Name, Description) VALUES (@Genre_Name, @Description); SELECT SCOPE_IDENTITY();", conn))
@@ -729,6 +755,7 @@ public class StorageManager
         }
     }
 
+    // Inserts a new review into the database
     public int InsertLocationReviews(Reviews review)
     {
         using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblReviews (Vinyl_ID, Reviewer_Name, Out_Of_5) VALUES (@Vinyl_ID, @Reviewer_Name, @Out_Of_5); SELECT SCOPE_IDENTITY();", conn))
@@ -740,6 +767,7 @@ public class StorageManager
         }
     }
 
+    // Inserts a new review comment into the database
     public int InsertLocationReviewComments(ReviewComments reviewComments)
     {
         using (SqlCommand cmd = new SqlCommand("INSERT INTO tblReviewComments (Review_ID, Short_Review, Review_Date) VALUES (@Review_ID, @Short_Review, @Review_Date); SELECT SCOPE_IDENTITY();", conn))               
@@ -751,6 +779,7 @@ public class StorageManager
         }
     }
 
+    // Deletes records by name
     public int DeleteRecordLabelByName(string recordLabelName)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblRecordLabel WHERE  RecordLabel_Name = @recordLabelName", conn))
@@ -760,6 +789,7 @@ public class StorageManager
         }
     }
 
+    // Deletes artists by name
     public int DeleteArtistByName(string artistName)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblArtist WHERE Artist_Name = @artistName", conn))
@@ -769,6 +799,7 @@ public class StorageManager
         }
     }
 
+    // Deletes vinyl by name
     public int DeleteVinylByName(string vinylName)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblVinyl WHERE Vinyl_Name = @vinylName", conn))
@@ -778,6 +809,7 @@ public class StorageManager
         }
     }
 
+    // Deletes genres by name
     public int DeleteGenreByName(string genreName)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblGenre WHERE Genre_Name = @genreName", conn))
@@ -787,6 +819,7 @@ public class StorageManager
         }
     }
 
+    // Deletes reviews by id
     public int DeleteReviewByName(int reviewID)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviews WHERE Review_ID = @Review_ID", conn))
@@ -796,6 +829,7 @@ public class StorageManager
         }
     }
 
+    // Deletes review comments by id
     public int DeleteReviewCommentByID(int ReviewCommentID)
     {
         using (SqlCommand cmd = new SqlCommand($"DELETE FROM tblReviewComments WHERE ReviewComment_ID = @ReviewComment_ID", conn))
@@ -805,6 +839,7 @@ public class StorageManager
         }
     }
 
+    // closes sql database server connection
     public void CloseConnection()
     {
         if (conn != null && conn.State == ConnectionState.Open)
