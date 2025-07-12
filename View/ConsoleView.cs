@@ -141,6 +141,7 @@ namespace MusicDBApp.View
             Console.WriteLine("5. tblReviews");
             Console.WriteLine("6. tblReviewComments");
             Console.WriteLine("7. Queries");
+            Console.WriteLine("8. Exit");
 
             return Console.ReadLine();
         }
@@ -158,6 +159,7 @@ namespace MusicDBApp.View
             Console.WriteLine("4. tblGenre");
             Console.WriteLine("5. tblReviews");
             Console.WriteLine("6. tblReviewComments");
+            Console.WriteLine("7. Exit");
 
             return Console.ReadLine();
         }

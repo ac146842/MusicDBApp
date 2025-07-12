@@ -161,7 +161,11 @@ namespace MusicDBApp
                             }
                         }
 
+                    case "8":
+                        storageManager.CloseConnection();
+                        Environment.Exit(0);
                         break;
+
                     default:
                         Console.WriteLine("Invalid option. Please try again.");
                         break;
@@ -194,7 +198,11 @@ namespace MusicDBApp
                         break;
                     case "6":
                         view.tblReviewCommentsU();
-                        break;                    
+                        break;
+                    case "7":
+                        storageManager.CloseConnection();
+                        Environment.Exit(0);
+                        break;
                 }
             }
         }
