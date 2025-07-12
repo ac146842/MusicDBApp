@@ -457,10 +457,38 @@ namespace MusicDBApp
 
         public static void InsertNewArtists()
         {
-            view.DisplayMessage("Enter the artist's name: ");
-            string artistName = view.GetInput();
-            view.DisplayMessage("Enter the record label ID: ");
-            int recordLabelID = view.GetIntInput();
+            string artistName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the artist's name: ");
+                artistName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(artistName) && artistName.Length <= 100)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Artist cannot be empty or more than 100 characters, please try again.");
+                }
+            }
+
+            int recordLabelID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the record label ID: ");
+                recordLabelID = view.GetIntInput();
+
+                if (storageManager.RecordLabelExists(recordLabelID))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Reecord Label ID does not exist or was not found, please try again.");
+                }
+            }
+
             Artist artist = new Artist(artistName, recordLabelID);
             int artistID = storageManager.InsertLocationArtists(artist);
             view.DisplayMessage($"New artist '{artist.Artist_Name}' inserted with ID {artistID}");
@@ -469,8 +497,23 @@ namespace MusicDBApp
 
         public static void InsertNewVinyls()
         {
-            view.DisplayMessage("Enter the new Vinyl name: ");
-            string vinylName = view.GetInput();
+            string vinylName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the new Vinyl name: ");
+                vinylName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(vinylName) && vinylName.Length <= 100)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Vinyl cannot be empty or more than 100 characters, please try again.");
+                }
+            }
+
+
             view.DisplayMessage("Enter the Artist ID: ");
             int artistID = view.GetIntInput();
             view.DisplayMessage("Enter the release date (yyyy-mm-dd): ");

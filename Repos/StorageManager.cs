@@ -129,18 +129,6 @@ public class StorageManager
         return (userID);
     }
 
-    public bool UserExists(string username)
-    {
-        string sql = "SELECT COUNT(*) FROM tblUser WHERE User_Name = @username";
-
-        using (SqlCommand cmd = new SqlCommand(sql, conn))
-        {
-            cmd.Parameters.AddWithValue("@username", username);
-            int count = (int)cmd.ExecuteScalar();
-            return count > 0;
-        }
-    }
-
     public int RegisterUser(string username, string password, int roleID)
     {
         string sql = "INSERT INTO tblUser (User_Name, Password, Role_ID) VALUES (@username, @password, @roleID)";
@@ -152,6 +140,26 @@ public class StorageManager
             cmd.Parameters.AddWithValue("@roleID", roleID);
 
             return cmd.ExecuteNonQuery();
+        }
+    }
+
+    public bool UserExists(string username)
+    {
+        string sql = "SELECT COUNT(*) FROM tblUser WHERE User_Name = @username";
+
+        using (SqlCommand cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@username", username);
+            int count = (int)cmd.ExecuteScalar();
+            return count > 0;
+        }
+    }
+    public bool RecordLabelExists(int recordLabelID)
+    {
+        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblRecordLabel WHERE RecordLabel_ID = @RecordLabel_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@RecordLabel_ID", recordLabelID);
+            return (int)cmd.ExecuteScalar() > 0;
         }
     }
 
