@@ -647,9 +647,21 @@ namespace MusicDBApp
                 }
             }
 
+            string shortReivew;
+            while (true)
+            {
+                view.DisplayMessage("Enter your short comment: ");
+                shortReivew = view.GetInput();
 
-            view.DisplayMessage("Enter your short comment: ");
-            string shortReivew = view.GetInput();
+                if (!string.IsNullOrWhiteSpace(shortReivew) && shortReivew.Length <= 255)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Short review cannot be empty or more than 255 characters, please try again.");
+                }
+            }
             view.DisplayMessage("Enter the review date (YYYY-MM-DD): ");
             DateTime reviewDate = DateTime.Parse(view.GetInput());
             ReviewComments reviewComments = new ReviewComments(reviewID, shortReivew, reviewDate);
