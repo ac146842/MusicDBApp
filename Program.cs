@@ -232,13 +232,13 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the new Record Label name: ");
                 RecordLabelName = view.GetInput();
 
-                if (!string.IsNullOrWhiteSpace(RecordLabelName))
+                if (!string.IsNullOrWhiteSpace(RecordLabelName) && RecordLabelName.Length <= 100)
                 {
                     break;
                 }
                 else
                 {
-                    view.DisplayMessage("Record Label Name cannot be empty, please try again.");
+                    view.DisplayMessage("Record Label Name cannot be empty or more than 100 characters, please try again.");
                 }
             };
             int rowsAffected = storageManager.UpdateRecordLabelsName(RecordLabelID, RecordLabelName);
@@ -269,13 +269,13 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the new Artist name: ");
                 ArtistName = view.GetInput();
 
-                if (!string.IsNullOrWhiteSpace(ArtistName))
+                if (!string.IsNullOrWhiteSpace(ArtistName) && ArtistName.Length <= 100)
                 {
                     break;
                 }
                 else
                 {
-                    view.DisplayMessage("Artist Name cannot be empty, please try again.");
+                    view.DisplayMessage("Artist Name cannot be empty or more than 100 characters, please try again.");
                 }
             }
             int rowsAffected = storageManager.UpdateArtistsName(ArtistID, ArtistName);
@@ -306,13 +306,13 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the new Vinyl name: ");
                 VinylName = view.GetInput();
 
-                if (!string.IsNullOrWhiteSpace(VinylName))
+                if (!string.IsNullOrWhiteSpace(VinylName) && VinylName.Length <= 100)
                 {
                     break;
                 }
                 else
                 {
-                    view.DisplayMessage("Vinyl Name cannot be empty, please try again.");
+                    view.DisplayMessage("Vinyl Name cannot be empty or more than 100 characters, please try again.");
                 }
             }
             int rowsAffected = storageManager.UpdateVinylsName(VinylID, VinylName);
@@ -344,13 +344,13 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the new Genre name: ");
                 genreName = view.GetInput();
 
-                if (!string.IsNullOrWhiteSpace(genreName))
+                if (!string.IsNullOrWhiteSpace(genreName) && genreName.Length <= 100)
                 {
                     break;
                 }
                 else
                 {
-                    view.DisplayMessage("Genre Name cannot be empty, please try again.");
+                    view.DisplayMessage("Genre Name cannot be empty or more than 100 characters, please try again.");
                 }
             }
             int rowsAffected = storageManager.UpdateGenresName(genreID, genreName);
@@ -381,13 +381,13 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the new/same Reviewer Name : ");
                 ReviewerName = view.GetInput();
 
-                if (!string.IsNullOrWhiteSpace(ReviewerName))
+                if (!string.IsNullOrWhiteSpace(ReviewerName) && ReviewerName.Length <= 100)
                 {
                     break;
                 }
                 else
                 {
-                    view.DisplayMessage("Reviewer Name cannot be empty, please try again.");
+                    view.DisplayMessage("Reviewer Name cannot be empty or more than 100 characters, please try again.");
                 }
             }
             int rowsAffected = storageManager.UpdateReviewersName(ReviewID, ReviewerName);
@@ -418,13 +418,13 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter your new Review Comment : ");
                 ShortReview = view.GetInput();
 
-                if (!string.IsNullOrWhiteSpace(ShortReview))
+                if (!string.IsNullOrWhiteSpace(ShortReview) && ShortReview.Length <= 255)
                 {
                     break;
                 }
                 else
                 {
-                    view.DisplayMessage("Review Comment cannot be empty, please try again.");
+                    view.DisplayMessage("Review Comment cannot be empty or more than 255 characters, please try again.");
                 }
             }
             int rowsAffected = storageManager.UpdateReviewComments(ReviewCommentID, ShortReview);
@@ -446,7 +446,7 @@ namespace MusicDBApp
                 }
                 else
                 {
-                    view.DisplayMessage("Review Comment cannot be empty, please try again.");
+                    view.DisplayMessage("Record Label cannot be empty or more than 100 characters, please try again.");
                 }
             }
             int RecordLabelID = 0;
