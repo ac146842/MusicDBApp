@@ -594,16 +594,22 @@ namespace MusicDBApp
                 }
             }
 
+            string reviewerName = "";
             while (true)
             {
                 view.DisplayMessage("Enter your name: ");
-                string reviewerName = view.GetInput();
-                if (string.IsNullOrEmpty(reviewerName))
+                reviewerName = view.GetInput();
+                if (string.IsNullOrWhiteSpace(reviewerName))
                 {
                     reviewerName = "Anonymous";
+                    break;
+                }
+                else
+                {
+                    break;
                 }
             }
-            
+
             decimal OutOf5 = 0;
             while (true)
             {
@@ -625,8 +631,23 @@ namespace MusicDBApp
 
         public static void InsertNewReviewComment()
         {
-            view.DisplayMessage("Enter the Review ID you are commenting on: ");
-            int reviewID = view.GetIntInput();
+            int reviewID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Review ID you are commenting on: ");
+                reviewID = view.GetIntInput();
+
+                if (storageManager.VinylExists(reviewID))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Vinyl ID does not exist or was not found, please try again.");
+                }
+            }
+
+
             view.DisplayMessage("Enter your short comment: ");
             string shortReivew = view.GetInput();
             view.DisplayMessage("Enter the review date (YYYY-MM-DD): ");
@@ -685,7 +706,7 @@ namespace MusicDBApp
 
             while (true)
             {
-                if (storageManager.ReviewExists(ReviewCommentID))
+                if (storageManager.ReviewIDExists(ReviewCommentID))
                 {
                     break;
                 }

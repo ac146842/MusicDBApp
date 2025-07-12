@@ -181,6 +181,15 @@ public class StorageManager
         }
     }
 
+    public bool ReviewIDExists(int reviewID)
+    {
+        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblReviews WHERE Review_ID = @Review_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@Review_ID", reviewID);
+            return (int)cmd.ExecuteScalar() > 0;
+        }
+    }
+
     public List<RecordLabel> GetAllRecordLabel()
     {
         List<RecordLabel> recordLabels = new List<RecordLabel>();
@@ -775,15 +784,6 @@ public class StorageManager
         {
             cmd.Parameters.AddWithValue($"@ReviewComment_ID", ReviewCommentID);
             return cmd.ExecuteNonQuery();
-        }
-    }
-
-    public bool ReviewExists(int ReviewCommentID)
-    {
-        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblReviewComments WHERE ReviewComment_ID = @ReviewComment_ID", conn))
-        {
-            cmd.Parameters.AddWithValue("@ReviewComment_ID", ReviewCommentID);
-            return (int)cmd.ExecuteScalar() > 0;
         }
     }
 
