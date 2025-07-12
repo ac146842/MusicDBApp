@@ -275,21 +275,46 @@ namespace MusicDBApp
                 }
                 else
                 {
-                    view.DisplayMessage("Artist ID does not exist or was not found, please try again.");
+                    view.DisplayMessage("Artist Name cannot be empty, please try again.");
                 }
             }
-
-
             int rowsAffected = storageManager.UpdateArtistsName(ArtistID, ArtistName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
         public static void UpdateVinylsName()
         {
-            view.DisplayMessage("Enter the Vinyl_ID to update: ");
-            int VinylID = view.GetIntInput();
-            view.DisplayMessage("Enter the new Vinyl name: ");
-            string VinylName = view.GetInput();
+            int VinylID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Vinyl_ID to update: ");
+                VinylID = view.GetIntInput();
+
+                if (VinylID > 0)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Vinyl ID does not exist or was not found, please try again.");
+                }
+            }
+
+            string VinylName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the new Vinyl name: ");
+                VinylName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(VinylName))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Vinyl Name cannot be empty, please try again.");
+                }
+            }
             int rowsAffected = storageManager.UpdateVinylsName(VinylID, VinylName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
@@ -297,30 +322,111 @@ namespace MusicDBApp
 
         public static void UpdateGenresName()
         {
-            view.DisplayMessage("Enter the Genre_ID to update: ");
-            int genreID = view.GetIntInput();
-            view.DisplayMessage("Enter the new Genre name: ");
-            string genreName = view.GetInput();
+            int genreID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Genre_ID to update: ");
+                genreID = view.GetIntInput();
+
+                if (genreID > 0)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Genre ID does not exist or was not found, please try again.");
+                }
+            }
+
+            string genreName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the new Genre name: ");
+                genreName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(genreName))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Genre Name cannot be empty, please try again.");
+                }
+            }
             int rowsAffected = storageManager.UpdateGenresName(genreID, genreName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
         public static void UpdateReviewersName()
         {
-            view.DisplayMessage("Enter the Review_ID to update: ");
-            int ReviewID = view.GetIntInput();
-            view.DisplayMessage("Enter the new/same Reviewer Name : ");
-            string ReviewerName = view.GetInput();
+            int ReviewID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Review_ID to update: ");
+                ReviewID = view.GetIntInput();
+
+                if (ReviewID > 0)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Review ID does not exist or was not found, please try again.");
+                }
+            }
+
+            string ReviewerName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the new/same Reviewer Name : ");
+                ReviewerName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(ReviewerName))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Reviewer Name cannot be empty, please try again.");
+                }
+            }
             int rowsAffected = storageManager.UpdateReviewersName(ReviewID, ReviewerName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
         public static void UpdateReviewComments()
         {
-            view.DisplayMessage("Enter the Review_ID to update: ");
-            int ReviewCommentID = view.GetIntInput();
-            view.DisplayMessage("Enter your new Review Comment : ");
-            string ShortReview = view.GetInput();
+            int ReviewCommentID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Review_ID to update: ");
+                ReviewCommentID = view.GetIntInput();
+
+                if (ReviewCommentID > 0)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Review Comment ID does not exist or was not found, please try again.");
+                }
+            }
+
+            string ShortReview;
+            while (true)
+            {
+                view.DisplayMessage("Enter your new Review Comment : ");
+                ShortReview = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(ShortReview))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Review Comment cannot be empty, please try again.");
+                }
+            }
             int rowsAffected = storageManager.UpdateReviewComments(ReviewCommentID, ShortReview);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
