@@ -60,7 +60,6 @@ namespace MusicDBApp.View
             else
             {
                 Console.WriteLine("Please re enter your details");
-                LoginMenu();
             }
         }
 
@@ -611,27 +610,27 @@ namespace MusicDBApp.View
 
 
             Console.WriteLine("Simple");
-            Console.WriteLine("1. ");
-            Console.WriteLine("2. ");
-            Console.WriteLine("3. ");
-            Console.WriteLine("4. ");
-            Console.WriteLine("5. ");
+            Console.WriteLine("1. qry Genre");
+            Console.WriteLine("2. qry RecordLabels");
+            Console.WriteLine("3. qry ReviewComments");
+            Console.WriteLine("4. qry Reviews");
+            Console.WriteLine("5. qry Vinyls");
             Console.WriteLine(" ");
 
             Console.WriteLine("Advanced: ");
-            Console.WriteLine("6. ");
-            Console.WriteLine("7. ");
-            Console.WriteLine("8. ");
-            Console.WriteLine("9. ");
-            Console.WriteLine("10. ");
+            Console.WriteLine("6. qry Artist Name Like A");
+            Console.WriteLine("7. qry Genres After Letter M");
+            Console.WriteLine("8. qry Higher Rating Than 3");
+            Console.WriteLine("9. qry Reviews Between 2010 & 2020");
+            Console.WriteLine("10. qry Short Review Under 30 char");
             Console.WriteLine(" ");
 
             Console.WriteLine("Complex: ");
-            Console.WriteLine("11. ");
-            Console.WriteLine("12. ");
-            Console.WriteLine("13. ");
-            Console.WriteLine("14. ");
-            Console.WriteLine("15 ");
+            Console.WriteLine("11. qry Artist AvgRating");
+            Console.WriteLine("12. qry Counting Artist Vinyl");
+            Console.WriteLine("13. qry Earliest Vinyl Dates");
+            Console.WriteLine("14. qry Highest Rated Vinyl For Artist");
+            Console.WriteLine("15 qry Record Label Artist Count");
             Console.WriteLine(" ");
         }
 
