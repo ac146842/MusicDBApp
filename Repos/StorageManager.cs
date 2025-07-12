@@ -665,17 +665,6 @@ public class StorageManager
         }
     }
 
-    /*
-    public int InsertLocationGenres(Vinyl vinyl)
-    {
-        using (SqlCommand cmd = new SqlCommand($"INSERT INTO tblVinyl (Vinyl_Name, Description) VALUES (@Genre_Name, @Description); SELECT SCOPE_IDENTITY();", conn))
-        {
-            cmd.Parameters.AddWithValue("@Genre_Name", genre.Genre_Name);
-            cmd.Parameters.AddWithValue("@Description", genre.Description);
-            return Convert.ToInt32(cmd.ExecuteScalar());
-        }
-    }
-    */
 
     public int InsertLocationGenres(Genres genre)
     {

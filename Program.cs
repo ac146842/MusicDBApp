@@ -208,111 +208,78 @@ namespace MusicDBApp
         }
 
 
-
-        /*
-        do
-        {
-            choice = Console.ReadLine();
-            switch (choice)
-            {
-                case "1":
-                    {
-                        view.AdvQry1();
-                    }
-                    break;
-
-                case "2":
-                    //UpdateReviewersName();
-                    break;
-
-                case "3":
-                    //InsertNewGenres();
-                    break;
-
-                case "4":
-                    //DeleteGenresByName();
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid option. Please try again.");
-                    break;
-            }
-        }
-
-        while (Notvalid);
-        break;
-
-        default:
-            Console.WriteLine("Invalid option please try again.");
-            Notvalid = false;
-            break;
-    }
-}
-while (true);
-
-storageManager.CloseConnection();
-}
-*/
-
-
-        /*
-        switch (choice)
-        {
-            case "1":
-                {
-                    List<Genres> genres = storageManager.GetAllGenres();
-                    view.DisplayGenres(genres);
-                }
-                break;
-
-            case "2":
-                UpdateGenresName();
-                break;
-
-            case "3":
-                InsertNewGenres();
-                break;
-
-            case "4":
-                DeleteGenresByName();
-                break;               
-
-            default:
-                Console.WriteLine("Invalid option. Please try again.");
-                break;
-        }
-    }
-    */
-
-        /*
-        private static void UpdateRecordLabelName()
-        {
-            view.DisplayMessage("Enter the RecordLabel_ID to update: ");
-            int RecordLabelID = view.GetIntInput();
-            view.DisplayMessage("Enter the new RecordLabel name: ");
-            string RecordLabelName = view.GetInput();
-            int rowsAffected = storageManager.UpdateGenresName();
-            view.DisplayMessage($"Rows affected {rowsAffected}");
-        }
-        */
-
-
         public static void UpdateRecordLabelsName()
         {
-            view.DisplayMessage("Enter the RecordLabel_ID to update: ");
-            int RecordLabelID = view.GetIntInput();
-            view.DisplayMessage("Enter the new Record Label name: ");
-            string RecordLabelName = view.GetInput();
+            int RecordLabelID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the RecordLabel_ID to update: ");
+                RecordLabelID = view.GetIntInput();
+
+                if (RecordLabelID > 0)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Record Label ID does not exist or was not found, please try again.");
+                }
+            }
+
+            string RecordLabelName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the new Record Label name: ");
+                RecordLabelName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(RecordLabelName))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Record Label Name cannot be empty, please try again.");
+                }
+            };
             int rowsAffected = storageManager.UpdateRecordLabelsName(RecordLabelID, RecordLabelName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
         public static void UpdateArtistsName()
         {
-            view.DisplayMessage("Enter the Artist_ID to update: ");
-            int ArtistID = view.GetIntInput();
-            view.DisplayMessage("Enter the new Artist name: ");
-            string ArtistName = view.GetInput();
+            int ArtistID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Artist_ID to update: ");
+                ArtistID = view.GetIntInput();
+
+                if (ArtistID > 0)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Artist ID does not exist or was not found, please try again.");
+                }
+            }
+
+            string ArtistName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the new Artist name: ");
+                ArtistName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(ArtistName))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Artist ID does not exist or was not found, please try again.");
+                }
+            }
+
+
             int rowsAffected = storageManager.UpdateArtistsName(ArtistID, ArtistName);
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }

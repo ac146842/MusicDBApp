@@ -20,7 +20,6 @@ namespace MusicDBApp.View
 
         public string WelcomeMenu()
         {
-            
             Console.WriteLine("Welcome to MusicDB ");
             Console.WriteLine("Please choose one of the following options: ");
             Console.WriteLine("1. Login ");
@@ -490,7 +489,8 @@ namespace MusicDBApp.View
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
             Console.WriteLine("1: View All records in tblReviews");
-            Console.WriteLine("2: Return to main menu");
+            Console.WriteLine("2: Leave a rating");
+            Console.WriteLine("3: Return to main menu");
 
             string choice = Console.ReadLine();
 
@@ -502,6 +502,10 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
+                   Program.InsertNewReview(); //user can leave a rating
+                    break;
+
+                case "3":
                     DisplayUserMenu(); //return menu
                     break;
 
@@ -560,8 +564,8 @@ namespace MusicDBApp.View
             Console.WriteLine("Welcome to tblReviewComments");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblReviewComments");
-            Console.WriteLine("2: Return to main menu");
+            Console.WriteLine("2: Leave a review comment");
+            Console.WriteLine("3: Return to main menu");
 
             string choice = Console.ReadLine();
 
@@ -573,7 +577,11 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    DisplayUserMenu();
+                    Program.InsertNewReviewComment(); //user can leave a review comment
+                    break;
+
+                case "3":
+                    DisplayUserMenu(); //return menu
                     break;
 
                 default:
@@ -612,16 +620,6 @@ namespace MusicDBApp.View
 
             return Console.ReadLine();
         }
-
-        /*
-        public void DisplayVinyl(List<Vinyl> vinyl)
-        {
-            foreach (Vinyl vinyl in vinyl)
-            {
-                Console.WriteLine($"{vinyl.Artist_ID}, {vinyl.VinylName1}, {vinyl.VinylName2}");
-            }
-        }
-        */
 
         public void DisplayRecordLabels(List<RecordLabel> recordLabels)
         {
