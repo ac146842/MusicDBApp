@@ -15,6 +15,7 @@ namespace MusicDBApp
         string tblchoice;
         string choice;
 
+        // Main method and displays Login/Register menu
         static void Main(string[] args)
         {
             //school connection
@@ -50,7 +51,7 @@ namespace MusicDBApp
             }
         }
 
-
+        // Takes user input for admin menu and query options
         public static void AdminMenu()
        
         {  
@@ -173,6 +174,7 @@ namespace MusicDBApp
             }
         }
 
+        // Takes user input for user menu
         public static void UserMenu()
         {
             while (true)
@@ -207,7 +209,7 @@ namespace MusicDBApp
             }
         }
 
-
+        // Takes user input to update record label name based off ID 
         public static void UpdateRecordLabelsName()
         {
             int RecordLabelID;
@@ -245,6 +247,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
+        // Takes user input to update Artist name based off ID 
         public static void UpdateArtistsName()
         {
             int ArtistID;
@@ -282,6 +285,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
+        // Takes user input to update Vinyl name based off ID 
         public static void UpdateVinylsName()
         {
             int VinylID;
@@ -319,7 +323,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
-
+        // Takes user input to update Genre name based off ID 
         public static void UpdateGenresName()
         {
             int genreID;
@@ -357,6 +361,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
+        // Takes user input to update Review name based off ID 
         public static void UpdateReviewersName()
         {
             int ReviewID;
@@ -394,6 +399,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
+        // Takes user input to update Review Comment name based off ID 
         public static void UpdateReviewComments()
         {
             int ReviewCommentID;
@@ -431,7 +437,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected {rowsAffected}");
         }
 
-
+        // Takes user input to insert a new record label name
         public static void InsertNewRecordLabels()
         {
             string RecordLabelName;
@@ -455,6 +461,7 @@ namespace MusicDBApp
             view.DisplayMessage($"new Record Label {recordLabel.RecordLabel_Name} inserted with ID {generateID}");
         }
 
+        // Takes user input to insert a new artist name
         public static void InsertNewArtists()
         {
             string artistName;
@@ -494,7 +501,7 @@ namespace MusicDBApp
             view.DisplayMessage($"New artist '{artist.Artist_Name}' inserted with ID {artistID}");
         }
 
-
+        // Takes user input to insert a new vinyl name
         public static void InsertNewVinyls()
         {
             string vinylName;
@@ -535,6 +542,7 @@ namespace MusicDBApp
             view.DisplayMessage($"New vinyl '{vinyl.Vinyl_Name}' inserted with ID {generatedID}");
         }
 
+        // Takes user input to insert a new genre name
         public static void InsertNewGenres()
         {
             string genreName;
@@ -576,6 +584,7 @@ namespace MusicDBApp
             view.DisplayMessage($"new Genre {genre.Genre_Name} with Description {genre.Description} inserted with ID {generateID}");
         }
 
+        // Takes user input to insert a new review name
         public static void InsertNewReview()
         {
             int vinylID;
@@ -629,6 +638,7 @@ namespace MusicDBApp
             view.DisplayMessage($"New review by {reviewerName} inserted with ID {reviewID}");
         }
 
+        // Takes user input to insert a new review comment name
         public static void InsertNewReviewComment()
         {
             int reviewID;
@@ -669,6 +679,7 @@ namespace MusicDBApp
             view.DisplayMessage($"New review comment inserted with ID {reviewCommentsID}");
         }
 
+        // Takes user input to delete a record label by name
         public static void DeleteRecordLabelByName()
         {
             view.DisplayMessage("Enter the Record Label Name to delete");
@@ -677,6 +688,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
+        // Takes user input to delete a artist by name
         public static void DeleteArtistByName()
         {
             view.DisplayMessage("Enter the Artist to delete");
@@ -685,7 +697,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
-
+        // Takes user input to delete a vinyl by name
         public static void DeleteVinylByName()
         {
             view.DisplayMessage("Enter the Vinyl to delete");
@@ -694,6 +706,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
+        // Takes user input to delete a genre by name
         public static void DeleteGenresByName()
         {
             view.DisplayMessage("Enter the Genre Name to delete");
@@ -702,7 +715,7 @@ namespace MusicDBApp
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
 
-
+        // Takes user input to delete a review by ID
         public static void DeleteReviewByID()
         {
             view.DisplayMessage("Enter the Review ID to delete: ");
@@ -710,7 +723,8 @@ namespace MusicDBApp
             int rowsaffected = storageManager.DeleteReviewByName(reviewID);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
-        
+
+        // Takes user input to delete a review comment by ID
         public static void DeleteReviewCommentByID()
         {
             view.DisplayMessage("Enter the Review Comment ID to delete");
