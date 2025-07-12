@@ -163,6 +163,24 @@ public class StorageManager
         }
     }
 
+    public bool ArtistExists(int artistID)
+    {
+        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblArtist WHERE Artist_ID = @Artist_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@Artist_ID", artistID);
+            return (int)cmd.ExecuteScalar() > 0;
+        }
+    }
+
+    public bool VinylExists(int vinylID)
+    {
+        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM tblVinyl WHERE Vinyl_ID = @Vinyl_ID", conn))
+        {
+            cmd.Parameters.AddWithValue("@Vinyl_ID", vinylID);
+            return (int)cmd.ExecuteScalar() > 0;
+        }
+    }
+
     public List<RecordLabel> GetAllRecordLabel()
     {
         List<RecordLabel> recordLabels = new List<RecordLabel>();

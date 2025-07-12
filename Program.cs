@@ -513,9 +513,21 @@ namespace MusicDBApp
                 }
             }
 
+            int artistID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Artist ID: ");
+                artistID = view.GetIntInput();
 
-            view.DisplayMessage("Enter the Artist ID: ");
-            int artistID = view.GetIntInput();
+                if (storageManager.ArtistExists(artistID))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Artist ID does not exist or was not found, please try again.");
+                }
+            }
             view.DisplayMessage("Enter the release date (yyyy-mm-dd): ");
             DateTime releaseDate = DateTime.Parse(view.GetInput());
             Vinyl vinyl = new Vinyl(vinylName, artistID, releaseDate);
@@ -525,10 +537,39 @@ namespace MusicDBApp
 
         public static void InsertNewGenres()
         {
-            view.DisplayMessage("Enter the new Genre name: ");
-            string genreName = view.GetInput();
-            view.DisplayMessage("Enter a description for the Genre: ");
-            string Description = view.GetInput();
+            string genreName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the new Genre name: ");
+                genreName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(genreName) && genreName.Length <= 100)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Genre cannot be empty or more than 100 characters, please try again.");
+                }
+            }
+
+            string Description;
+            while (true)
+            {
+                view.DisplayMessage("Enter a description for the Genre: ");
+                Description = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(Description) && Description.Length <= 255)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Description cannot be empty or more than 255 characters, please try again.");
+                }
+            }
+
+
             int genreID = 0;
             Genres genre = new Genres(genreName, genreID, Description);
             int generateID = storageManager.InsertLocationGenres(genre);
@@ -537,8 +578,21 @@ namespace MusicDBApp
 
         public static void InsertNewReview()
         {
-            view.DisplayMessage("Enter the Vinyl ID to review: ");
-            int vinylID = view.GetIntInput();
+            int vinylID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Vinyl ID to review: ");
+                vinylID = view.GetIntInput();
+
+                if (storageManager.VinylExists(vinylID))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Vinyl ID does not exist or was not found, please try again.");
+                }
+            }
 
 
             view.DisplayMessage("Enter your name: ");
