@@ -31,7 +31,7 @@ namespace MusicDBApp.View
 
         public void LoginMenu()
         {
-            
+            Console.Clear();
             Console.WriteLine("Please enter your login credentials: ");
 
             Console.WriteLine("Please enter your Username: ");
@@ -67,6 +67,7 @@ namespace MusicDBApp.View
         
         public string RegisterMenu()
         {
+            Console.Clear();
             Console.WriteLine("User Registration");
 
             Console.WriteLine("(Max 100 characters)");
@@ -121,6 +122,7 @@ namespace MusicDBApp.View
 
         public string DisplayAdminMenu()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to MusicDB (admin)");
             Console.WriteLine("Menu: ");
             Console.WriteLine("Choose an option from 1-7");
@@ -148,6 +150,7 @@ namespace MusicDBApp.View
 
         public string DisplayUserMenu()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to MusicDB (user)");
             Console.WriteLine("Menu: ");
             Console.WriteLine("Choose an option from 1-7");
@@ -166,6 +169,7 @@ namespace MusicDBApp.View
 
         public void tblRecordLabelA()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblRecordlabel");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -208,6 +212,7 @@ namespace MusicDBApp.View
 
         public void tblRecordLabelU()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblRecordlabel");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -235,6 +240,7 @@ namespace MusicDBApp.View
 
         public void tblArtistA()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblArtist");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -277,6 +283,7 @@ namespace MusicDBApp.View
 
         public void tblArtistU()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblArtist");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -304,6 +311,7 @@ namespace MusicDBApp.View
 
         public void tblVinylA()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblVinyl");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -346,6 +354,7 @@ namespace MusicDBApp.View
 
         public void tblVinylU()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblVinyl");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -373,6 +382,7 @@ namespace MusicDBApp.View
 
         public void tblGenreA()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblGenre");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -415,6 +425,7 @@ namespace MusicDBApp.View
 
         public void tblGenreU()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblGenre");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -442,6 +453,7 @@ namespace MusicDBApp.View
 
         public void tblReviewsA()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblReviews");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -485,6 +497,7 @@ namespace MusicDBApp.View
 
         public void tblReviewsU()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblReviews");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -518,6 +531,7 @@ namespace MusicDBApp.View
 
         public void tblReviewCommentsA()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblReviewComments");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -561,6 +575,7 @@ namespace MusicDBApp.View
 
         public void tblReviewCommentsU()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to tblReviewComments");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -592,6 +607,7 @@ namespace MusicDBApp.View
 
         public string QueryOptions()
         {
+            Console.Clear();
             Console.WriteLine("Please select one of the following: ");
 
             Console.WriteLine("Simple");
