@@ -434,8 +434,21 @@ namespace MusicDBApp
 
         public static void InsertNewRecordLabels()
         {
-            view.DisplayMessage("Enter the new Record Label name: ");
-            string RecordLabelName = view.GetInput();
+            string RecordLabelName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the new Record Label name: ");
+                RecordLabelName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(RecordLabelName) && RecordLabelName.Length <= 100)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Review Comment cannot be empty, please try again.");
+                }
+            }
             int RecordLabelID = 0;
             RecordLabel recordLabel = new RecordLabel(RecordLabelName, RecordLabelID);
             int generateID = storageManager.InsertLocationRecordLabels(recordLabel);
