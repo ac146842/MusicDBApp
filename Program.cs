@@ -594,12 +594,14 @@ namespace MusicDBApp
                 }
             }
 
-
-            view.DisplayMessage("Enter your name: ");
-            string reviewerName = view.GetInput();
-            if (string.IsNullOrEmpty(reviewerName))
+            while (true)
             {
-                reviewerName = "Anonymous";
+                view.DisplayMessage("Enter your name: ");
+                string reviewerName = view.GetInput();
+                if (string.IsNullOrEmpty(reviewerName))
+                {
+                    reviewerName = "Anonymous";
+                }
             }
             
             decimal OutOf5 = 0;
