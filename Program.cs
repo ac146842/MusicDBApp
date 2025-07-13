@@ -49,12 +49,12 @@ namespace MusicDBApp
 
         // Takes user input for admin menu and query options
         public static void AdminMenu()       
-        {
-            Console.Clear();
+        {           
             while (true)
             {
-                
+                Console.Clear();
                 string choice = view.DisplayAdminMenu();
+
                 switch (choice)
                 {
                     case "1":
@@ -152,10 +152,7 @@ namespace MusicDBApp
                                 default:
                                     Console.WriteLine("Invalid query option. Try again.");
                                     break;
-                            }
-                            Console.WriteLine("Press Enter to return to the main menu");
-                            Console.ReadLine();
-                            break;
+                            }                            
                         }
                     break;
 
