@@ -532,8 +532,22 @@ namespace MusicDBApp
                     view.DisplayMessage("Artist ID does not exist or was not found, please try again.");
                 }
             }
-            view.DisplayMessage("Enter the release date (yyyy-mm-dd): ");
-            DateTime releaseDate = DateTime.Parse(view.GetInput());
+
+            DateTime releaseDate;
+            while (true)
+            {
+                view.DisplayMessage("Enter the release date (yyyy-mm-dd): ");
+                releaseDate = DateTime.Parse(view.GetInput());
+
+                if (releaseDate != default(DateTime))
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Please try again.");
+                }
+            }
             Vinyl vinyl = new Vinyl(vinylName, artistID, releaseDate);
             int generatedID = storageManager.InsertLocationVinyls(vinyl);
             view.DisplayMessage($"New vinyl '{vinyl.Vinyl_Name}' inserted with ID {generatedID}");
