@@ -40,89 +40,103 @@ namespace MusicDBApp.View
         // Displays Login menu and prompts user for credentials
         public void LoginMenu()
         {
-            Console.Clear();
-            Console.WriteLine("Please enter your login credentials: ");
-
-            Console.WriteLine("Please enter your Username: ");
-            string InputtedUsername = Console.ReadLine();
-
-            Console.WriteLine("Please enter your Password: ");
-            string InputtedPassword = Console.ReadLine();
-
-            string Username = storageManager.getUsername(InputtedUsername);
-            string Password = storageManager.getPassword(InputtedUsername);
-            int roleID = storageManager.getRoleID(InputtedUsername);
-            int userID = storageManager.getUserID(InputtedUsername);
-
-            if (!string.IsNullOrEmpty(Username) && InputtedUsername.Equals(Username) && InputtedPassword.Equals(Password))
+            while (true)
             {
-                if (roleID == 1)
-                {
-                    Program.AdminMenu();
-                }
+                Console.Clear();
+                Console.WriteLine("Please enter your login credentials: ");
 
-                else if (roleID == 2)
+                Console.WriteLine("Please enter your Username: ");
+                string InputtedUsername = Console.ReadLine();
+
+                Console.WriteLine("Please enter your Password: ");
+                string InputtedPassword = Console.ReadLine();
+
+                string Username = storageManager.getUsername(InputtedUsername);
+                string Password = storageManager.getPassword(InputtedUsername);
+                int roleID = storageManager.getRoleID(InputtedUsername);
+                int userID = storageManager.getUserID(InputtedUsername);
+
+                if (!string.IsNullOrEmpty(Username) && InputtedUsername.Equals(Username) && InputtedPassword.Equals(Password))
                 {
-                    Program.UserMenu();
+                    if (roleID == 1)
+                    {
+                        Program.AdminMenu();
+                    }
+
+                    else if (roleID == 2)
+                    {
+                        Program.UserMenu();
+                    }
+
+                    break;
                 }
-            }
-            else
-            {
-                Console.WriteLine("Please re enter your details");
+                else
+                {
+                    Console.WriteLine("Please re enter your details");
+                }
             }
         }
 
         //Displays Registration menu and prompts user for new credentials
         public string RegisterMenu()
         {
-            Console.Clear();
-            Console.WriteLine("User Registration");
-
-            Console.WriteLine("(Max 100 characters)");
-            Console.WriteLine("Please enter your desired username: ");
-            string newUsername = Console.ReadLine();
-
-            Console.WriteLine("(Max 100 characters)");
-            Console.WriteLine("Please enter your desired password: ");
-            string newPassword = Console.ReadLine();
-
-            if (storageManager.UserExists(newUsername))
+            while (true)
             {
-                Console.WriteLine("Username already exists, please choose another one");
-                return RegisterMenu();                
-            }
-            
-            int rowsInserted = storageManager.RegisterUser(newUsername, newPassword, roleID: 2);
+                Console.Clear();
+                Console.WriteLine("User Registration");
 
-            if (rowsInserted > 0)
-            {
-                Console.WriteLine("Registration successful");
+                Console.WriteLine("(Max 100 characters)");
+                Console.WriteLine("Please enter your desired username: ");
+                string newUsername = Console.ReadLine();
 
-                Console.WriteLine("Press Y to go back to login menu and N to exit the app");
-                string choice = Console.ReadLine().ToUpper();
+                Console.WriteLine("(Max 100 characters)");
+                Console.WriteLine("Please enter your desired password: ");
+                string newPassword = Console.ReadLine();
 
-                if (choice == "Y")
+                if (storageManager.UserExists(newUsername))
                 {
-                    WelcomeMenu();
-                    return newUsername;
+                    Console.WriteLine("Username already exists, please choose another one");
+                    Console.WriteLine("Press enter to re-try");
+                    Console.ReadLine();
+                    continue;
+
                 }
 
-                else if (choice == "N")
-                {
-                    Environment.Exit(0);
-                    return null;
-                }
+                int rowsInserted = storageManager.RegisterUser(newUsername, newPassword, roleID: 2);
 
+                if (rowsInserted > 0)
+                {
+                    Console.WriteLine("Registration successful");
+
+                    while (true)
+                    {
+                        Console.WriteLine("Press Y to go back to login menu and N to exit the app");
+                        string choice = Console.ReadLine().ToUpper();
+
+                        if (choice == "Y")
+                        {
+                            WelcomeMenu();
+                            return newUsername;
+                        }
+
+                        else if (choice == "N")
+                        {
+                            Environment.Exit(0);
+                            return null;
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Invalid choice, please try again.");
+                            return RegisterMenu();
+                        }
+                    }
+                }
                 else
                 {
-                    Console.WriteLine("Invalid choice, please try again.");
+                    Console.WriteLine("Registration failed please try again.");
                     return RegisterMenu();
                 }
-            }
-            else
-            {
-                Console.WriteLine("Registration failed please try again.");
-                return RegisterMenu();
             }
         }
 

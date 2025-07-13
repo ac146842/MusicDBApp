@@ -159,7 +159,11 @@ namespace MusicDBApp
                                     Console.WriteLine("Invalid query option. Try again.");
                                     break;
                             }
+                            Console.WriteLine("Press Enter to return to the main menu");
+                            Console.ReadLine();
+                            break;
                         }
+                    break;
 
                     case "8":
                         storageManager.CloseConnection();
