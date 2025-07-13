@@ -209,8 +209,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            //Console.WriteLine("\nPress Enter to return to the menu...");
-            //Console.ReadLine();
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblRecordLabel options for User
@@ -240,6 +240,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblArtist options for Admin
@@ -284,6 +286,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblArtist options for User
@@ -313,6 +317,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblVinyl options for Admin
@@ -357,6 +363,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblVinyl options for User
@@ -386,6 +394,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblGenre options for Admin
@@ -430,6 +440,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblGenre options for User
@@ -459,6 +471,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblReviews options for Admin
@@ -503,7 +517,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblReviews options for User
@@ -538,7 +553,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblReviewComments options for Admin
@@ -583,7 +599,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         //Displays tblReviewComments options for User
@@ -617,6 +634,8 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
+            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.ReadLine();
         }
 
         // Displays Query options
