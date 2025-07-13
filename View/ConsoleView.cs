@@ -125,6 +125,7 @@ namespace MusicDBApp.View
                         else if (choice == "N")
                         {
                             Environment.Exit(0);
+                            storageManager.CloseConnection();
                             return null;
                         }
 
