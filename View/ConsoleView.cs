@@ -72,6 +72,7 @@ namespace MusicDBApp.View
                 }
                 else
                 {
+                    Console.WriteLine(" ");
                     Console.WriteLine("Please re enter your details");
                     Console.WriteLine("Press enter to re-try");
                     Console.ReadLine();
@@ -225,7 +226,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -256,7 +257,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -302,7 +303,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -333,7 +334,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -379,7 +380,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -410,7 +411,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -456,7 +457,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -487,7 +488,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -533,7 +534,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -569,7 +570,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -615,7 +616,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
@@ -650,7 +651,7 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
-            Console.WriteLine("\nPress Enter to return to the menu...");
+            Console.WriteLine("Press Enter to return to the menu");
             Console.ReadLine();
         }
 
