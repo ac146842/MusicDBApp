@@ -662,6 +662,7 @@ namespace MusicDBApp.View
                 Console.WriteLine("Welcome to tblReviewComments");
                 Console.WriteLine("Please choose one of the following options");
                 Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View all review comments");
                 Console.WriteLine("2: Leave a review comment");
                 Console.WriteLine("3: Return to main menu");
 
