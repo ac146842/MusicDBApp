@@ -92,90 +92,105 @@ namespace MusicDBApp
                             switch (queryChoice)
                             {
                                 case "1":
+                                    Console.Clear();
                                     storageManager.SmpQry1();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "2":
+                                    Console.Clear();
                                     storageManager.SmpQry2();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "3":
+                                    Console.Clear();
                                     storageManager.SmpQry3();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "4":
+                                    Console.Clear();
                                     storageManager.SmpQry4();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "5":
+                                    Console.Clear();
                                     storageManager.SmpQry5();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "6":
+                                    Console.Clear();
                                     storageManager.AdvQry1();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "7":
+                                    Console.Clear();
                                     storageManager.AdvQry2();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "8":
+                                    Console.Clear();
                                     storageManager.AdvQry3();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "9":
+                                    Console.Clear();
                                     storageManager.AdvQry4();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "10":
+                                    Console.Clear();
                                     storageManager.AdvQry5();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "11":
+                                    Console.Clear();
                                     storageManager.CmxQry1();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "12":
+                                    Console.Clear();
                                     storageManager.CmxQry2();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "13":
+                                    Console.Clear();
                                     storageManager.CmxQry3();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "14":
+                                    Console.Clear();
                                     storageManager.CmxQry4();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
                                     break;
 
                                 case "15":
+                                    Console.Clear();
                                     storageManager.CmxQry5();
                                     Console.WriteLine("Press Enter to return to the query menu");
                                     Console.ReadLine();
