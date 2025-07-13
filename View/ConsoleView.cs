@@ -526,7 +526,7 @@ namespace MusicDBApp.View
                 Console.WriteLine("Please choose one of the following options");
                 Console.WriteLine("Menu: ");
                 Console.WriteLine("1: View All records in tblReviews");
-                Console.WriteLine("2: Update an Reviews details by Review ID");
+                Console.WriteLine("2: Update an Reviewer name by Review ID");
                 Console.WriteLine("3: Insert a new Review");
                 Console.WriteLine("4: Delete a Review by ID");
                 Console.WriteLine("5: Return to main menu");

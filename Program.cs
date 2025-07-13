@@ -790,26 +790,23 @@ namespace MusicDBApp
         {
             int reviewCommentId;
 
-            view.DisplayMessage("Enter the Review Comment ID to delete: ");
-            string input = view.GetInput();
-
             while (true)
             {
+                view.DisplayMessage("Enter the Review Comment ID to delete: ");
+                string input = view.GetInput();
+
                 if (!int.TryParse(input, out reviewCommentId))
                 {
                     view.DisplayMessage("Invalid input. Please enter a valid number.");
                     continue;
                 }
 
-                if (storageManager.ReviewIDExists(reviewCommentId))
+                if (!storageManager.ReviewIDExists(reviewCommentId))
                 {
-                    break;
+                    view.DisplayMessage("Review ID either does not exist or wasn't found. Please try again.");
+                    continue;
                 }
-                else
-                {
-                    view.DisplayMessage("Review ID either does not exist or wasn't found, please try again.");
-                    DeleteReviewCommentByID();
-                }
+                break;
             }
 
             int rowsaffected = storageManager.DeleteReviewCommentByID(reviewCommentId);
