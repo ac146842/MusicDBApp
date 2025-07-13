@@ -29,14 +29,12 @@ namespace MusicDBApp
 
             // string tblchoice = view.TblDisplayMenu();
             // string choice = view.DisplayMenu();
-            bool Notvalid = true;
-            string tblchoice;
-
-            
-            string choice = view.WelcomeMenu();
+            string tblchoice;   
 
             while (true)
             {
+                string choice = view.WelcomeMenu();
+
                 switch (choice)
                 {
                     case "1":
