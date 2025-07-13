@@ -185,6 +185,7 @@ namespace MusicDBApp.View
             return Console.ReadLine();
         }
 
+
         //Displays tblRecordLabel options for Admin
         public void tblRecordLabelA()
         {
