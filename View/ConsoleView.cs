@@ -73,6 +73,8 @@ namespace MusicDBApp.View
                 else
                 {
                     Console.WriteLine("Please re enter your details");
+                    Console.WriteLine("Press enter to re-try");
+                    Console.ReadLine();
                 }
             }
         }
