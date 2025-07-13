@@ -692,9 +692,7 @@ namespace MusicDBApp.View
         // Displays Query options
         public void QueryOptions()
         {
-            Console.Clear();
-            while (true)
-            {
+                Console.Clear();
                 Console.WriteLine("Simple");
                 Console.WriteLine("1. qry Genre");
                 Console.WriteLine("2. qry RecordLabels");
@@ -717,8 +715,7 @@ namespace MusicDBApp.View
                 Console.WriteLine("13. qry Earliest Vinyl Dates");
                 Console.WriteLine("14. qry Highest Rated Vinyl For Artist");
                 Console.WriteLine("15 qry Record Label Artist Count");
-                Console.WriteLine(" ");
-            }
+                Console.WriteLine(" ");            
         }
 
         //Displays list of record labels and their IDs

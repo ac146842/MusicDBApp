@@ -85,8 +85,7 @@ namespace MusicDBApp
 
                         Console.Write("Please enter one of the following options: ");
                         string queryChoice = Console.ReadLine();
-                        while (true)
-                        {
+
                             switch (queryChoice)
                             {
                                 case "1":
@@ -152,9 +151,11 @@ namespace MusicDBApp
                                 default:
                                     Console.WriteLine("Invalid query option. Try again.");
                                     break;
-                            }                            
-                        }
-                    break;
+                            }
+                        Console.WriteLine("Press Enter to return to the query menu");
+                        Console.ReadLine();
+                        view.QueryOptions();
+                        break;
 
                     case "8":
                         storageManager.CloseConnection();
