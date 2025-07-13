@@ -52,9 +52,9 @@ namespace MusicDBApp
         }
 
         // Takes user input for admin menu and query options
-        public static void AdminMenu()
-       
-        {  
+        public static void AdminMenu()       
+        {
+            Console.Clear();
             while (true)
             {
                 
@@ -63,27 +63,25 @@ namespace MusicDBApp
                 {
                     case "1":
                         view.tblRecordLabelA();
-
                         break;
                     case "2":
                         view.tblArtistA();
-
                         break;
+
                     case "3":
                         view.tblVinylA();
-
                         break;
+
                     case "4":
                         view.tblGenreA();
+                        break;
 
-                        break;
                     case "5":
-                        view.tblReviewsA();
-                     
+                        view.tblReviewsA();      
                         break;
+
                     case "6":
-                        view.tblReviewCommentsA();
-                        
+                        view.tblReviewCommentsA();                       
                         break;
 
                     case "7":

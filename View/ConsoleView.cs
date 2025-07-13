@@ -18,6 +18,12 @@ namespace MusicDBApp.View
             storageManager = manager;
         }
 
+        // method to seperate rows from each other for visibility
+        static void PrintLine()
+        {
+            Console.WriteLine(new string('-', Console.WindowWidth - 1));
+        }
+
         // Displays Welcome menu and prompts user for input
         public string WelcomeMenu()
         {
@@ -122,7 +128,6 @@ namespace MusicDBApp.View
         //Displays Admin menu
         public string DisplayAdminMenu()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to MusicDB (admin)");
             Console.WriteLine("Menu: ");
             Console.WriteLine("Choose an option from 1-7");
@@ -143,7 +148,6 @@ namespace MusicDBApp.View
         //Displays User menu
         public string DisplayUserMenu()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to MusicDB (user)");
             Console.WriteLine("Menu: ");
             Console.WriteLine("Choose an option from 1-7");
@@ -162,7 +166,7 @@ namespace MusicDBApp.View
         //Displays tblRecordLabel options for Admin
         public void tblRecordLabelA()
         {
-            Console.Clear();
+            
             Console.WriteLine("Welcome to tblRecordlabel");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -201,12 +205,13 @@ namespace MusicDBApp.View
                     Console.WriteLine("Invalid option Please try again");
                     break;
             }
+            //Console.WriteLine("\nPress Enter to return to the menu...");
+            //Console.ReadLine();
         }
 
         //Displays tblRecordLabel options for User
         public void tblRecordLabelU()
-        {
-            Console.Clear();
+        {            
             Console.WriteLine("Welcome to tblRecordlabel");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -235,7 +240,6 @@ namespace MusicDBApp.View
         //Displays tblArtist options for Admin
         public void tblArtistA()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblArtist");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -279,7 +283,6 @@ namespace MusicDBApp.View
         //Displays tblArtist options for User
         public void tblArtistU()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblArtist");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -308,7 +311,6 @@ namespace MusicDBApp.View
         //Displays tblVinyl options for Admin
         public void tblVinylA()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblVinyl");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -352,7 +354,6 @@ namespace MusicDBApp.View
         //Displays tblVinyl options for User
         public void tblVinylU()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblVinyl");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -381,7 +382,6 @@ namespace MusicDBApp.View
         //Displays tblGenre options for Admin
         public void tblGenreA()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblGenre");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -425,7 +425,6 @@ namespace MusicDBApp.View
         //Displays tblGenre options for User
         public void tblGenreU()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblGenre");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -454,7 +453,6 @@ namespace MusicDBApp.View
         //Displays tblReviews options for Admin
         public void tblReviewsA()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblReviews");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -499,7 +497,6 @@ namespace MusicDBApp.View
         //Displays tblReviews options for User
         public void tblReviewsU()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblReviews");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -534,7 +531,6 @@ namespace MusicDBApp.View
         //Displays tblReviewComments options for Admin
         public void tblReviewCommentsA()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblReviewComments");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -579,7 +575,6 @@ namespace MusicDBApp.View
         //Displays tblReviewComments options for User
         public void tblReviewCommentsU()
         {
-            Console.Clear();
             Console.WriteLine("Welcome to tblReviewComments");
             Console.WriteLine("Please choose one of the following options");
             Console.WriteLine("Menu: ");
@@ -612,9 +607,6 @@ namespace MusicDBApp.View
         // Displays Query options
         public void QueryOptions()
         {
-            Console.Clear();
-
-
             Console.WriteLine("Simple");
             Console.WriteLine("1. qry Genre");
             Console.WriteLine("2. qry RecordLabels");
@@ -646,6 +638,7 @@ namespace MusicDBApp.View
             foreach (RecordLabel recordLabel in recordLabels)
             {
                 Console.WriteLine($"{recordLabel.RecordLabel_ID}, {recordLabel.RecordLabel_Name}");
+                PrintLine();
             }
         }
 
@@ -655,6 +648,7 @@ namespace MusicDBApp.View
             foreach (Artist artist in artists)
             {
                 Console.WriteLine($"{artist.Artist_Name}, {artist.Artist_ID}, {artist.RecordLabel_ID}");
+                PrintLine();
             }
         }
 
@@ -664,6 +658,7 @@ namespace MusicDBApp.View
             foreach (Vinyl vinyl in vinyls)
             {
                 Console.WriteLine($"{vinyl.Vinyl_ID}, {vinyl.Vinyl_Name}, {vinyl.Artist_ID}, {vinyl.Date_Of_Release:yyyy-MM-dd}");
+                PrintLine();
             }
         }
 
@@ -673,6 +668,7 @@ namespace MusicDBApp.View
             foreach (Genres genre in genres)
             {
                 Console.WriteLine($"{genre.Genre_ID}, {genre.Genre_Name}");
+                PrintLine();
             }
         }
 
@@ -682,6 +678,7 @@ namespace MusicDBApp.View
             foreach (Reviews review in reviews)
             {
                 Console.WriteLine($"{review.Review_ID}, {review.Reviewer_Name}, {review.Vinyl_ID}, {review.Out_Of_5}");
+                PrintLine();
             }
         }
 
@@ -691,6 +688,7 @@ namespace MusicDBApp.View
             foreach (ReviewComments reviewComment in reviewComments)
             {
                 Console.WriteLine($"{reviewComment.Short_Review}, {reviewComment.Review_ID}, {reviewComment.ReviewComment_ID}, {reviewComment.Review_Date:yyyy-MM-dd}");
+                PrintLine();
             }
         }
 
