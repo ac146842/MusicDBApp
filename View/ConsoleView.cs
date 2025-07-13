@@ -205,6 +205,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
                         DisplayRecordLabels(recordLabels);
                         break;
@@ -250,6 +251,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
                         DisplayRecordLabels(recordLabels);
                         break;
@@ -287,6 +289,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<Artist> artists = storageManager.GetAllArtist();
                         DisplayArtists(artists);
                         break;
@@ -333,6 +336,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<Artist> artists = storageManager.GetAllArtist();
                         DisplayArtists(artists);
                         break;
@@ -370,6 +374,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<Vinyl> vinyls = storageManager.GetAllVinyl();
                         DisplayVinyls(vinyls);
                         break;
@@ -416,6 +421,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<Vinyl> vinyls = storageManager.GetAllVinyl();
                         DisplayVinyls(vinyls);
                         break;
@@ -453,6 +459,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<Genres> genres = storageManager.GetAllGenres();
                         DisplayGenres(genres);
                         break;
@@ -499,6 +506,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<Genres> genres = storageManager.GetAllGenres();
                         DisplayGenres(genres);
                         break;
@@ -536,6 +544,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<Reviews> reviews = storageManager.GetAllReviews();
                         DisplayReviews(reviews);
                         break;
@@ -583,6 +592,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<Reviews> reviews = storageManager.GetAllReviews();
                         DisplayReviews(reviews);
                         break;
@@ -624,6 +634,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
                         DisplayReviewComments(reviewComments);
                         break;
@@ -671,6 +682,7 @@ namespace MusicDBApp.View
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
                         DisplayReviewComments(reviewComments);
                         break;
