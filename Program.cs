@@ -749,12 +749,20 @@ namespace MusicDBApp
         // Takes user input to delete a review comment by ID
         public static void DeleteReviewCommentByID()
         {
-            view.DisplayMessage("Enter the Review Comment ID to delete");
-            int ReviewCommentID = view.GetIntInput();
+            int reviewCommentId;
+
+            view.DisplayMessage("Enter the Review Comment ID to delete: ");
+            string input = view.GetInput();
 
             while (true)
             {
-                if (storageManager.ReviewIDExists(ReviewCommentID))
+                if (!int.TryParse(input, out reviewCommentId))
+                {
+                    view.DisplayMessage("Invalid input. Please enter a valid number.");
+                    continue;
+                }
+
+                if (storageManager.ReviewIDExists(reviewCommentId))
                 {
                     break;
                 }
@@ -765,7 +773,7 @@ namespace MusicDBApp
                 }
             }
 
-            int rowsaffected = storageManager.DeleteReviewCommentByID(ReviewCommentID);
+            int rowsaffected = storageManager.DeleteReviewCommentByID(reviewCommentId);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }       
     }
