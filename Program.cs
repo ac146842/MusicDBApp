@@ -89,11 +89,10 @@ namespace MusicDBApp
                     case "7":
                         view.QueryOptions();
 
+                        Console.Write("Please enter one of the following options: ");
+                        string queryChoice = Console.ReadLine();
                         while (true)
                         {
-                            Console.Write("Please enter one of the following options: ");
-                            string queryChoice = Console.ReadLine();
-
                             switch (queryChoice)
                             {
                                 case "1":
