@@ -759,7 +759,19 @@ namespace MusicDBApp.View
         // Gets user input for numbers
         public int GetIntInput()
         {
-            return int.Parse(Console.ReadLine());
+            int result;
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out result))
+                {
+                    return result; // valid number
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number:");
+                }
+            }
         }
     }
 }
