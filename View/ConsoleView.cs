@@ -739,6 +739,7 @@ namespace MusicDBApp.View
             foreach (RecordLabel recordLabel in recordLabels)
             {
                 Console.WriteLine($"{recordLabel.RecordLabel_ID}, {recordLabel.RecordLabel_Name}");
+                Console.WriteLine("-----------------------------");
             }
         }
 
@@ -748,6 +749,7 @@ namespace MusicDBApp.View
             foreach (Artist artist in artists)
             {
                 Console.WriteLine($"{artist.Artist_Name}, {artist.Artist_ID}, {artist.RecordLabel_ID}");
+                Console.WriteLine("-----------------------------");
             }
         }
 
@@ -757,6 +759,7 @@ namespace MusicDBApp.View
             foreach (Vinyl vinyl in vinyls)
             {
                 Console.WriteLine($"{vinyl.Vinyl_ID}, {vinyl.Vinyl_Name}, {vinyl.Artist_ID}, {vinyl.Date_Of_Release:yyyy-MM-dd}");
+                Console.WriteLine("-----------------------------");
             }
         }
 
@@ -766,6 +769,7 @@ namespace MusicDBApp.View
             foreach (Genres genre in genres)
             {
                 Console.WriteLine($"{genre.Genre_ID}, {genre.Genre_Name}");
+                Console.WriteLine("-----------------------------");
             }
         }
 
@@ -775,6 +779,7 @@ namespace MusicDBApp.View
             foreach (Reviews review in reviews)
             {
                 Console.WriteLine($"{review.Review_ID}, {review.Reviewer_Name}, {review.Vinyl_ID}, {review.Out_Of_5}");
+                Console.WriteLine("-----------------------------");
             }
         }
 
@@ -784,6 +789,7 @@ namespace MusicDBApp.View
             foreach (ReviewComments reviewComment in reviewComments)
             {
                 Console.WriteLine($"{reviewComment.Short_Review}, {reviewComment.Review_ID}, {reviewComment.ReviewComment_ID}, {reviewComment.Review_Date:yyyy-MM-dd}");
+                Console.WriteLine("-----------------------------");
             }
         }
 
