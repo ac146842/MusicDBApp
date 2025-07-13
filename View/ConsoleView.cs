@@ -187,499 +187,538 @@ namespace MusicDBApp.View
         //Displays tblRecordLabel options for Admin
         public void tblRecordLabelA()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblRecordlabel");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblRecordLabel");
-            Console.WriteLine("2: Update a Record Labels info by RecordLabel_ID");
-            Console.WriteLine("3: Insert a new Record Label");
-            Console.WriteLine("4: Delete a Record Label by Name");
-            Console.WriteLine("5: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
-                    DisplayRecordLabels(recordLabels);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblRecordlabel");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View All records in tblRecordLabel");
+                Console.WriteLine("2: Update a Record Labels info by RecordLabel_ID");
+                Console.WriteLine("3: Insert a new Record Label");
+                Console.WriteLine("4: Delete a Record Label by Name");
+                Console.WriteLine("5: Return to main menu");
 
-                case "2":
-                    Program.UpdateRecordLabelsName();
-                    break;
+                string choice = Console.ReadLine();
 
-                case "3":
-                    Program.InsertNewRecordLabels();
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
+                        DisplayRecordLabels(recordLabels);
+                        break;
 
-                case "4":
-                    Program.DeleteRecordLabelByName();
-                    break;
+                    case "2":
+                        Program.UpdateRecordLabelsName();
+                        break;
 
-                case "5":
-                    return;
+                    case "3":
+                        Program.InsertNewRecordLabels();
+                        break;
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                    case "4":
+                        Program.DeleteRecordLabelByName();
+                        break;
+
+                    case "5":
+                        return;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         //Displays tblRecordLabel options for User
         public void tblRecordLabelU()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblRecordlabel");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View all existing Record Labels");
-            Console.WriteLine("2: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
-                    DisplayRecordLabels(recordLabels);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblRecordlabel");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View all existing Record Labels");
+                Console.WriteLine("2: Return to main menu");
 
-                case "2":
-                    return;
-                    break;
+                string choice = Console.ReadLine();
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        List<RecordLabel> recordLabels = storageManager.GetAllRecordLabel();
+                        DisplayRecordLabels(recordLabels);
+                        break;
+
+                    case "2":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         //Displays tblArtist options for Admin
         public void tblArtistA()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblArtist");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblArtist");
-            Console.WriteLine("2: Update an Artists details by Artist_ID");
-            Console.WriteLine("3: Insert a new Artist");
-            Console.WriteLine("4: Delete a Artist by Name");
-            Console.WriteLine("5: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<Artist> artists = storageManager.GetAllArtist();
-                    DisplayArtists(artists);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblArtist");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View All records in tblArtist");
+                Console.WriteLine("2: Update an Artists details by Artist_ID");
+                Console.WriteLine("3: Insert a new Artist");
+                Console.WriteLine("4: Delete a Artist by Name");
+                Console.WriteLine("5: Return to main menu");
 
-                case "2":
-                    Program.UpdateArtistsName();
-                    break;
+                string choice = Console.ReadLine();
 
-                case "3":
-                    Program.InsertNewArtists();
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        List<Artist> artists = storageManager.GetAllArtist();
+                        DisplayArtists(artists);
+                        break;
 
-                case "4":
-                    Program.DeleteArtistByName();
-                    break;
+                    case "2":
+                        Program.UpdateArtistsName();
+                        break;
 
-                case "5":
-                    return;
-                    break;
+                    case "3":
+                        Program.InsertNewArtists();
+                        break;
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                    case "4":
+                        Program.DeleteArtistByName();
+                        break;
+
+                    case "5":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         //Displays tblArtist options for User
         public void tblArtistU()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblArtist");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View all existing Artists");
-            Console.WriteLine("2: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<Artist> artists = storageManager.GetAllArtist();
-                    DisplayArtists(artists);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblArtist");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View all existing Artists");
+                Console.WriteLine("2: Return to main menu");
 
-                case "2":
-                    return;
-                    break;
+                string choice = Console.ReadLine();
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        List<Artist> artists = storageManager.GetAllArtist();
+                        DisplayArtists(artists);
+                        break;
+
+                    case "2":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         //Displays tblVinyl options for Admin
         public void tblVinylA()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblVinyl");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblVinyl");
-            Console.WriteLine("2: Update an Vinyls details by Vinyl_ID");
-            Console.WriteLine("3: Insert a new Vinyl");
-            Console.WriteLine("4: Delete a Vinyl by Name");
-            Console.WriteLine("5: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<Vinyl> vinyls = storageManager.GetAllVinyl();
-                    DisplayVinyls(vinyls);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblVinyl");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View All records in tblVinyl");
+                Console.WriteLine("2: Update an Vinyls details by Vinyl_ID");
+                Console.WriteLine("3: Insert a new Vinyl");
+                Console.WriteLine("4: Delete a Vinyl by Name");
+                Console.WriteLine("5: Return to main menu");
 
-                case "2":
-                    Program.UpdateVinylsName();
-                    break;
+                string choice = Console.ReadLine();
 
-                case "3":
-                    Program.InsertNewVinyls();
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        List<Vinyl> vinyls = storageManager.GetAllVinyl();
+                        DisplayVinyls(vinyls);
+                        break;
 
-                case "4":
-                    Program.DeleteVinylByName();
-                    break;
+                    case "2":
+                        Program.UpdateVinylsName();
+                        break;
 
-                case "5":
-                    return;
-                    break;
+                    case "3":
+                        Program.InsertNewVinyls();
+                        break;
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                    case "4":
+                        Program.DeleteVinylByName();
+                        break;
+
+                    case "5":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         //Displays tblVinyl options for User
         public void tblVinylU()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblVinyl");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblVinyl");
-            Console.WriteLine("2: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<Vinyl> vinyls = storageManager.GetAllVinyl();
-                    DisplayVinyls(vinyls);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblVinyl");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View All records in tblVinyl");
+                Console.WriteLine("2: Return to main menu");
 
-                case "2":
-                    return;
-                    break; 
+                string choice = Console.ReadLine();
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
-            }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        List<Vinyl> vinyls = storageManager.GetAllVinyl();
+                        DisplayVinyls(vinyls);
+                        break;
+
+                    case "2":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
+            } 
         }
 
         //Displays tblGenre options for Admin
         public void tblGenreA()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblGenre");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblGenre");
-            Console.WriteLine("2: Update an Genre's details by Genre_ID");
-            Console.WriteLine("3: Insert a new Genre");
-            Console.WriteLine("4: Delete a Genre by Name");
-            Console.WriteLine("5: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<Genres> genres = storageManager.GetAllGenres();
-                    DisplayGenres(genres);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblGenre");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View All records in tblGenre");
+                Console.WriteLine("2: Update an Genre's details by Genre_ID");
+                Console.WriteLine("3: Insert a new Genre");
+                Console.WriteLine("4: Delete a Genre by Name");
+                Console.WriteLine("5: Return to main menu");
 
-                case "2":
-                    Program.UpdateGenresName();
-                    break;
+                string choice = Console.ReadLine();
 
-                case "3":
-                   Program.InsertNewGenres();
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        List<Genres> genres = storageManager.GetAllGenres();
+                        DisplayGenres(genres);
+                        break;
 
-                case "4":
-                    Program.DeleteGenresByName();
-                    break;
+                    case "2":
+                        Program.UpdateGenresName();
+                        break;
 
-                case "5":
-                    return;
-                    break;
+                    case "3":
+                        Program.InsertNewGenres();
+                        break;
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                    case "4":
+                        Program.DeleteGenresByName();
+                        break;
+
+                    case "5":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         //Displays tblGenre options for User
         public void tblGenreU()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblGenre");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblGenre");
-            Console.WriteLine("2: Return to main menu"); 
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<Genres> genres = storageManager.GetAllGenres();
-                    DisplayGenres(genres);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblGenre");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View All records in tblGenre");
+                Console.WriteLine("2: Return to main menu");
 
-                case "2":
-                    return;
-                    break;
+                string choice = Console.ReadLine();
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
-            }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        List<Genres> genres = storageManager.GetAllGenres();
+                        DisplayGenres(genres);
+                        break;
+
+                    case "2":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
+            }       
         }
 
         //Displays tblReviews options for Admin
         public void tblReviewsA()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblReviews");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblReviews");
-            Console.WriteLine("2: Update an Reviews details by Review ID");
-            Console.WriteLine("3: Insert a new Review");
-            Console.WriteLine("4: Delete a Review by ID");
-            Console.WriteLine("5: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<Reviews> reviews = storageManager.GetAllReviews();
-                    DisplayReviews(reviews);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblReviews");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View All records in tblReviews");
+                Console.WriteLine("2: Update an Reviews details by Review ID");
+                Console.WriteLine("3: Insert a new Review");
+                Console.WriteLine("4: Delete a Review by ID");
+                Console.WriteLine("5: Return to main menu");
 
-                case "2":
-                    Program.UpdateReviewersName();
-                    break;
+                string choice = Console.ReadLine();
 
-                case "3":
-                    Program.InsertNewReview();
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        List<Reviews> reviews = storageManager.GetAllReviews();
+                        DisplayReviews(reviews);
+                        break;
 
-                case "4":
-                    Program.DeleteReviewByID();
-                    break;
+                    case "2":
+                        Program.UpdateReviewersName();
+                        break;
 
-                case "5":
-                    return;
-                    break;
+                    case "3":
+                        Program.InsertNewReview();
+                        break;
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                    case "4":
+                        Program.DeleteReviewByID();
+                        break;
+
+                    case "5":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         //Displays tblReviews options for User
         public void tblReviewsU()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblReviews");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblReviews");
-            Console.WriteLine("2: Leave a rating");
-            Console.WriteLine("3: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<Reviews> reviews = storageManager.GetAllReviews();
-                    DisplayReviews(reviews);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblReviews");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View All records in tblReviews");
+                Console.WriteLine("2: Leave a rating");
+                Console.WriteLine("3: Return to main menu");
 
-                case "2":
-                   Program.InsertNewReview(); 
-                    break;
+                string choice = Console.ReadLine();
 
-                case "3":
-                    return;
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        List<Reviews> reviews = storageManager.GetAllReviews();
+                        DisplayReviews(reviews);
+                        break;
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                    case "2":
+                        Program.InsertNewReview();
+                        break;
+
+                    case "3":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         //Displays tblReviewComments options for Admin
         public void tblReviewCommentsA()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblReviewComments");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("1: View All records in tblReviewComments");
-            Console.WriteLine("2: Update Review Comment by ReviewComment_ID");
-            Console.WriteLine("3: Insert a new Review Comment");
-            Console.WriteLine("4: Delete a Review Comment by ID");
-            Console.WriteLine("5: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
-                    DisplayReviewComments(reviewComments);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblReviewComments");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("1: View All records in tblReviewComments");
+                Console.WriteLine("2: Update Review Comment by ReviewComment_ID");
+                Console.WriteLine("3: Insert a new Review Comment");
+                Console.WriteLine("4: Delete a Review Comment by ID");
+                Console.WriteLine("5: Return to main menu");
 
-                case "2":
-                    Program.UpdateReviewComments();
-                    break;
+                string choice = Console.ReadLine();
 
-                case "3":
-                    Program.InsertNewReviewComment();
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
+                        DisplayReviewComments(reviewComments);
+                        break;
 
-                case "4":
-                    Program.DeleteReviewCommentByID();
-                    break;
+                    case "2":
+                        Program.UpdateReviewComments();
+                        break;
 
-                case "5":
-                    return;
-                    break;
+                    case "3":
+                        Program.InsertNewReviewComment();
+                        break;
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                    case "4":
+                        Program.DeleteReviewCommentByID();
+                        break;
+
+                    case "5":
+                        return;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         //Displays tblReviewComments options for User
         public void tblReviewCommentsU()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to tblReviewComments");
-            Console.WriteLine("Please choose one of the following options");
-            Console.WriteLine("Menu: ");
-            Console.WriteLine("2: Leave a review comment");
-            Console.WriteLine("3: Return to main menu");
-
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
-                    DisplayReviewComments(reviewComments);
-                    break;
+                Console.Clear();
+                Console.WriteLine("Welcome to tblReviewComments");
+                Console.WriteLine("Please choose one of the following options");
+                Console.WriteLine("Menu: ");
+                Console.WriteLine("2: Leave a review comment");
+                Console.WriteLine("3: Return to main menu");
 
-                case "2":
-                    Program.InsertNewReviewComment(); 
-                    break;
+                string choice = Console.ReadLine();
 
-                case "3":
-                    return;
+                switch (choice)
+                {
+                    case "1":
+                        List<ReviewComments> reviewComments = storageManager.GetAllReviewComments();
+                        DisplayReviewComments(reviewComments);
+                        break;
 
-                default:
-                    Console.WriteLine("Invalid option Please try again");
-                    break;
+                    case "2":
+                        Program.InsertNewReviewComment();
+                        break;
+
+                    case "3":
+                        return;
+
+                    default:
+                        Console.WriteLine("Invalid option Please try again");
+                        break;
+                }
+                Console.WriteLine("Press Enter to return to the menu");
+                Console.ReadLine();
             }
-            Console.WriteLine("Press Enter to return to the menu");
-            Console.ReadLine();
         }
 
         // Displays Query options
         public void QueryOptions()
         {
-            Console.Clear();
-            Console.WriteLine("Simple");
-            Console.WriteLine("1. qry Genre");
-            Console.WriteLine("2. qry RecordLabels");
-            Console.WriteLine("3. qry ReviewComments");
-            Console.WriteLine("4. qry Reviews");
-            Console.WriteLine("5. qry Vinyls");
-            Console.WriteLine(" ");
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("Simple");
+                Console.WriteLine("1. qry Genre");
+                Console.WriteLine("2. qry RecordLabels");
+                Console.WriteLine("3. qry ReviewComments");
+                Console.WriteLine("4. qry Reviews");
+                Console.WriteLine("5. qry Vinyls");
+                Console.WriteLine(" ");
 
-            Console.WriteLine("Advanced: ");
-            Console.WriteLine("6. qry Artist Name Like A");
-            Console.WriteLine("7. qry Genres After Letter M");
-            Console.WriteLine("8. qry Higher Rating Than 3");
-            Console.WriteLine("9. qry Reviews Between 2010 & 2020");
-            Console.WriteLine("10. qry Short Review Under 30 char");
-            Console.WriteLine(" ");
+                Console.WriteLine("Advanced: ");
+                Console.WriteLine("6. qry Artist Name Like A");
+                Console.WriteLine("7. qry Genres After Letter M");
+                Console.WriteLine("8. qry Higher Rating Than 3");
+                Console.WriteLine("9. qry Reviews Between 2010 & 2020");
+                Console.WriteLine("10. qry Short Review Under 30 char");
+                Console.WriteLine(" ");
 
-            Console.WriteLine("Complex: ");
-            Console.WriteLine("11. qry Artist AvgRating");
-            Console.WriteLine("12. qry Counting Artist Vinyl");
-            Console.WriteLine("13. qry Earliest Vinyl Dates");
-            Console.WriteLine("14. qry Highest Rated Vinyl For Artist");
-            Console.WriteLine("15 qry Record Label Artist Count");
-            Console.WriteLine(" ");
+                Console.WriteLine("Complex: ");
+                Console.WriteLine("11. qry Artist AvgRating");
+                Console.WriteLine("12. qry Counting Artist Vinyl");
+                Console.WriteLine("13. qry Earliest Vinyl Dates");
+                Console.WriteLine("14. qry Highest Rated Vinyl For Artist");
+                Console.WriteLine("15 qry Record Label Artist Count");
+                Console.WriteLine(" ");
+            }
         }
 
         //Displays list of record labels and their IDs

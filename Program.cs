@@ -685,9 +685,9 @@ namespace MusicDBApp
             while (true)
             {
                 view.DisplayMessage("Enter the review date (YYYY-MM-DD): ");
-                reviewDate = DateTime.Parse(view.GetInput());
+                string input = view.GetInput();
 
-                if (reviewDate != default(DateTime))
+                if (DateTime.TryParse(input, out reviewDate))
                 {
                     break;
                 }
