@@ -219,8 +219,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "5":
-                    DisplayAdminMenu(); 
-                    break;
+                    return;
 
                 default:
                     Console.WriteLine("Invalid option Please try again");
@@ -250,7 +249,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    DisplayUserMenu(); 
+                    return;
                     break;
 
                 default:
@@ -296,7 +295,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "5":
-                    DisplayAdminMenu(); 
+                    return;
                     break;
 
                 default:
@@ -326,8 +325,8 @@ namespace MusicDBApp.View
                     DisplayArtists(artists);
                     break;
 
-                case "2": 
-                    DisplayUserMenu();
+                case "2":
+                    return;
                     break;
 
                 default:
@@ -373,7 +372,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "5":
-                    DisplayAdminMenu(); 
+                    return;
                     break;
 
                 default:
@@ -404,7 +403,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    DisplayUserMenu();
+                    return;
                     break; 
 
                 default:
@@ -450,7 +449,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "5":
-                    DisplayAdminMenu(); 
+                    return;
                     break;
 
                 default:
@@ -481,7 +480,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "2":
-                    DisplayUserMenu();
+                    return;
                     break;
 
                 default:
@@ -527,7 +526,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "5":
-                    DisplayAdminMenu(); 
+                    return;
                     break;
 
                 default:
@@ -563,7 +562,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "3":
-                    DisplayUserMenu();
+                    return;
                     break;
 
                 default:
@@ -609,7 +608,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "5":
-                    DisplayAdminMenu(); 
+                    return;
                     break;
 
                 default:
@@ -644,8 +643,7 @@ namespace MusicDBApp.View
                     break;
 
                 case "3":
-                    DisplayUserMenu(); 
-                    break;
+                    return;
 
                 default:
                     Console.WriteLine("Invalid option Please try again");
