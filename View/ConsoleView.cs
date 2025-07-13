@@ -692,9 +692,9 @@ namespace MusicDBApp.View
         // Displays Query options
         public void QueryOptions()
         {
+            Console.Clear();
             while (true)
             {
-                Console.Clear();
                 Console.WriteLine("Simple");
                 Console.WriteLine("1. qry Genre");
                 Console.WriteLine("2. qry RecordLabels");
