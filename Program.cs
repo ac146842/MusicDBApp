@@ -81,81 +81,118 @@ namespace MusicDBApp
                         break;
 
                     case "7":
-                        view.QueryOptions();
+                        while (true)
+                        {
+                            view.QueryOptions();
 
-                        Console.Write("Please enter one of the following options: ");
-                        string queryChoice = Console.ReadLine();
+                            Console.Write("Please enter one of the following options: ");
+                            string queryChoice = Console.ReadLine();
 
                             switch (queryChoice)
                             {
                                 case "1":
                                     storageManager.SmpQry1();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "2":
                                     storageManager.SmpQry2();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "3":
                                     storageManager.SmpQry3();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "4":
                                     storageManager.SmpQry4();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "5":
                                     storageManager.SmpQry5();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "6":
                                     storageManager.AdvQry1();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "7":
                                     storageManager.AdvQry2();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "8":
                                     storageManager.AdvQry3();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "9":
                                     storageManager.AdvQry4();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "10":
                                     storageManager.AdvQry5();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "11":
                                     storageManager.CmxQry1();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "12":
                                     storageManager.CmxQry2();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "13":
                                     storageManager.CmxQry3();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "14":
                                     storageManager.CmxQry4();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
                                     break;
 
                                 case "15":
                                     storageManager.CmxQry5();
+                                    Console.WriteLine("Press Enter to return to the query menu");
+                                    Console.ReadLine();
+                                    break;
+
+                                case "16":
                                     break;
 
                                 default:
                                     Console.WriteLine("Invalid query option. Try again.");
-                                    break;
+                                    continue;
                             }
-                        Console.WriteLine("Press Enter to return to the query menu");
-                        Console.ReadLine();
-                        view.QueryOptions();
-                        break;
+                            if (queryChoice == "16")
+                            {
+                                break;
+                            }
+                        }
+                    break;
 
                     case "8":
                         storageManager.CloseConnection();

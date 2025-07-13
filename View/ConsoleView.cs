@@ -715,7 +715,8 @@ namespace MusicDBApp.View
                 Console.WriteLine("13. qry Earliest Vinyl Dates");
                 Console.WriteLine("14. qry Highest Rated Vinyl For Artist");
                 Console.WriteLine("15 qry Record Label Artist Count");
-                Console.WriteLine(" ");            
+                Console.WriteLine(" ");
+                Console.WriteLine("16. Return to main menu");
         }
 
         //Displays list of record labels and their IDs
