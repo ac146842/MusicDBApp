@@ -35,19 +35,23 @@ namespace MusicDBApp
             
             string choice = view.WelcomeMenu();
 
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    view.LoginMenu();
-                    break;
+                switch (choice)
+                {
+                    case "1":
+                        view.LoginMenu();
+                        break;
 
-                case "2":
-                    view.RegisterMenu();
-                    break;
+                    case "2":
+                        view.RegisterMenu();
+                        break;
 
-                default:
-                    Console.WriteLine("Please try again.");
-                    break;
+                    default:
+                        Console.WriteLine("Please try again.");
+                        view.WelcomeMenu();
+                        break;
+                }
             }
         }
 

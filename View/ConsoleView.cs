@@ -33,6 +33,7 @@ namespace MusicDBApp.View
             Console.WriteLine("1. Login ");
             Console.WriteLine("2. Register ");
 
+            Console.Write("Enter your option here: ");
             return Console.ReadLine();
         }
 
