@@ -61,7 +61,7 @@ namespace MusicDBApp
                     case "1":
                         view.tblRecordLabelA();
                         break;
-                    case "2":
+                    case "2":;
                         view.tblArtistA();
                         break;
 
@@ -69,7 +69,7 @@ namespace MusicDBApp
                         view.tblVinylA();
                         break;
 
-                    case "4":
+                    case "4":                       
                         view.tblGenreA();
                         break;
 
