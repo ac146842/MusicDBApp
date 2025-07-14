@@ -715,13 +715,13 @@ namespace MusicDBApp
                 view.DisplayMessage("Enter the Review ID you are commenting on: ");
                 reviewID = view.GetIntInput();
 
-                if (storageManager.VinylExists(reviewID))
+                if (storageManager.ReviewIDExists(reviewID))
                 {
                     break;
                 }
                 else
                 {
-                    view.DisplayMessage("Vinyl ID does not exist or was not found, please try again.");
+                    view.DisplayMessage("Review ID does not exist or was not found, please try again.");
                 }
             }
 
