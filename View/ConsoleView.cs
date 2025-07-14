@@ -89,31 +89,46 @@ namespace MusicDBApp.View
                 Console.WriteLine("User Registration");
 
                 Console.WriteLine("(Max 100 characters)");
-                Console.WriteLine("Please enter your desired username: ");
+                Console.Write("Please enter your desired username: ");
                 string newUsername = Console.ReadLine();
 
                 Console.WriteLine("(Max 100 characters)");
-                Console.WriteLine("Please enter your desired password: ");
+                Console.Write("Please enter your desired password: ");
                 string newPassword = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(newUsername) || string.IsNullOrWhiteSpace(newPassword))
+                {
+                    Console.WriteLine("Username or Password cannot be empty.");
+                    Console.WriteLine("Press Enter to try again");
+                    Console.ReadLine();
+                    continue;
+                }
+
+                if (newUsername.Length > 100 || newPassword.Length > 100)
+                {
+                    Console.WriteLine("Username/Password must be under 100 characters.");
+                    Console.WriteLine("Press Enter to try again");
+                    Console.ReadLine();
+                    continue;
+                }
 
                 if (storageManager.UserExists(newUsername))
                 {
-                    Console.WriteLine("Username already exists, please choose another one");
-                    Console.WriteLine("Press enter to re-try");
+                    Console.WriteLine("Username already exists. Please choose another one.");
+                    Console.WriteLine("Press Enter to try again");
                     Console.ReadLine();
                     continue;
-
                 }
 
                 int rowsInserted = storageManager.RegisterUser(newUsername, newPassword, roleID: 2);
 
                 if (rowsInserted > 0)
                 {
-                    Console.WriteLine("Registration successful");
+                    Console.WriteLine("Registration successful!");
 
                     while (true)
                     {
-                        Console.WriteLine("Press Y to go back to login menu and N to exit the app");
+                        Console.Write("Press Y to go to login or N to exit: ");
                         string choice = Console.ReadLine().ToUpper();
 
                         if (choice == "Y")
@@ -121,28 +136,25 @@ namespace MusicDBApp.View
                             WelcomeMenu();
                             return newUsername;
                         }
-
                         else if (choice == "N")
                         {
-                            Environment.Exit(0);
                             storageManager.CloseConnection();
-                            return null;
+                            Environment.Exit(0);
                         }
-
                         else
                         {
-                            Console.WriteLine("Invalid choice, please try again.");
-                            return RegisterMenu();
+                            Console.WriteLine("Invalid input. Please enter Y or N.");
                         }
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Registration failed please try again.");
-                    return RegisterMenu();
+                    Console.WriteLine("Registration failed. Please press Enter to try again...");
+                    Console.ReadLine();
                 }
             }
         }
+
 
 
         //Displays Admin menu

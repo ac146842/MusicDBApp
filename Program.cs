@@ -19,7 +19,8 @@ namespace MusicDBApp
         // Main method and displays Login/Register menu
         static void Main(string[] args)
         {
-            string connectionString = " ";
+            string connectionString = "";
+
 
             storageManager = new StorageManager(connectionString);
             view = new ConsoleView(storageManager);
@@ -588,9 +589,14 @@ namespace MusicDBApp
             while (true)
             {
                 view.DisplayMessage("Enter the release date (yyyy-mm-dd): ");
-                releaseDate = DateTime.Parse(view.GetInput());
+                string input = view.GetInput();
 
-                if (releaseDate != default(DateTime))
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    view.DisplayMessage("Date cannot be empty, please try again.");
+                    continue;
+                }
+                else if (DateTime.TryParse(input, out releaseDate))
                 {
                     break;
                 }
