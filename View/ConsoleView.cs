@@ -17,12 +17,7 @@ namespace MusicDBApp.View
         {
             storageManager = manager;
         }
-
-        // method to seperate rows from each other for visibility
-        static void PrintLine()
-        {
-            Console.WriteLine(new string('-', Console.WindowWidth - 1));
-        }
+     
 
         // Displays Welcome menu and prompts user for input
         public string WelcomeMenu()

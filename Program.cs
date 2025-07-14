@@ -764,8 +764,21 @@ namespace MusicDBApp
         // Takes user input to delete a record label by name
         public static void DeleteRecordLabelByName()
         {
-            view.DisplayMessage("Enter the Record Label Name to delete");
-            string recordLabelName = view.GetInput();
+            string recordLabelName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Record Label Name to delete");
+                recordLabelName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(recordLabelName) && recordLabelName.Length <= 100)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Record Label name cannot be empty or more than 100 characters, please try again.");
+                }
+            }
             int rowsaffected = storageManager.DeleteRecordLabelByName(recordLabelName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
@@ -773,8 +786,21 @@ namespace MusicDBApp
         // Takes user input to delete a artist by name
         public static void DeleteArtistByName()
         {
-            view.DisplayMessage("Enter the Artist to delete");
-            string artistName = view.GetInput();
+            string artistName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Artist to delete");
+                artistName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(artistName) && artistName.Length <= 100)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Artist name cannot be empty or more than 100 characters, please try again.");
+                }
+            }
             int rowsaffected = storageManager.DeleteArtistByName(artistName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
@@ -782,8 +808,21 @@ namespace MusicDBApp
         // Takes user input to delete a vinyl by name
         public static void DeleteVinylByName()
         {
-            view.DisplayMessage("Enter the Vinyl to delete");
-            string vinylName = view.GetInput();
+            string vinylName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Vinyl to delete");
+                vinylName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(vinylName) && vinylName.Length <= 100)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Vinyl name cannot be empty or more than 100 characters, please try again.");
+                }
+            }
             int rowsaffected = storageManager.DeleteVinylByName(vinylName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
@@ -791,8 +830,21 @@ namespace MusicDBApp
         // Takes user input to delete a genre by name
         public static void DeleteGenresByName()
         {
-            view.DisplayMessage("Enter the Genre Name to delete");
-            string genreName = view.GetInput();
+            string genreName;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Genre Name to delete");
+                genreName = view.GetInput();
+
+                if (!string.IsNullOrWhiteSpace(genreName) && genreName.Length <= 100)
+                {
+                    break;
+                }
+                else
+                {
+                    view.DisplayMessage("Genre name cannot be empty or more than 100 characters, please try again.");
+                }
+            }
             int rowsaffected = storageManager.DeleteGenreByName(genreName);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
@@ -800,8 +852,28 @@ namespace MusicDBApp
         // Takes user input to delete a review by ID
         public static void DeleteReviewByID()
         {
-            view.DisplayMessage("Enter the Review ID to delete: ");
-            int reviewID = view.GetIntInput();
+            int reviewID;
+            while (true)
+            {
+                view.DisplayMessage("Enter the Review ID to delete: ");
+                string input = view.GetInput();
+
+                if (!int.TryParse(input, out reviewID))
+                {
+                    view.DisplayMessage("Invalid input. Please enter a valid number.");
+                    continue;
+                }
+
+                if (storageManager.VinylExists(reviewID))
+                {
+                    break;
+                }
+
+                else
+                {
+                    view.DisplayMessage("Review ID does not exist or was not found, please try again.");
+                }
+            }
             int rowsaffected = storageManager.DeleteReviewByName(reviewID);
             view.DisplayMessage($"Rows affected: {rowsaffected}");
         }
