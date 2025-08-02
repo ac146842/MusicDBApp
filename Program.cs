@@ -19,8 +19,8 @@ namespace MusicDBApp
         // Main method and displays Login/Register menu
         static void Main(string[] args)
         {
-            string connectionString = "";
-
+            string mdfPath = Path.Combine(AppContext.BaseDirectory, "MusicDB1.mdf");
+            string connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={mdfPath};Integrated Security=True;Connect Timeout=30;";
 
             storageManager = new StorageManager(connectionString);
             view = new ConsoleView(storageManager);

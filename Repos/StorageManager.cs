@@ -132,14 +132,15 @@ public class StorageManager
     }
 
     // Registers a new user in the database
-    public int RegisterUser(string username, string password, int roleID)
+    public int RegisterUser(string username, string password, int roleID, int newAge)
     {
-        string sql = "INSERT INTO tblUser (User_Name, Password, Role_ID) VALUES (@username, @password, @roleID)";
+        string sql = "INSERT INTO tblUser (User_Name, Password, Age, Role_ID) VALUES (@username, @password, @age, @roleID)";
 
         using (SqlCommand cmd = new SqlCommand(sql, conn))
         {
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@age", newAge);
             cmd.Parameters.AddWithValue("@roleID", roleID);
 
             return cmd.ExecuteNonQuery();

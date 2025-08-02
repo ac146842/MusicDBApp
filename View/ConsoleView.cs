@@ -91,9 +91,29 @@ namespace MusicDBApp.View
                 Console.Write("Please enter your desired password: ");
                 string newPassword = Console.ReadLine();
 
+                Console.WriteLine("(minimum age 13, max age 100)");
+                Console.Write("Please enter your age: ");
+                string ageInput = Console.ReadLine();
+
                 if (string.IsNullOrWhiteSpace(newUsername) || string.IsNullOrWhiteSpace(newPassword))
                 {
                     Console.WriteLine("Username or Password cannot be empty.");
+                    Console.WriteLine("Press Enter to try again");
+                    Console.ReadLine();
+                    continue;
+                }
+
+                if (newUsername.Length > 100 || newPassword.Length > 100)
+                {
+                    Console.WriteLine("Username/Password must be under 100 characters.");
+                    Console.WriteLine("Press Enter to try again");
+                    Console.ReadLine();
+                    continue;
+                }
+
+                if (!int.TryParse(ageInput, out int newAge) || newAge < 13 || newAge > 100)
+                {
+                    Console.WriteLine("Invalid age. Please enter a number between 13 and 100.");
                     Console.WriteLine("Press Enter to try again");
                     Console.ReadLine();
                     continue;
@@ -115,7 +135,7 @@ namespace MusicDBApp.View
                     continue;
                 }
 
-                int rowsInserted = storageManager.RegisterUser(newUsername, newPassword, roleID: 2);
+                int rowsInserted = storageManager.RegisterUser(newUsername, newPassword, roleID: 2, newAge);
 
                 if (rowsInserted > 0)
                 {
@@ -181,12 +201,12 @@ namespace MusicDBApp.View
             Console.WriteLine("Menu: ");
             Console.WriteLine("Choose an option from 1-7");
 
-            Console.WriteLine("1. tblRecordLabel");
-            Console.WriteLine("2. tblArtist");
-            Console.WriteLine("3. tblVinyl");
-            Console.WriteLine("4. tblGenre");
-            Console.WriteLine("5. tblReviews");
-            Console.WriteLine("6. tblReviewComments");
+            Console.WriteLine("1. RecordLabel");
+            Console.WriteLine("2. Artist");
+            Console.WriteLine("3. Vinyl");
+            Console.WriteLine("4. Genre");
+            Console.WriteLine("5. Reviews");
+            Console.WriteLine("6. Review Comments");
             Console.WriteLine("7. Exit");
 
             return Console.ReadLine();
